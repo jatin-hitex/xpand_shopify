@@ -1,0 +1,143 @@
+{
+  "sections": {
+    "main": {
+      "type": "page-team-template",
+      "blocks": {
+        "block-1": {
+          "type": "employee",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/team-1.jpg",
+            "title": "Sam Wilder",
+            "job_title": "Founder and Creator",
+            "description": "<p>Yoga has the power to heal. I love sharing my passion with my team and the community.<\/p>",
+            "twitter": "Shopify"
+          }
+        },
+        "block-3": {
+          "type": "employee",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/team-5.jpg",
+            "title": "David Jones",
+            "job_title": "Community Manager",
+            "description": "<p>I love hosting events to bring the community together.<\/p>",
+            "twitter": ""
+          }
+        },
+        "block-2": {
+          "type": "employee",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/team-2.jpg",
+            "title": "Natasha Ulrich",
+            "job_title": "Co-Founder",
+            "description": "<p>Acrobatics and ballet are my favourite!<\/p>",
+            "twitter": "Shopify"
+          }
+        },
+        "96cbf2f6-f57b-4543-b997-27e31883e815": {
+          "type": "employee",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/team-4.jpg",
+            "title": "Gil Sadri",
+            "job_title": "Yoga Instructor",
+            "description": "<p>I love helping others and pushing them to do their best!<\/p>",
+            "twitter": ""
+          }
+        }
+      },
+      "block_order": [
+        "block-1",
+        "block-3",
+        "block-2",
+        "96cbf2f6-f57b-4543-b997-27e31883e815"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/team-page-1.jpg",
+        "image_position": "left",
+        "title": "MEET OUR PORTLAND CREW",
+        "text": "<p>Whether it's running, dancing, yoga, pilates, boxing, or trampolining - we all love <strong>moving<\/strong>, and believe that movement heals your soul. We are a dynamic crew of likeminded folks who care about the wellness of others in our community. We love partnering with other locals for events and collaborations, and are always open to new ideas. We focus on bringing people together in our space where everybody is always welcome.<\/p>",
+        "text_position": "left",
+        "employee_per_row": 2,
+        "member_color": "#ffffff",
+        "member_accent_color": "#d54d4d",
+        "member_overlay_color": "#000000"
+      }
+    },
+    "16473616606c976f7a": {
+      "type": "contact-form",
+      "blocks": {
+        "1647361660a611df2c-0": {
+          "type": "richtext",
+          "settings": {
+            "label": "<p>Introduce yourself<\/p>",
+            "placeholder": "Name",
+            "required": false,
+            "field_type": "text"
+          }
+        },
+        "1647361660a611df2c-1": {
+          "type": "richtext",
+          "settings": {
+            "label": "<p>Where can we reach you?<\/p>",
+            "placeholder": "Email",
+            "required": true,
+            "field_type": "email"
+          }
+        },
+        "bac85a1e-1bef-4951-9f50-e471f51d322b": {
+          "type": "custom",
+          "settings": {
+            "label": "Area of inquiry",
+            "placeholder": "Make a selection",
+            "required": false,
+            "options_1": "General Fitness",
+            "options_2": "Diet + Lifestyle",
+            "options_3": "Yogi Training",
+            "options_4": "",
+            "options_5": "",
+            "options_6": "",
+            "field_type": "drop_down"
+          }
+        },
+        "1647361660a611df2c-2": {
+          "type": "richtext",
+          "settings": {
+            "label": "<p>How can we help?<\/p>",
+            "placeholder": "Message",
+            "required": true,
+            "field_type": "textarea"
+          }
+        }
+      },
+      "block_order": [
+        "1647361660a611df2c-0",
+        "1647361660a611df2c-1",
+        "bac85a1e-1bef-4951-9f50-e471f51d322b",
+        "1647361660a611df2c-2"
+      ],
+      "settings": {
+        "contact_heading": "",
+        "contact_subheading": "We'd love to chat!",
+        "contact_content": "<p>If you're curious about any of our instructors' backgrounds and areas of expertise, or want to book a private consultation for fitness assessment, please reach out and we'll be happy to assist you! Please allow 48 hours for a reply.<\/p>",
+        "contact_text_position": "center",
+        "contact_text_alignment": "center",
+        "contact_social_buttons": false,
+        "css_class": "",
+        "custom_css": ""
+      }
+    },
+    "1647361781ae969abc": {
+      "type": "divider",
+      "settings": {
+        "divider_spacing": 20,
+        "divider_border": false,
+        "css_class": "",
+        "custom_css": ""
+      }
+    }
+  },
+  "order": [
+    "main",
+    "16473616606c976f7a",
+    "1647361781ae969abc"
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "sections": {
+    "main": {
+      "type": "contact-template",
+      "settings": {
+        "wide_display": true,
+        "image": "shopify:\/\/shop_images\/contact-banner-1_1dc4735f-ffd4-453f-8926-823b361129c5.jpg",
+        "contact_heading": "Contact Us",
+        "contact_subheading": "",
+        "caption_content_background": "original",
+        "contact_text": "",
+        "show_map": false,
+        "map_wide_display": true,
+        "map_address": "",
+        "map_height": 400,
+        "zoom_level": 16,
+        "api_key": "",
+        "show_pin": true,
+        "map_style": "default"
+      }
+    },
+    "16473619594dee2d5e": {
+      "type": "divider",
+      "settings": {
+        "divider_spacing": 20,
+        "divider_border": false,
+        "css_class": "",
+        "custom_css": ""
+      }
+    },
+    "164736184124975cbe": {
+      "type": "blog-posts",
+      "settings": {
+        "title": "learn more on the blog",
+        "blog_widget_select": "community-blog",
+        "home_page_articles": 3,
+        "blog_tags": false,
+        "blog_author": false,
+        "read_time": true,
+        "blog_date": true,
+        "blog_comment_count": true,
+        "read_more_link": false,
+        "excerpt_display": "none",
+        "css_class": "",
+        "custom_css": ""
+      }
+    }
+  },
+  "order": [
+    "main",
+    "16473619594dee2d5e",
+    "164736184124975cbe"
+  ]
+}
