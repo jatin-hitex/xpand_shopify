@@ -1,0 +1,324 @@
+{
+  "sections": {
+    "image-with-text-overlay-1": {
+      "type": "image-with-text-overlay",
+      "settings": {
+        "wide_display": true,
+        "image": "shopify:\/\/shop_images\/hero-banner-stocksy.jpg",
+        "pretext": "",
+        "title": "Everyday Yoga Essentials",
+        "subtitle": "<p>To assist and elevate your practice<\/p>",
+        "button1": "shop clothing",
+        "button1_link": "shopify:\/\/collections\/apparel",
+        "button1_style": "global-button--banner-highlighted",
+        "button2": "shop props",
+        "button2_link": "shopify:\/\/collections\/yoga-props",
+        "button2_style": "global-button--banner-highlighted",
+        "text_position": "left",
+        "text_align": "left",
+        "caption_content_background": "original",
+        "mobile_text_below_image": false,
+        "mobile_text_color": "",
+        "css_class": "",
+        "custom_css": ""
+      }
+    },
+    "1631543569c907f287": {
+      "type": "divider",
+      "settings": {
+        "divider_spacing": 20,
+        "divider_border": false,
+        "css_class": "",
+        "custom_css": ""
+      }
+    },
+    "featured-text-1": {
+      "type": "featured-text",
+      "settings": {
+        "title": "High Quality and Mindful Products",
+        "content": "<p>We aim to provide you with support, ease and confidence<br\/>so you can stay connected and focused on your yoga practice.<\/p>",
+        "button_label": "Learn more",
+        "button_link": "shopify:\/\/pages\/our-story",
+        "text_size": "featured_text",
+        "text_alignment": "center",
+        "css_class": "",
+        "custom_css": ""
+      }
+    },
+    "1631543635c1f072b3": {
+      "type": "divider",
+      "settings": {
+        "divider_spacing": 20,
+        "divider_border": false,
+        "css_class": "",
+        "custom_css": ""
+      }
+    },
+    "1631543637f7855f0e": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "",
+        "collection_description": false,
+        "collection": "new",
+        "collection_style": "slider",
+        "products_per": 3,
+        "products_limit": 12,
+        "css_class": "",
+        "custom_css": ""
+      }
+    },
+    "165790005380b9589d": {
+      "type": "shoppable-image",
+      "blocks": {
+        "1657900053c86da342-0": {
+          "type": "shoppable-image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/shoppable-3.jpg",
+            "card_styling": "square",
+            "elements_outline": true,
+            "hotspot_color": "",
+            "product_1": "refined-tee",
+            "image_alignment_1": "center-center",
+            "x_axis_1": 23,
+            "y_axis_1": 69,
+            "button_label_1": "View product",
+            "product_2": "presence-top",
+            "image_alignment_2": "center-center",
+            "x_axis_2": 66,
+            "y_axis_2": 62,
+            "button_label_2": "View product",
+            "product_3": "skye-barre-leggings-black",
+            "image_alignment_3": "center-center",
+            "x_axis_3": 75,
+            "y_axis_3": 33,
+            "button_label_3": "View product",
+            "product_4": "athletic-maxtowel",
+            "image_alignment_4": "center-center",
+            "x_axis_4": 51,
+            "y_axis_4": 11,
+            "button_label_4": "View product",
+            "call_to_action": "Bring up the intensity",
+            "subtitle": "",
+            "text_align": "center",
+            "button_label": "Shop what's new",
+            "button_link": "shopify:\/\/collections\/new",
+            "button_style": "global-button--primary",
+            "cta_bg_color": "#f2f2f2"
+          }
+        },
+        "7772ae39-fc7d-4905-b370-98bdb9f83c4f": {
+          "type": "shoppable-image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/shoppable-4.jpg",
+            "card_styling": "square",
+            "elements_outline": true,
+            "hotspot_color": "",
+            "product_1": "crop-top",
+            "image_alignment_1": "center-center",
+            "x_axis_1": 41,
+            "y_axis_1": 57,
+            "button_label_1": "View product",
+            "product_2": "stretch-leggings",
+            "image_alignment_2": "center-center",
+            "x_axis_2": 73,
+            "y_axis_2": 46,
+            "button_label_2": "View product",
+            "product_3": "performance-cork-yoga-mat-5mm",
+            "image_alignment_3": "center-center",
+            "x_axis_3": 59,
+            "y_axis_3": 13,
+            "button_label_3": "View product",
+            "product_4": "grippy-yoga-gloves",
+            "image_alignment_4": "center-center",
+            "x_axis_4": 9,
+            "y_axis_4": 85,
+            "button_label_4": "View product",
+            "call_to_action": "Cool down in comfort",
+            "subtitle": "",
+            "text_align": "center",
+            "button_label": "Shop women",
+            "button_link": "shopify:\/\/collections\/womens-apparel",
+            "button_style": "global-button--primary",
+            "cta_bg_color": "#f2f2f2"
+          }
+        }
+      },
+      "block_order": [
+        "1657900053c86da342-0",
+        "7772ae39-fc7d-4905-b370-98bdb9f83c4f"
+      ],
+      "settings": {
+        "wide_display": false,
+        "slideshow_text_animation": "fadeInDown",
+        "slideshow_animation": "fade",
+        "slideshow_speed": 0,
+        "title": "",
+        "quick_view": true,
+        "bottom_bar": true,
+        "product_thumbnails": true,
+        "cta": true,
+        "bottom_bar_image_style": "natural",
+        "css_class": "",
+        "custom_css": ""
+      }
+    },
+    "163154378857b6bff2": {
+      "type": "divider",
+      "settings": {
+        "divider_spacing": 25,
+        "divider_border": false,
+        "css_class": "",
+        "custom_css": ""
+      }
+    },
+    "16315436514b9a8b41": {
+      "type": "featured-promotions",
+      "blocks": {
+        "16315436514b9a8b41-0": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/shop-women-1.jpg",
+            "link": "shopify:\/\/collections\/womens-apparel",
+            "title": "Shop Women",
+            "text": "",
+            "button_label": ""
+          }
+        },
+        "16315436514b9a8b41-1": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/shop-men-1_1200c002-ead0-48a0-8715-e9be76fd9bb6.jpg",
+            "link": "shopify:\/\/collections\/mens-apparel",
+            "title": "shop men",
+            "text": "",
+            "button_label": ""
+          }
+        }
+      },
+      "block_order": [
+        "16315436514b9a8b41-0",
+        "16315436514b9a8b41-1"
+      ],
+      "settings": {
+        "wide_display": false,
+        "promo_text_on_image_enabled": true,
+        "featured_promos_per_row": 2,
+        "featured_links_animation": "fadeIn",
+        "feature_style": "square",
+        "css_class": "",
+        "custom_css": ""
+      }
+    },
+    "1631543981571b53f1": {
+      "type": "divider",
+      "settings": {
+        "divider_spacing": 20,
+        "divider_border": false,
+        "css_class": "",
+        "custom_css": ""
+      }
+    },
+    "16315439842a06c96b": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "",
+        "collection_description": false,
+        "collection": "tops-1",
+        "collection_style": "slider",
+        "products_per": 3,
+        "products_limit": 12,
+        "css_class": "",
+        "custom_css": ""
+      }
+    },
+    "163154403243d91c4d": {
+      "type": "divider",
+      "settings": {
+        "divider_spacing": 10,
+        "divider_border": false,
+        "css_class": "",
+        "custom_css": ""
+      }
+    },
+    "16315440459bd794b1": {
+      "type": "text-columns-with-images",
+      "blocks": {
+        "16315440459bd794b1-0": {
+          "type": "text_block",
+          "settings": {
+            "enable_image": true,
+            "image": "shopify:\/\/shop_images\/yoga-mats.jpg",
+            "title": "Eco-friendly Mats",
+            "heading_size": "large_text",
+            "text": "<p>Innovative with extra cushioning, our mats are both supportive and sustainably sourced – meet your new go-to mat.<\/p>",
+            "button_label": "Shop Now",
+            "button_link": "shopify:\/\/collections\/mats",
+            "align_text": "left",
+            "border_style": "none"
+          }
+        },
+        "16315440459bd794b1-1": {
+          "type": "text_block",
+          "settings": {
+            "enable_image": true,
+            "image": "shopify:\/\/shop_images\/yoga-props.jpg",
+            "title": "Helpful Extras",
+            "heading_size": "large_text",
+            "text": "<p>From yoga blocks, to bags and socks – simple designs that are perfect for almost anything related to your yoga practice.<\/p>",
+            "button_label": "Shop Now",
+            "button_link": "shopify:\/\/collections\/accessories",
+            "align_text": "left",
+            "border_style": "none"
+          }
+        }
+      },
+      "block_order": [
+        "16315440459bd794b1-0",
+        "16315440459bd794b1-1"
+      ],
+      "settings": {
+        "title": "",
+        "css_class": "",
+        "custom_css": ""
+      }
+    },
+    "1631544130288fe1ad": {
+      "type": "divider",
+      "settings": {
+        "divider_spacing": 0,
+        "divider_border": false,
+        "css_class": "",
+        "custom_css": ""
+      }
+    },
+    "1631544138de39fa71": {
+      "type": "newsletter",
+      "settings": {
+        "wide_display": true,
+        "display_first_name": false,
+        "display_last_name": false,
+        "newsletter_title": "Sign up today!",
+        "newsletter_text": "<p>Subscribe to our newsletter for exclusive deals and early access.<\/p>",
+        "newsletter_section_text_align": "center",
+        "css_class": "",
+        "custom_css": ""
+      }
+    }
+  },
+  "order": [
+    "image-with-text-overlay-1",
+    "1631543569c907f287",
+    "featured-text-1",
+    "1631543635c1f072b3",
+    "1631543637f7855f0e",
+    "165790005380b9589d",
+    "163154378857b6bff2",
+    "16315436514b9a8b41",
+    "1631543981571b53f1",
+    "16315439842a06c96b",
+    "163154403243d91c4d",
+    "16315440459bd794b1",
+    "1631544130288fe1ad",
+    "1631544138de39fa71"
+  ]
+}

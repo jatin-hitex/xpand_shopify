@@ -1,0 +1,26 @@
+{
+  "sections": {
+    "main": {
+      "type": "blog-template",
+      "settings": {
+        "wide_display": true,
+        "image": "shopify:\/\/shop_images\/blog-banner.jpg",
+        "subtitle": "inspiring practice and play",
+        "caption_content_background": "original",
+        "blog_posts_per_row": 3,
+        "blog_posts_per_page": 6,
+        "blog_tags": true,
+        "blog_author": true,
+        "read_time": true,
+        "blog_date": false,
+        "blog_comment_count": true,
+        "read_more_link": false,
+        "excerpt_display": "none",
+        "toggle": false
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}
