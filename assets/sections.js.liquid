@@ -23,7 +23,7 @@ window.logoList = {
   init() {
     $('[data-logo-slider]').flickity({
       cellAlign: 'center',
-      pageDots: false,
+      pageDots: true,
       prevNextButtons: true,
       contain: true,
       groupCells: true,
@@ -2410,7 +2410,7 @@ window.header = {
       }
     });
 
-    //Only apply on larger screen sizes
+        //Only apply on larger screen sizes
     if (window.PXUTheme.media_queries.large.matches) {
       if ($('.header').hasClass('header-fixed--true')){
 
@@ -2530,7 +2530,7 @@ window.header = {
       });
 
       $('.cart-container').on('mouseleave', () => {
-        closeTimer = setTimeout(() => closeMiniCart(), 400);
+        //closeTimer = setTimeout(() => closeMiniCart(), 400);
       });
     }
 

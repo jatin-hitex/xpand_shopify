@@ -1,0 +1,1099 @@
+{% assign product_prefix = product.type | split: ' ' | first | downcase %}
+{% assign template_prefix = template.suffix %}
+{% if section.blocks.size > 0 %}
+  <div class="shopify-section-product-tab">
+    <section class="product-tab">
+      <div class="tab-container">
+        <div class="tab-head">
+          <div class="section">
+            <ul class="columns is-mobile">
+              {% for block in section.blocks %}
+                {% assign tabHeading = block.settings.name %}
+                {% if tabHeading != blank %}
+                  <li id="tab-{{ forloop.index}}" class="column {% if forloop.index == 1 %}active{% endif %}">{{ tabHeading }}</li>
+                {% endif %}
+              {% endfor %}
+            </ul>
+          </div>
+        </div>
+        <div class="tab-body">
+          {% for block in section.blocks %}
+            {% case block.type %}
+
+              {% when 'about' %}
+              {% if product_prefix == 'flat' %}
+                {% assign blockTitle = block.settings.title %}
+                {% assign topVideo = block.settings.flat_top_video_url %}
+                {% assign blockDesc = block.settings.block_desc %}
+              {% endif %}
+              {% if product_prefix == 'round' %}
+                {% assign blockTitle = block.settings.title %}
+                {% assign topVideo = block.settings.round_top_video_url %}
+                {% assign blockDesc = block.settings.block_desc %}
+              {% endif %}
+              {% if template_prefix == 'primary' or template_prefix == 'primary-alternate' %}
+              {% assign blockTitle = block.settings.title %}
+              {% assign topVideo = block.settings.accessories_top_video_url %}
+              {% assign blockDesc = block.settings.block_desc %}
+              
+            {% endif %}
+
+              <div
+                class="body-content {% if forloop.index == 1 %}active-tab-content{% endif %}"
+                data-id="tab-{{forloop.index}}"
+                data-type="{{ block.type }}">
+              <div class="section {% if template_prefix == 'primary' or template_prefix == 'primary-alternate' %} accessories-top-section-layout{% endif %}">
+                  {% unless topVideo == blank %}
+                    <div class="top-video">
+                      {{ topVideo | video_tag: image_size: 'master', autoplay: true, muted: true, controls: false, loop: true }}
+                    </div>
+                  {% endunless %}
+
+                  {% unless blockTitle == blank %}
+                    <h2>{{ blockTitle }}</h2>
+                  {% endunless %}
+                  {% unless blockDesc == blank %}
+                  <div class="pdp-tab-block-desc">{{ blockDesc }}</div>
+                  {% endunless %}
+                  <div class="videos-columns">
+                    {% for i in (1..4) %}
+                      {% if product_prefix == 'flat' %}
+                        {% capture flatVideoText %}flat_video{{ i }}_text{% endcapture %}
+                        {% capture flatVideo %}flat_video{{ i }}_url{% endcapture %}
+                      {% endif %}
+                      {% if product_prefix == 'round' %}
+                        {% capture flatVideoText %}round_video{{ i }}_text{% endcapture %}
+                        {% capture flatVideo %}round_video{{ i }}_url{% endcapture %}
+                      {% endif %}
+                      {% if template_prefix == 'primary' or template_prefix == 'primary-alternate' %}
+                        {% capture accessoriesType %}accessories_{{ i }}_type{% endcapture %}
+                        {% capture accessoriesVideo %}accessories_video{{ i }}_url{% endcapture %}
+                        {% capture accessoriesImage %}accessories_{{ i }}_image{% endcapture %}
+                        {% capture accessoriesIcon %}accessories_video{{ i }}_icon{% endcapture %}
+                        {% capture accessoriesHeading %}accessories_video{{ i }}_heading{% endcapture %}
+                        {% capture accessoriesDesc %}accessories_video{{ i }}_text{% endcapture %}
+                      {% endif %}
+                      {% if block.settings[accessoriesVideo] != blank or block.settings[accessoriesImage] != blank %}
+                        <div class="column accessories-column-content">
+                          {% if block.settings[accessoriesType] == 'image' %}                          
+                          {% unless block.settings[accessoriesImage] == blank %}<div class="accessories-column-media">{{ block.settings[accessoriesImage] | img_url: '600x' | img_tag }}</div>{% endunless %}
+                          {% endif %}
+                          {% if block.settings[accessoriesType] == 'video' %}                          
+                          {% unless block.settings[accessoriesVideo] == blank %}<div class="accessories-column-media">{{ block.settings[accessoriesVideo] | video_tag: image_size: 'master', autoplay: true, muted: true, controls: false, loop: true }}</div> {% endunless %}
+                          {% endif %}
+                          {% unless block.settings[accessoriesHeading] == blank or block.settings[accessoriesDesc] == blank %}
+                            <div class="column-content-area">
+                              {% unless block.settings[accessoriesIcon] == blank %}<div class="column-content-icon">{{ block.settings[accessoriesIcon] | img_url: '100x' | img_tag }}</div>{% endunless %}
+                              {% unless block.settings[accessoriesHeading] == blank %}<h3 class="column-content-heading">{{ block.settings[accessoriesHeading] }}</h3>{% endunless %}
+                              {% unless block.settings[accessoriesDesc] == blank %}<p>{{ block.settings[accessoriesDesc] }}</p>{% endunless %}
+                            </div>                           
+                          {% endunless %}
+                        </div>
+                        {% endif %}
+
+                      {% unless block.settings[flatVideo] == blank %}
+                        <div class="column">
+                          {{ block.settings[flatVideo] | video_tag: image_size: 'master', autoplay: true, muted: true, controls: false, loop: true }}
+                          {% unless block.settings[flatVideoText] == blank %}
+                            <p>{{ block.settings[flatVideoText] }}</p>
+                          {% endunless %}
+                        </div>
+                      {% endunless %}
+                    {% endfor %}
+                  </div>
+                </div>
+                {% if product_prefix == 'flat' %}
+                  {% assign highlType1 = block.settings.flat_highlight1_type %}
+                  {% assign highlType2 = block.settings.flat_highlight2_type %}
+                {% endif %}
+                {% if product_prefix == 'round' %}
+                  {% assign highlType1 = block.settings.round_highlight1_type %}
+                  {% assign highlType2 = block.settings.round_highlight2_type %}
+                {% endif %}
+
+                {% if highlType1 != blank or highlType2 != blank %}
+
+                  <div class="highlights" style="background:{{ block.settings.highlight_bg }};">
+                    <div class="section">
+                      {% for i in (1..2) %}
+                        {% if product_prefix == 'flat' %}
+                          {% capture highlightType %}flat_highlight{{ i }}_type{% endcapture %}
+                          {% capture highlisghtTitle %}flat_highlight{{ i }}_title{% endcapture %}
+                          {% capture highlightCaption %}flat_highlight{{ i }}_caption{% endcapture %}
+                          {% capture highlightText %}flat_highlight{{ i }}_text{% endcapture %}
+                          {% capture highlightImg %}flat_highlight{{ i }}_image{% endcapture %}
+                          {% capture highlightVideo %}flat_highlight{{ i }}_video_url{% endcapture %}
+                        {% endif %}
+                        {% if product_prefix == 'round' %}
+                          {% capture highlightType %}round_highlight{{ i }}_type{% endcapture %}
+                          {% capture highlisghtTitle %}round_highlight{{ i }}_title{% endcapture %}
+                          {% capture highlightCaption %}round_highlight{{ i }}_caption{% endcapture %}
+                          {% capture highlightText %}round_highlight{{ i }}_text{% endcapture %}
+                          {% capture highlightImg %}round_highlight{{ i }}_image{% endcapture %}
+                          {% capture highlightVideo %}round_highlight{{ i }}_video_url{% endcapture %}
+                        {% endif %}
+                        {% if block.settings[highlightImg] == blank or block.settings[highlightVideo] == blank or block.settings[highlisghtTitle] == blank and block.settings[highlightText] == blank %}
+
+                          <div class="columns">
+                            <div class="column text">
+                              {% unless block.settings[highlightCaption] == blank %}
+                                <p class="caption">{{ block.settings[highlightCaption] }}</p>
+                              {% endunless %}
+                              {% unless block.settings[highlisghtTitle] == blank %}
+                                <h3>{{ block.settings[highlisghtTitle] }}</h3>
+                              {% endunless %}
+                              {% unless block.settings[highlightText] == blank %}
+                                <p>{{ block.settings[highlightText] }}</p>
+                              {% endunless %}
+                            </div>
+                            <div class="column media">
+                              {% if block.settings[highlightType] == 'image' %}
+                                {{ block.settings[highlightImg] | img_url: '600x' | img_tag }}
+                              {% endif %}
+                              {% if block.settings[highlightType] == 'video' %}
+                                {{ block.settings[highlightVideo] | video_tag: image_size: 'master', autoplay: true, muted: true, controls: false, loop: true }}
+                              {% endif %}
+                            </div>
+                          </div>
+                        {% endif %}
+                      {% endfor %}
+                    </div>
+                  </div>
+                {% endif %}
+              </div>
+
+
+              {% when 'specs' %}
+              <div
+                class="body-content {% if forloop.index == 1 %}active-tab-content{% endif %}"
+                data-id="tab-{{forloop.index}}"
+                data-type="{{ block.type }}">
+                <div class="section">
+                  <div class="columns">
+                    {% if product_prefix == 'flat' %}
+                      {% capture specsTitle %}flat_title{% endcapture %}
+                      {% capture specsDesc %}flat_description{% endcapture %}
+                      {% capture specsImg %}flat_image{% endcapture %}
+                      {% capture specContentFullWidth %}flat_full_width{% endcapture %}
+                    {% endif %}
+                    {% if product_prefix == 'round' %}
+                      {% capture specsTitle %}round_title{% endcapture %}
+                      {% capture specsDesc %}round_description{% endcapture %}
+                      {% capture specsImg %}round_image{% endcapture %}
+                      {% capture specContentFullWidth %}round_full_width{% endcapture %}
+                    {% endif %}
+                    {% if template_prefix == 'primary' or template_prefix == 'primary-alternate' %}
+                  {% capture specsTitle %}accessories_title{% endcapture %}
+                  {% capture specsDesc %}accessories_description{% endcapture %}
+                  {% capture specsImg %}accessories_image{% endcapture %}
+                  {% capture specContentFullWidth %}accessories_full_width{% endcapture %}
+                    
+                  {% endif %}
+                  {% unless block.settings[specsTitle] == blank or block.settings[specsDesc] == blank %}       
+                <div class="column is-4 text {% if block.settings[specContentFullWidth] %} full-width-layout{% endif %}">
+                      {% if block.settings[specsTitle] != blank %}
+                        <h3>{{ block.settings[specsTitle] }}</h3>
+                      {% endif %}
+                      {% if block.settings[specsDesc] != blank %}
+                        {{ block.settings[specsDesc] }}{% endif %}
+                    </div>
+                  {% endunless %}
+                  {% unless block.settings[specsImg] == blank %}
+                  <div class="column is-8 media  {% if block.settings[specContentFullWidth] %} full-width-layout{% endif %} {% if block.settings[specsTitle] == blank and block.settings[specsDesc] == blank %} full-width{% endif %}">
+                      {% if block.settings[specsImg] != blank %}
+                        {{ block.settings[specsImg] | img_url: 'master' | img_tag }}
+                      {% endif %}
+                    </div>
+                  {% endunless %}
+                  </div>
+                </div>
+              </div>
+
+              {% when 'reviews' %}
+              <div
+                class="body-content {% if forloop.index == 1 %}active-tab-content{% endif %}"
+                data-id="tab-{{forloop.index}}"
+                data-type="{{ block.type }}">
+                <div class="section">
+                  <!--Start Stamped.io Auto Installation-->
+                  <div
+                    id="stamped-main-widget"
+                    class="stamped-main-widget"
+                    data-widget-style="standard"
+                    data-photo-summary="false"
+                    data-product-id="{{ product.id }}"
+                    data-name="{{ product.title | escape }}"
+                    data-url="{{ shop.url }}{{ product.url }}"
+                    data-image-url="{{ product.featured_image | product_img_url: "large" |replace: '?', '%3F' | replace: '&','%26'}}"
+                    data-description="{{ product.description | escape }}"
+                    data-product-sku="{{product.handle}}">{{ product.metafields.stamped.reviews }}</div>
+                  <!--End Stamped.io Auto Installation-->
+                </div>
+              </div>
+
+              {% when 'installation' %}
+              <div
+                class="body-content {% if forloop.index == 1 %}active-tab-content{% endif %}"
+                data-id="tab-{{forloop.index}}"
+                data-type="{{ block.type }}">
+                <div class="section">
+                  {% for i in (1..2) %}
+                    {% if product_prefix == 'flat' %}
+                      {% capture installVideoyoutube %}flat_iframe_video_{{ i }}{% endcapture %}
+                      {% capture installVideoHtml %}flat_video{{ i }}_url{% endcapture %}
+                    {% endif %}
+                    {% if product_prefix == 'round' %}
+                      {% capture installVideoyoutube %}round_iframe_video_{{ i }}{% endcapture %}
+                      {% capture installVideoHtml %}round_video{{ i }}_url{% endcapture %}
+                    {% endif %}
+                    {% if template_prefix contains 'primary' %}
+                      {% capture installVideoyoutube %}accessories_iframe_video_{{ i }}{% endcapture %}
+                      {% capture installVideoHtml %}accessories_video{{ i }}_url{% endcapture %}
+                    {% endif %}
+
+                
+                    {% comment %} Checks there is an HTML5 video {% endcomment %}
+                    {% if block.settings[installVideoHtml] != blank %}
+                      {{ block.settings[installVideoHtml] | video_tag: image_size: 'master', autoplay: true, muted: true, controls: false, loop: true }}
+                          {% comment %} Checks there is an iframe video (YouTube or Vimeo) {% endcomment %}
+                    {% elsif block.settings[installVideoyoutube] != blank %}
+                      {% if block.settings[installVideoyoutube].type == 'vimeo' %}
+                        <iframe src="https://player.vimeo.com/video/{{ block.settings[installVideoyoutube].id }}?loop=false&amp;byline=false&amp;portrait=false&amp;title=false&amp;speed=true&amp;transparent=0&amp;gesture=media" allowfullscreen allowtransparency allow="autoplay"></iframe> 
+
+                      {% elsif block.settings[installVideoyoutube].type == 'youtube' %}
+                        <iframe src="https://www.youtube.com/embed/{{ block.settings[installVideoyoutube].id }}?origin=https://plyr.io&amp;iv_load_policy=3&amp;modestbranding=1&amp;playsinline=1&amp;showinfo=0&amp;rel=0&amp;enablejsapi=1" allowfullscreen allowtransparency allow="autoplay"></iframe> 
+                      {% endif %}                    
+                    {% endif %}
+
+
+                {% endfor %}
+              </div>
+            </div>
+            {%  when 'size_chart' %}
+              <div
+                class="body-content {% if forloop.index == 1 %}active-tab-content{% endif %}"
+                data-id="tab-{{forloop.index}}"
+                data-type="{{ block.type }}">
+                {% capture sizeChartHeadingTop %}accessories_sizechart_top_title{% endcapture %}
+                {% capture sizeChartDescTop %}accessories_sizechart_top_description{% endcapture %}
+                <div class="section size-chart-content">
+                  {% unless block.settings[sizeChartHeadingTop] == blank %}<h2>{{ block.settings[sizeChartHeadingTop] }}</h2>{% endunless %}
+                  {% unless block.settings[sizeChartDescTop] == blank %}{{ block.settings[sizeChartDescTop] }}{% endunless %}
+                  {% assign rowspanCounter = 1 %}
+                  {% for i in (1..3) %}
+                    {% capture tableType %}accessories_sizechart_table_{{ i }}_type{% endcapture %}
+                    {% capture tableHeading %}accessories_sizechart_table_{{ i }}_heading{% endcapture %}
+                      {% unless block.settings[accessories_sizechart_table_] == blank and block.settings[tableHeading] == blank %}
+                      <table class="table">
+                        <tbody>
+                          <tr>
+                            <td rowspan="20" class="gender">{{ block.settings[tableType] }}</td>
+                            {%  assign tableHeadContent = block.settings[tableHeading] | split: ','%}
+                            {% for item in  tableHeadContent %}
+                              <td class="size-name">{{ item }}</td>
+                            {% endfor %}
+                          </tr> 
+                          {% for j in (1..5) %}
+                            {% capture tableContent %}accessories_sizechart_table_{{ i }}_row_{{ j }}_content{% endcapture %}
+                            {%  assign tableData = block.settings[tableContent] | split: ','%} 
+                            <tr>
+                              {% for itemData in  tableData %}
+                                <td>{{ itemData }}</td>
+                              {% endfor %}
+                            </tr>
+                          {% endfor %}
+                        </tbody>
+                      </table>
+                      {% endunless %}
+                {% endfor %}
+                {% capture sizeChartContent %}accessories_sizechart_content{% endcapture %}
+                {% capture sizeChartContentImg %}accessories_sizechart_content_img{% endcapture %}
+                  {% unless block.settings[sizeChartContent] == blank %}<div class="size-chart-content-area text-center">{{ block.settings[sizeChartContent] }}</div>{% endunless %}
+                  {% unless block.settings[sizeChartContentImg] == blank %}                  
+                  {{ block.settings[sizeChartContentImg] | img_url: 'master' | img_tag }}
+                  {% endunless %}
+              </div>
+            </div>
+          {% endcase %}
+        {% endfor %}
+
+
+      </div>
+    </section>
+  </div>
+{% endif %}
+{% schema %}
+  {
+    "name": "Product Tab",
+    "max_blocks": 4,
+    "blocks": [
+      {
+        "type": "about",
+        "name": "Overview",
+        "settings": [
+          {
+            "id": "name",
+            "type": "text",
+            "label": "Name"
+          },
+          {
+            "id": "title",
+            "type": "text",
+            "label": "Title"
+          },
+          {
+            "id": "block_desc",
+            "type": "richtext",
+            "label": "Description"
+          },
+          {
+            "type": "header",
+            "content": "Accessories System"
+          },
+          {
+            "type": "video",
+            "id": "accessories_top_video_url",
+            "label": "Top Video URL"
+          },
+          {
+            "type": "radio",
+            "id": "accessories_1_type",
+            "label": "Enable",
+            "options": [
+              {
+                "value": "image",
+                "label": "Image"
+              }, {
+                "value": "video",
+                "label": "Video"
+              }
+            ],
+            "default": "image"
+          },
+          {
+            "type": "image_picker",
+            "id": "accessories_1_image",
+            "label": "Accessories #1 Image"
+          },
+           {
+            "type": "video",
+            "id": "accessories_video1_url",
+            "label": "Video #1 URL"
+          },
+          {
+            "type": "image_picker",
+            "id": "accessories_video1_icon",
+            "label": "Video #1 icon"
+          }, 
+          {
+            "type": "text",
+            "id": "accessories_video1_heading",
+            "label": "Video #1 Heading"
+          }, 
+          {
+            "type": "text",
+            "id": "accessories_video1_text",
+            "label": "Video #1 Text"
+          }, 
+          {
+            "type": "radio",
+            "id": "accessories_2_type",
+            "label": "Enable",
+            "options": [
+              {
+                "value": "image",
+                "label": "Image"
+              }, {
+                "value": "video",
+                "label": "Video"
+              }
+            ],
+            "default": "image"
+          },
+          {
+            "type": "image_picker",
+            "id": "accessories_2_image",
+            "label": "Accessories #2 Image"
+          },{
+            "type": "video",
+            "id": "accessories_video2_url",
+            "label": "Video #2 URL"
+          }, {
+            "type": "image_picker",
+            "id": "accessories_video2_icon",
+            "label": "Video #2 icon"
+          }, 
+          {
+            "type": "text",
+            "id": "accessories_video2_heading",
+            "label": "Video #2 Heading"
+          }, 
+          {
+            "type": "text",
+            "id": "accessories_video2_text",
+            "label": "Video #2 Text"
+          }, 
+          {
+            "type": "radio",
+            "id": "accessories_3_type",
+            "label": "Enable",
+            "options": [
+              {
+                "value": "image",
+                "label": "Image"
+              }, {
+                "value": "video",
+                "label": "Video"
+              }
+            ],
+            "default": "image"
+          }, 
+          {
+            "type": "image_picker",
+            "id": "accessories_3_image",
+            "label": "Accessories #3 Image"
+          },
+          {
+            "type": "video",
+            "id": "accessories_video3_url",
+            "label": "Video #3 URL"
+          }, {
+            "type": "image_picker",
+            "id": "accessories_video3_icon",
+            "label": "Video #3 icon"
+          }, 
+          {
+            "type": "text",
+            "id": "accessories_video3_heading",
+            "label": "Video #3 Heading"
+          }, 
+          {
+            "type": "text",
+            "id": "accessories_video3_text",
+            "label": "Video #3 Text"
+          }, 
+          {
+            "type": "radio",
+            "id": "accessories_4_type",
+            "label": "Enable",
+            "options": [
+              {
+                "value": "image",
+                "label": "Image"
+              }, {
+                "value": "video",
+                "label": "Video"
+              }
+            ],
+            "default": "image"
+          },
+          {
+            "type": "image_picker",
+            "id": "accessories_4_image",
+            "label": "Accessories #4 Image"
+          },
+          {
+            "type": "video",
+            "id": "accessories_video4_url",
+            "label": "Video #4 URL"
+          },{
+            "type": "image_picker",
+            "id": "accessories_video4_icon",
+            "label": "Video #4 icon"
+          }, 
+          {
+            "type": "text",
+            "id": "accessories_video4_heading",
+            "label": "Video #4 Heading"
+          }, 
+          {
+            "type": "text",
+            "id": "accessories_video4_text",
+            "label": "Video #4 Text"
+          }, 
+
+          {
+            "type": "header",
+            "content": "Flat Lacing System"
+          },
+          {
+            "type": "video",
+            "id": "flat_top_video_url",
+            "label": "Top Video URL"
+          }, {
+            "type": "video",
+            "id": "flat_video1_url",
+            "label": "Video #1 URL"
+          }, {
+            "type": "text",
+            "id": "flat_video1_text",
+            "label": "Video #1 Text"
+          }, {
+            "type": "video",
+            "id": "flat_video2_url",
+            "label": "Video #2 URL"
+          }, {
+            "type": "text",
+            "id": "flat_video2_text",
+            "label": "Video #2 Text"
+          }, {
+            "type": "video",
+            "id": "flat_video3_url",
+            "label": "Video #3 URL"
+          }, {
+            "type": "text",
+            "id": "flat_video3_text",
+            "label": "Video #3 Text"
+          }, {
+            "type": "video",
+            "id": "flat_video4_url",
+            "label": "Video #4 URL"
+          }, {
+            "type": "text",
+            "id": "flat_video4_text",
+            "label": "Video #4 Text"
+          }, {
+            "type": "header",
+            "content": "Highlight #1"
+          }, {
+            "type": "color",
+            "id": "highlight_bg",
+            "label": "Highlight Background color"
+          }, {
+            "type": "radio",
+            "id": "flat_highlight1_type",
+            "label": "Enable",
+            "options": [
+              {
+                "value": "image",
+                "label": "Image"
+              }, {
+                "value": "video",
+                "label": "Video"
+              }
+            ],
+            "default": "image"
+          }, {
+            "type": "text",
+            "id": "flat_highlight1_title",
+            "label": "Highlight #1 Title"
+          }, {
+            "type": "text",
+            "id": "flat_highlight1_caption",
+            "label": "Highlight #1 Caption"
+          }, {
+            "type": "richtext",
+            "id": "flat_highlight1_text",
+            "label": "Highlight #1 Text"
+          }, {
+            "type": "image_picker",
+            "id": "flat_highlight1_image",
+            "label": "Highlight #1 Image"
+          }, {
+            "type": "video",
+            "id": "flat_highlight1_video_url",
+            "label": "Highlight #1 Video URL"
+          }, {
+            "type": "header",
+            "content": "Highlight #2"
+          }, {
+            "type": "radio",
+            "id": "flat_highlight2_type",
+            "label": "Enable",
+            "options": [
+              {
+                "value": "image",
+                "label": "Image"
+              }, {
+                "value": "video",
+                "label": "Video"
+              }
+            ],
+            "default": "image"
+          }, {
+            "type": "text",
+            "id": "flat_highlight2_title",
+            "label": "Highlight #2 Title"
+          }, {
+            "type": "text",
+            "id": "flat_highlight2_caption",
+            "label": "Highlight #2 Caption"
+          }, {
+            "type": "richtext",
+            "id": "flat_highlight2_text",
+            "label": "Highlight #2 Text"
+          }, {
+            "type": "image_picker",
+            "id": "flat_highlight2_image",
+            "label": "Highlight #2 Image"
+          }, {
+            "type": "video",
+            "id": "flat_highlight2_video_url",
+            "label": "Highlight #2 Video URL"
+          }, {
+            "type": "header",
+            "content": "Round Lacing System"
+          }, {
+            "type": "video",
+            "id": "round_top_video_url",
+            "label": "Top Video URL"
+          }, {
+            "type": "video",
+            "id": "round_video1_url",
+            "label": "Video #1 URL"
+          }, {
+            "type": "text",
+            "id": "round_video1_text",
+            "label": "Video #1 Text"
+          }, {
+            "type": "video",
+            "id": "round_video2_url",
+            "label": "Video #2 URL"
+          }, {
+            "type": "text",
+            "id": "round_video2_text",
+            "label": "Video #2 Text"
+          }, {
+            "type": "video",
+            "id": "round_video3_url",
+            "label": "Video #3 URL"
+          }, {
+            "type": "text",
+            "id": "round_video3_text",
+            "label": "Video #3 Text"
+          }, {
+            "type": "video",
+            "id": "round_video4_url",
+            "label": "Video #4 URL"
+          }, {
+            "type": "text",
+            "id": "round_video4_text",
+            "label": "Video #4 Text"
+          }, {
+            "type": "header",
+            "content": "Highlight #1"
+          }, {
+            "type": "radio",
+            "id": "round_highlight1_type",
+            "label": "Enable",
+            "options": [
+              {
+                "value": "image",
+                "label": "Image"
+              }, {
+                "value": "video",
+                "label": "Video"
+              }
+            ],
+            "default": "image"
+          }, {
+            "type": "text",
+            "id": "round_highlight1_title",
+            "label": "Highlight #1 Title"
+          }, {
+            "type": "text",
+            "id": "round_highlight1_caption",
+            "label": "Highlight #1 Caption"
+          }, {
+            "type": "richtext",
+            "id": "round_highlight1_text",
+            "label": "Highlight #1 Text"
+          }, {
+            "type": "image_picker",
+            "id": "round_highlight1_image",
+            "label": "Highlight #1 Image"
+          }, {
+            "type": "video",
+            "id": "round_highlight1_video_url",
+            "label": "Highlight #1 Video URL"
+          }, {
+            "type": "header",
+            "content": "Highlight #2"
+          }, {
+            "type": "radio",
+            "id": "round_highlight2_type",
+            "label": "Enable",
+            "options": [
+              {
+                "value": "image",
+                "label": "Image"
+              }, {
+                "value": "video",
+                "label": "Video"
+              }
+            ],
+            "default": "image"
+          }, {
+            "type": "text",
+            "id": "round_highlight2_title",
+            "label": "Highlight #2 Title"
+          }, {
+            "type": "text",
+            "id": "round_highlight2_caption",
+            "label": "Highlight #2 Caption"
+          }, {
+            "type": "richtext",
+            "id": "round_highlight2_text",
+            "label": "Highlight #2 Text"
+          }, {
+            "type": "image_picker",
+            "id": "round_highlight2_image",
+            "label": "Highlight #2 Image"
+          }, {
+            "type": "video",
+            "id": "round_highlight2_video_url",
+            "label": "Highlight #2 Video URL"
+          }
+        ]
+      }, {
+        "type": "specs",
+        "name": "Specs",
+        "settings": [
+          {
+            "id": "name",
+            "type": "text",
+            "label": "Name"
+          },
+          {
+            "type": "header",
+            "content": "Accessories System"
+          },
+          {
+            "type": "text",
+            "id": "accessories_title",
+            "label": "Title"
+          },
+          {
+            "type": "richtext",
+            "id": "accessories_description",
+            "label": "Description"
+          }, {
+            "type": "image_picker",
+            "id": "accessories_image",
+            "label": "Image"
+          },
+          {
+            "type": "checkbox",
+            "id": "accessories_full_width",
+            "label": "Full width content",
+            "default": false
+          },
+          {
+            "type": "header",
+            "content": "Flat Lacing System"
+          },
+          {
+            "type": "text",
+            "id": "flat_title",
+            "label": "Title"
+          },
+          {
+            "type": "richtext",
+            "id": "flat_description",
+            "label": "Description"
+          }, {
+            "type": "image_picker",
+            "id": "flat_image",
+            "label": "Image"
+          }, 
+          {
+            "type": "checkbox",
+            "id": "flat_full_width",
+            "label": "Full width content",
+            "default": false
+          },
+          {
+            "type": "header",
+            "content": "Round Lacing System"
+          }, {
+            "type": "text",
+            "id": "round_title",
+            "label": "Title"
+          }, {
+            "type": "richtext",
+            "id": "round_description",
+            "label": "Description"
+          }, {
+            "type": "image_picker",
+            "id": "round_image",
+            "label": "Image"
+          },
+          {
+            "type": "checkbox",
+            "id": "round_full_width",
+            "label": "Full width content",
+            "default": false
+          }
+        ]
+      }, {
+        "type": "reviews",
+        "name": "Reviews",
+        "settings": [
+          {
+            "id": "name",
+            "type": "text",
+            "label": "Name"
+          }
+        ]
+      }, {
+        "type": "installation",
+        "name": "Installation",
+        "settings": [
+          {
+            "id": "name",
+            "type": "text",
+            "label": "Name"
+          },
+          {
+            "type": "header",
+            "content": "Accessories System"
+          },
+          {
+            "type": "video_url",
+            "id": "accessories_iframe_video_1",
+            "label": "Video link",
+            "accept": [
+              "youtube", "vimeo"
+            ],
+            "default": "https://www.youtube.com/watch?v=_9VUPq3SxOc"
+          },
+          {
+            "type": "video",
+            "id": "accessories_video1_url",
+            "label": "Video #1 URL"
+          }, {
+            "type": "video_url",
+            "id": "accessories_iframe_video_2",
+            "label": "Video link",
+            "accept": [
+              "youtube", "vimeo"
+            ],
+            "default": "https://www.youtube.com/watch?v=_9VUPq3SxOc"
+          }, {
+            "type": "video",
+            "id": "accessories_video2_url",
+            "label": "Video #2 URL"
+          },
+          {
+            "type": "header",
+            "content": "Flat Lacing System"
+          },
+          {
+            "type": "video_url",
+            "id": "flat_iframe_video_1",
+            "label": "Video link",
+            "accept": [
+              "youtube", "vimeo"
+            ],
+            "default": "https://www.youtube.com/watch?v=_9VUPq3SxOc"
+          },
+          {
+            "type": "video",
+            "id": "flat_video1_url",
+            "label": "Video #1 URL"
+          }, {
+            "type": "video_url",
+            "id": "flat_iframe_video_2",
+            "label": "Video link",
+            "accept": [
+              "youtube", "vimeo"
+            ],
+            "default": "https://www.youtube.com/watch?v=_9VUPq3SxOc"
+          }, {
+            "type": "video",
+            "id": "flat_video2_url",
+            "label": "Video #2 URL"
+          }, {
+            "type": "header",
+            "content": "Round Lacing System"
+          }, {
+            "type": "video_url",
+            "id": "round_iframe_video_1",
+            "label": "Video link",
+            "accept": [
+              "youtube", "vimeo"
+            ],
+            "default": "https://www.youtube.com/watch?v=_9VUPq3SxOc"
+          }, {
+            "type": "video",
+            "id": "round_video1_url",
+            "label": "Video #1 URL"
+          }, {
+            "type": "video_url",
+            "id": "round_iframe_video_2",
+            "label": "Video link",
+            "accept": [
+              "youtube", "vimeo"
+            ],
+            "default": "https://www.youtube.com/watch?v=_9VUPq3SxOc"
+          }, {
+            "type": "video",
+            "id": "round_video2_url",
+            "label": "Video #2 URL"
+          }
+        ]
+      },
+      {
+      "type": "size_chart",
+        "name": "Size Chart",
+        "settings": [
+          {
+            "id": "name",
+            "type": "text",
+            "label": "Name"
+          },
+          {
+            "type": "header",
+            "content": "Accessories System"
+          },
+          {
+            "type": "text",
+            "id": "accessories_sizechart_top_title",
+            "label": "Title"
+          },
+          {
+            "type": "richtext",
+            "id": "accessories_sizechart_top_description",
+            "label": "Description"
+          },
+          {
+            "type": "text",
+            "id": "accessories_sizechart_table_1_type",
+            "label": "Size chart type Men/Women/Unisex for table 1"
+          },
+          {
+            "type":"text",
+            "id": "accessories_sizechart_table_1_heading",
+            "label": "Size chart heading with comma seprator for table 1"
+          },
+          {
+            "type": "text",
+            "id": "accessories_sizechart_table_1_row_1_content",
+            "label": "Size chart row 1 content with comma seprator for table 1"
+          },
+          {
+            "type": "text",
+            "id": "accessories_sizechart_table_1_row_2_content",
+            "label": "Size chart row 2 content with comma seprator for table 1"
+          },
+          {
+            "type": "text",
+            "id": "accessories_sizechart_table_1_row_3_content",
+            "label": "Size chart row 3 content with comma seprator for table 1"
+          },
+          {
+            "type": "text",
+            "id": "accessories_sizechart_table_1_row_4_content",
+            "label": "Size chart row 4 content with comma seprator for table 1"
+          },
+          {
+            "type": "text",
+            "id": "accessories_sizechart_table_1_row_5_content",
+            "label": "Size chart row 5 content with comma seprator for table 1"
+          },
+          {
+            "type": "text",
+            "id": "accessories_sizechart_table_2_type",
+            "label": "Size chart type Men/Women/Unisex for table 2"
+          },
+          {
+            "type":"text",
+            "id": "accessories_sizechart_table_2_heading",
+            "label": "Size chart heading with comma seprator for table 2"
+          },
+          {
+            "type": "text",
+            "id": "accessories_sizechart_table_2_row_1_content",
+            "label": "Size chart row 1 content with comma seprator for table 2"
+          },
+          {
+            "type": "text",
+            "id": "accessories_sizechart_table_2_row_2_content",
+            "label": "Size chart row 2 content with comma seprator for table 2"
+          },
+          {
+            "type": "text",
+            "id": "accessories_sizechart_table_2_row_3_content",
+            "label": "Size chart row 3 content with comma seprator for table 2"
+          },
+          {
+            "type": "text",
+            "id": "accessories_sizechart_table_2_row_4_content",
+            "label": "Size chart row 4 content with comma seprator for table 2"
+          },
+          {
+            "type": "text",
+            "id": "accessories_sizechart_table_2_row_5_content",
+            "label": "Size chart row 5 content with comma seprator for table 2"
+          },
+          {
+            "type": "text",
+            "id": "accessories_sizechart_table_3_type",
+            "label": "Size chart type Men/Women/Unisex for table 3"
+          },
+          {
+            "type":"text",
+            "id": "accessories_sizechart_table_3_heading",
+            "label": "Size chart heading with comma seprator for table 3"
+          },
+          {
+            "type": "text",
+            "id": "accessories_sizechart_table_3_row_1_content",
+            "label": "Size chart row 1 content with comma seprator for table 3"
+          },
+          {
+            "type": "text",
+            "id": "accessories_sizechart_table_3_row_2_content",
+            "label": "Size chart row 2 content with comma seprator for table 3"
+          },
+          {
+            "type": "text",
+            "id": "accessories_sizechart_table_3_row_3_content",
+            "label": "Size chart row 3 content with comma seprator for table 3"
+          },
+          {
+            "type": "text",
+            "id": "accessories_sizechart_table_3_row_4_content",
+            "label": "Size chart row 4 content with comma seprator for table 3"
+          },
+          {
+            "type": "text",
+            "id": "accessories_sizechart_table_3_row_5_content",
+            "label": "Size chart row 5 content with comma seprator for table 3"
+          },
+          {
+            "type": "richtext",
+            "id": "accessories_sizechart_content",
+            "label": "Size chart content after table"
+          },
+          {
+            "type": "image_picker",
+            "id": "accessories_sizechart_content_img",
+            "label": "Size chart content image after table"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Product Tab"
+      }
+    ]
+  }
+{% endschema %}
+<script>
+  window.addEventListener("DOMContentLoaded", (event) => {
+    console.log('Dom Content loaded on PDP TABS')
+
+// PDP TAB System
+
+    $(document).on('click', '.tab-head li.column', function() {
+      console.log('hitTab')
+      $('.tab-body .body-content[data-id]').removeClass('active-tab-content');
+      var activeTab = $(this).attr('id');
+      console.log(activeTab);
+      $(this).addClass('active').siblings('li').removeClass('active');
+      $('.tab-body .body-content[data-id="' + activeTab + '"]').addClass('active-tab-content')
+    })
+  });
+</script>

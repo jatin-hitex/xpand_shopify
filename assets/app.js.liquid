@@ -329,7 +329,8 @@ $(() => {
   // backwards compatibility with flexslider
   $('.slider, .flexslider').find('li').unwrap();
   $('.slider, .flexslider').flickity({
-    pageDots: window.usePageDots,
+    //pageDots: window.usePageDots,
+    pageDots: true,
     imagesLoaded: true,
     arrowShape: window.arrowSize,
     lazyLoad: 2,
@@ -442,7 +443,7 @@ $(() => {
   /*= ===========================================================================
     Start of cart-related functionality
   ============================================================================== */
-
+  applyDiscount();
   function ajaxSubmitCart(cart) {
     const $cart = cart;
     $.ajax({
@@ -458,6 +459,7 @@ $(() => {
   }
 
   function updateCartItemQuantity(cartItem) {
+    $('body').addClass('loader-on');
     $.ajax({
       url: '/cart/change.js',
       dataType: 'json',
@@ -526,6 +528,8 @@ $(() => {
         } else {
           refreshCart(data);
         }
+        applyDiscount();
+        
       },
     });
   }
@@ -544,6 +548,8 @@ $(() => {
   }
 
   function refreshCart(cart) {
+    console.log('Referesh Cart==>', cart.total_price);
+    
     $('.cart_count').empty();
     const $cartBtn = $('.cart_count');
     const value = $cartBtn.text() || '0';
@@ -571,6 +577,7 @@ $(() => {
       let saving = 0;
 
       $.each(cart.items, (index, item) => {
+        //console.log('CartEachItem==>', item);
         const itemDiscounts = item.discounts;
         let discountMessage = '';
 
@@ -580,7 +587,7 @@ $(() => {
         }
         const lineID = index + 1;
 
-        cartItemsHTML += `<li class="mini-cart__item" data-cart-item data-line-id="${lineID}" data-variant-id="${item.id}">`
+        cartItemsHTML += `<li class="mini-cart__item" data-cart-item data-line-id="${lineID}" data-variant-id="${item.id}" data-key="${item.key}">`
           + `<a href="${item.url}">`;
         if (item.image) {
           cartItemsHTML += `${'<div class="cart_image">'
@@ -597,7 +604,7 @@ $(() => {
         if (item.properties) {
           $.each(item.properties, (title, value) => {
             if (value) {
-              cartItemsHTML += `<div class="line-item">${title}: ${value} </div>`;
+              //cartItemsHTML += `<div class="line-item">${title}: ${value} </div>`;
             }
           });
         }
@@ -637,20 +644,22 @@ $(() => {
 
         if (productHasSale === true) {
           // puts the slash through the old item price
+          //const itemPrice = `${window.Shopify.formatMoney(productFinalPrice, $('body').data('money-format'))} </span><span class="money was_price">${window.Shopify.formatMoney(productCompareAtPrice, $('body').data('money-format'))}</span>`;
           const itemPrice = `${window.Shopify.formatMoney(productFinalPrice, $('body').data('money-format'))} </span><span class="money was_price">${window.Shopify.formatMoney(productCompareAtPrice, $('body').data('money-format'))}</span>`;
-          cartItemsHTML += `<span class="money sale">${itemPrice}</strong>`;
+          cartItemsHTML += `<span data-upate-price="`+productFinalPrice+`"  data-price="`+productFinalPrice+`" data-original-price="`+item.price+`" class="money sale 11">${itemPrice}</strong>`;
 
           // Total savings
           saving = (productCompareAtPrice - productFinalPrice) * item.quantity;
           totalSaving = saving + totalSaving;
         } else if (item.price > item.final_price) {
           // puts the slash through the old item price
-          const itemPrice = `${window.Shopify.formatMoney(item.final_price, $('body').data('money-format'))} </span><span class="money was_price">${window.Shopify.formatMoney(item.price, $('body').data('money-format'))}</span>`;
-          cartItemsHTML += `<span class="money sale">${itemPrice}</strong>`;
+         // const itemPrice = `${window.Shopify.formatMoney(item.final_price, $('body').data('money-format'))} </span><span class="money was_price">${window.Shopify.formatMoney(item.price, $('body').data('money-format'))}</span>`;
+         const itemPrice = `${window.Shopify.formatMoney(item.price, $('body').data('money-format'))} </span><span class="money was_price">${window.Shopify.formatMoney(item.price, $('body').data('money-format'))}</span>`;
+          cartItemsHTML += `<span data-upate-price="`+item.final_price+`"  data-price="`+item.final_price+`" data-original-price="`+item.price+`" class="money sale 22">${itemPrice}</strong>`;
         } else {
           const itemPrice = window.Shopify.formatMoney(item.price, $('body').data('money-format'));
           if (item.price > 0) {
-            cartItemsHTML += `<span class="money">${itemPrice}</span></strong>`;
+            cartItemsHTML += `<span data-upate-price="`+item.price+`" data-price="`+item.price+`" data-original-price="`+item.price+`" class="money">${itemPrice}</span></strong>`;
           } else {
             cartItemsHTML += `<span>${window.PXUTheme.translation.cart_free_text}</span></strong>`;
           }
@@ -671,7 +680,7 @@ $(() => {
         }
 
         if (item.price > item.final_price) {
-          cartItemsHTML += discountMessage;
+          //cartItemsHTML += discountMessage;
         }
 
         cartItemsHTML += '<div class="product-quantity-box">';
@@ -693,7 +702,7 @@ $(() => {
         cartDiscountsHTML += `-<span class="money">${amount}</span></span>`;
       }
 
-      cartActionHTML += `<span class="right"><span class="money">${window.Shopify.formatMoney(cart.total_price, $('body').data('money-format'))}</span></span> <span>${window.PXUTheme.translation.cart_subtotal_text}</span>`;
+      cartActionHTML += `<span class="right"><span data-subtotal-cart-original="`+cart.original_total_price+`" data-sutotal-price="`+cart.total_price+`" class="money">${window.Shopify.formatMoney(cart.total_price, $('body').data('money-format'))}</span></span> <span>${window.PXUTheme.translation.cart_subtotal_text}</span>`;
       totalSaving += cart.total_discount;
       if (window.PXUTheme.theme_settings.display_savings && totalSaving > 0) {
         cartSavingsHTML = `<span class="right"><span class="money">${window.Shopify.formatMoney(totalSaving, $('body').data('money-format'))}</span></span>`
@@ -712,9 +721,11 @@ $(() => {
     if (window.PXUTheme.currency.show_multiple_currencies) {
       window.currencyConverter.convertCurrencies();
     }
+    applyDiscount();
+    $('.cart-container').addClass('active_link');
   }
 
-  $('body').on('change', '[data-cart-quantity-input]', function () {
+  $('body').on('change keyup', '[data-cart-quantity-input]', function () {
     const cartItem = {
       lineID: $(this).parents('[data-cart-item]').data('line-id'),
       variantID: $(this).parents('[data-cart-item]').data('variant-id'),
@@ -726,6 +737,7 @@ $(() => {
     // Disable button after click to prevent multiple clicks
     $(this).parents('.product-quantity-box').find('.js-change-quantity').addClass('is-disabled');
     updateCartItemQuantity(cartItem);
+
   });
 
   $('body').on('click', '[data-remove-item]', function (e) {
@@ -836,7 +848,389 @@ $(() => {
     });
   }
 
-  window.productPage.productSwatches();
+    function applyDiscount(){
+      $.ajax({
+        url: '/cart.js',
+        dataType: 'json',
+        cache: false,
+        success(cartData) {
+          //console.log('Get Updated Cart==>', cartData);
+          toAppendtagsonCartUpdate();
+        },
+        error(XMLHttpRequest) {
+          console.log('Get Updated Cart Error==>', XMLHttpRequest);
+        }
+      });
+    }
+
+    var checkFreeDiscoutOfferEnabled = $('#cart-settings-data').attr('data-activefreeoffer');
+      var freeShippingItemCount = {{ settings.cart_free_shipping_item_count }};
+      var freeShippingAppliedText = `{{ settings.cart_free_shipping_applied_text }}`;
+      var freeShippingTextHint = `{{ settings.cart_free_shipping_hint_text | replace: 'quantity', '1' }}`;
+      var discountAppliedText = `{{ settings.cart_discount_applied_text }}`;
+      var noDiscountHintText = `{{ settings.cart_no_discount_hint_text }}`;
+      var tier_1_line_qnty = {{ settings.tier_1_line_qnty }};
+      var tier_2_line_qnty = {{ settings.tier_2_line_qnty }};
+      var tier_3_line_qnty = {{ settings.tier_3_line_qnty }};
+      var tier_4_line_qnty = {{ settings.tier_4_line_qnty }};
+      var tier_1_dis_amount = {{ settings.tier_1_dis_amount }};
+      var tier_2_dis_amount = {{ settings.tier_2_dis_amount }};
+      var tier_3_dis_amount = {{ settings.tier_3_dis_amount }};
+      var tier_4_dis_amount = {{ settings.tier_4_dis_amount }};
+
+
+    function toAppendtagsonCartUpdate(){      
+      $(document).find('#temp-cart-data').remove();
+      $.ajax({
+        type: 'GET',
+        url: '/cart?view=temp',
+        cache: false,
+        success(cartTempData) {
+          //console.log('Get cartTempData==>', cartTempData);
+          $('body').append(cartTempData);
+          var updateDataAttr = setInterval(function(){
+            if($('body').find('#temp-cart-data').length > 0 ){
+              //console.log('Temp DATA Exist in Dom');
+              $('#temp-cart-data .cart-temp-data').each(function(){
+                $(document).find('.cart_items.js-cart_items li[data-line-id="'+$(this).attr('data-line-id')+'"]').attr('data-tags', $(this).attr('data-tags'));
+              })
+              clearInterval(updateDataAttr);
+            }
+          },0);
+          var checkTotalQtyAndTags = setInterval(function(){
+            if( $('header[data-desktop-header] .main-nav__wrapper .nav.nav--right .cart_items.js-cart_items li[data-tags]').length > 0){
+              var cartQty = 0;
+              $('header[data-desktop-header] .main-nav__wrapper .nav.nav--right .cart_items.js-cart_items li[data-tags]').each(function(i){
+                //console.log('inside the topnav', i);
+                
+
+                if($(this).attr('data-tags') == 'BOGOOFF'){
+                    //console.log('Yes Tag exist');
+                    cartQty = cartQty + Number($(this).find('input[data-cart-quantity-input]').val());
+
+                }
+              }).promise().done(function(){
+                console.log('TotalQty==>', cartQty);
+                var cm_itemsInDiscountGroup = cartQty
+                var cm_discountAmount = 0;
+                
+                if(tier_4_line_qnty > 0 && tier_4_dis_amount && cm_itemsInDiscountGroup >= tier_4_line_qnty ) {
+                  console.log('inside-4');
+                  cm_discountAmount = tier_4_dis_amount
+                  updateDiscountProgressBar(cartQty, cm_discountAmount, tier_4_line_qnty, tier_4_dis_amount, tier_4_line_qnty, tier_4_dis_amount)
+                } else                  
+                if(tier_3_line_qnty > 0 && tier_3_dis_amount && cm_itemsInDiscountGroup >= tier_3_line_qnty ) {
+                  console.log('inside-3');
+                  cm_discountAmount = tier_4_dis_amount
+                  updateDiscountProgressBar(cartQty, cm_discountAmount, tier_3_line_qnty, tier_3_dis_amount, tier_4_line_qnty, tier_4_dis_amount)
+                }  else
+                if(tier_2_line_qnty > 0 && tier_2_dis_amount && cm_itemsInDiscountGroup >= tier_2_line_qnty ) {
+                  console.log('inside-2');
+                  cm_discountAmount = tier_3_dis_amount
+                  updateDiscountProgressBar(cartQty, cm_discountAmount, tier_2_line_qnty, tier_2_dis_amount, tier_3_line_qnty, tier_3_dis_amount)
+                } else
+                if(tier_1_line_qnty > 0 && tier_1_dis_amount && cm_itemsInDiscountGroup >= tier_1_line_qnty ) {
+                  console.log('inside-1');
+                  cm_discountAmount = tier_2_dis_amount;
+                  updateDiscountProgressBar(cartQty, cm_discountAmount, tier_1_line_qnty, tier_1_dis_amount, tier_2_line_qnty, tier_2_dis_amount)
+                } else if(tier_1_line_qnty > 0 && tier_1_dis_amount && cm_itemsInDiscountGroup < tier_1_line_qnty ) {
+                  console.log('inside-0');
+                  cm_discountAmount = tier_1_dis_amount;
+                  updateDiscountProgressBar(cartQty, tier_1_dis_amount, 0, 0, tier_1_line_qnty, tier_1_dis_amount)
+                } 
+        
+
+              })
+              clearInterval(checkTotalQtyAndTags);
+            }
+          },0)
+          
+         
+        },
+        error(XMLHttpRequest) {
+          console.log('Get Updated cartTempData Error==>', XMLHttpRequest);
+        }
+      });
+    }
+    function updateDiscountProgressBar(cartQty, cm_discountAmount, cm_tier_qty, cm_tier_amount, cm_next_tier_qty, cm_next_tier_discount) {
+        console.log('updateDiscountProgressBar==>', cartQty,'--',cm_discountAmount,'--', cm_tier_qty,'--', cm_tier_amount,'--', cm_next_tier_qty,'--', cm_next_tier_discount)
+        var lineItemDiscount = 0;
+        var updateOriginalPrice = 0;
+       
+        // var cartSubtotal = 
+        console.log(cartQty ,'---', cm_next_tier_qty)
+        var lineItemSubtotal = 0;
+        if(cartQty < cm_next_tier_qty){
+          console.log('inside If condition --1' );
+          var pendingQty = Number(cm_next_tier_qty - cartQty); console.log('Pending Qty', pendingQty);
+          $('header[data-desktop-header] .main-nav__wrapper .nav.nav--right .cart_items.js-cart_items li[data-tags]').each(function(i){
+            var currentItem = $(this);
+            if(currentItem.attr('data-tags') == 'BOGOOFF'){
+              console.log('inside If condition --1-1' );
+              //console.log('Inside BogoOff tag item');
+              console.log('PRiceee==>', Number($(this).find('.mini-cart__item-price > span').attr('data-original-price')/100) - cm_discountAmount, '=======', cm_discountAmount);
+           var cartLineItemDiscount = Number($(this).find('.mini-cart__item-price > span').attr('data-original-price')/100*cm_next_tier_qty - cm_discountAmount*cm_next_tier_qty); console.log('eachItemDiscountPrice', cartLineItemDiscount);
+           var cartLineItemTotalPrice =  Number($(this).find('.mini-cart__item-price > span').attr('data-original-price')*cm_next_tier_qty/100); console.log('cartLineItemTotalPrice', cartLineItemTotalPrice)
+           var makePercentage = 100 - cartLineItemDiscount/cartLineItemTotalPrice*100;
+           makePercentage = Math.ceil(makePercentage);  console.log('makePercentage', Math.ceil(makePercentage));
+           if(cartQty == cm_tier_qty){
+            var savedCartLineItemDiscount = Number($(this).find('.mini-cart__item-price > span').attr('data-original-price')/100*cm_tier_qty - cm_tier_amount*cm_tier_qty); console.log('eachItemDiscountPrice', savedCartLineItemDiscount);
+           var savedCartLineItemTotalPrice =  Number($(this).find('.mini-cart__item-price > span').attr('data-original-price')*cm_tier_qty/100); console.log('cartLineItemTotalPrice', savedCartLineItemTotalPrice)
+           var savedPercentage = 100 - savedCartLineItemDiscount/savedCartLineItemTotalPrice*100;
+           savedPercentage = Math.ceil(savedPercentage);  console.log('SavedQtyAmount===>', savedPercentage)
+           }
+           if(cartQty == freeShippingItemCount ){
+            console.log('match freeshipping count')
+            $(document).find('.progress-wrap .text-wrapper').html('<p>'+freeShippingAppliedText+'</p>');
+            setTimeout(function(){
+              $(document).find('.progress-wrap .text-wrapper').html('<p>You are '+pendingQty+' items (laces or socks) away from '+makePercentage+'% off</p>')
+            },2000)
+           } else if(cartQty == freeShippingItemCount-1){
+            $(document).find('.progress-wrap .text-wrapper').html('<p>'+freeShippingTextHint+'</p>');
+            
+           }
+           else {
+            if(cartQty == cm_tier_qty){
+              $(document).find('.progress-wrap .text-wrapper').html('<p>'+discountAppliedText.replace('discountPercentage', ''+savedPercentage+'')+'</p>');
+              setTimeout(function(){
+                $(document).find('.progress-wrap .text-wrapper').html('<p>You are '+pendingQty+' items (laces or socks) away from '+makePercentage+'% off</p>')
+              },2000)
+            }else {
+              $(document).find('.progress-wrap .text-wrapper').html('<p>You are '+pendingQty+' items (laces or socks) away from '+makePercentage+'% off</p>')
+            }
+            
+           }
+
+
+            
+            var lineItemDiscountAmnt = Number(currentItem.find('.mini-cart__item-price span').attr('data-original-price')/100) - cm_tier_amount; 
+            if(currentItem.find('.mini-cart__item-price span').attr('data-original-price')/100 == lineItemDiscountAmnt){
+              currentItem.find('.mini-cart__item-price span.updated-amount[data-upate-price]').remove();
+              console.log('inside If price match');
+            currentItem.find('.mini-cart__item-price').removeClass('text-strikethrough');
+            currentItem.find('.mini-cart__item-price').append('<span data-discount-price="'+cm_tier_amount*100+'" data-upate-price="'+lineItemDiscountAmnt*100+'" class="updated-amount hidden">$ '+lineItemDiscountAmnt+'</span>');
+            }else {
+              console.log('inside If price not match')
+              currentItem.find('.mini-cart__item-price span.updated-amount[data-upate-price]').remove();
+            currentItem.find('.mini-cart__item-price').addClass('text-strikethrough');
+            currentItem.find('.mini-cart__item-price').append('<span data-discount-price="'+cm_tier_amount*100+'" data-upate-price="'+lineItemDiscountAmnt*100+'" class="updated-amount">$ '+lineItemDiscountAmnt+'</span>');
+            }
+            var checkqty = Number(currentItem.find('input[data-cart-quantity-input]').val()); console.log('checkqty==:', checkqty)
+            var checkItemPrice = Number(currentItem.find('.mini-cart__item-price span.updated-amount[data-upate-price]').attr('data-upate-price')); console.log('checkItemPrice==:', checkItemPrice)
+            // lineItemSubtotal = lineItemSubtotal + Number(checkqty * checkItemPrice); console.log('upatedSubtotal 44 => ', lineItemSubtotal);
+            updateOriginalPrice = updateOriginalPrice + checkqty*currentItem.find('.mini-cart__item-price span').attr('data-original-price'); console.log('Updated Original SubtotalPrice', updateOriginalPrice);
+            lineItemSubtotal = updateOriginalPrice; console.log('upatedSubtotal 44 => ', lineItemSubtotal);
+            
+
+
+            // Update ajax cart/change.js to update properties
+            var getLineId = currentItem.attr('data-line-id'); console.log('getDataId == ', getLineId);
+            var getLineVariantId = currentItem.attr('data-variant-id'); console.log('getLineVariantId == ', getLineVariantId);
+            var getLineKey = currentItem.attr('data-key'); console.log('getLineKey == ', getLineKey);
+            var discountItemQty = Number(currentItem.find('input[data-cart-quantity-input]').val()); console.log('==========>', discountItemQty)
+            if(cm_tier_amount > 0 && cartQty >= freeShippingItemCount){
+              var lineItemData =  {
+                'line': getLineId,
+                'quantity': discountItemQty,
+                'properties': { 'freeShippingItemCount': freeShippingItemCount, 'discountAmount': discountItemQty*cm_tier_amount*100 }
+              }
+            }else if(cm_tier_amount > 0 && cartQty < freeShippingItemCount) {
+              var lineItemData =  {
+                'line': getLineId,
+                'quantity': discountItemQty,
+                'properties': { 'freeShippingItemCount': '', 'discountAmount': discountItemQty*cm_tier_amount*100 }
+              }
+            } else {
+              var lineItemData =  {
+                'line': getLineId,
+                'quantity': discountItemQty,
+                'properties': { 'freeShippingItemCount': '', 'discountAmount':'' }
+              }
+            }
+            
+            console.log('LineItemData for ajax hit', lineItemData);
+            $.ajax({
+              url: '/cart/change.js',
+              dataType: 'json',
+              cache: false,
+              type: 'post',
+              async: false,
+              data: lineItemData,
+              success(data) {
+                console.log(data);
+              },
+            });
+           
+           
+
+
+            }else {
+              console.log('outside BogoOff tag item');
+              console.log('inside If condition --1' );
+              var checkqty = Number(currentItem.find('input[data-cart-quantity-input]').val()); console.log('checkqty==:', checkqty)
+              if(currentItem.find('.mini-cart__item-price span[data-upate-price-default]').length > 0){
+                var checkItemPrice = Number(currentItem.find('.mini-cart__item-price span[data-upate-price-default]').attr('data-upate-price-default')); console.log('checkItemPrice==:', checkItemPrice)
+              }else {
+                var checkItemPrice = Number(currentItem.find('.mini-cart__item-price span[data-upate-price]').attr('data-upate-price')); console.log('checkItemPrice==:', checkItemPrice)
+              }
+              updateOriginalPrice = updateOriginalPrice + checkqty*currentItem.find('.mini-cart__item-price span').attr('data-original-price'); console.log('Updated Original SubtotalPrice 22', updateOriginalPrice)
+              // lineItemSubtotal = lineItemSubtotal + Number(checkqty * checkItemPrice); console.log('upatedSubtotal 11 => ', lineItemSubtotal)              
+              lineItemSubtotal = lineItemSubtotal + updateOriginalPrice;
+                var lineItemData =  {
+                  'line': getLineId,
+                  'quantity': discountItemQty,
+                  'properties': { 'freeShippingItemCount': '', 'discountAmount':'' }
+                }    
+                
+                console.log('LineItemData for ajax hit else 11', lineItemData);
+                $.ajax({
+                  url: '/cart/change.js',
+                  dataType: 'json',
+                  cache: false,
+                  type: 'post',
+                  async: false,
+                  data: lineItemData,
+                  success(data) {
+                    console.log(data);
+                  },
+                });
+                
+            }
+            
+            
+          })
+        } else {
+          console.log('inside else condition');
+          if(cartQty >= tier_4_line_qnty) {
+          var pendingQty = Number(cm_next_tier_qty - cartQty); console.log('Pending Qty', pendingQty);
+          $('header[data-desktop-header] .main-nav__wrapper .nav.nav--right .cart_items.js-cart_items li[data-tags]').each(function(i){
+            var currentItem = $(this);
+            if(currentItem.attr('data-tags') == 'BOGOOFF'){
+
+              console.log('PRiceee==>', Number($(this).find('.mini-cart__item-price > span').attr('data-original-price')/100) - cm_discountAmount, '=======', cm_discountAmount);
+           var cartLineItemDiscount = Number($(this).find('.mini-cart__item-price > span').attr('data-original-price')/100*cm_next_tier_qty - cm_discountAmount*cm_next_tier_qty); console.log('eachItemDiscountPrice', cartLineItemDiscount);
+           var cartLineItemTotalPrice =  Number($(this).find('.mini-cart__item-price > span').attr('data-original-price')*cm_next_tier_qty/100); console.log('cartLineItemTotalPrice', cartLineItemTotalPrice)
+           var makePercentage = 100 - cartLineItemDiscount/cartLineItemTotalPrice*100;
+           makePercentage = Math.ceil(makePercentage);  console.log('makePercentage', Math.ceil(makePercentage));
+           $(document).find('.progress-wrap .text-wrapper').html('<p>'+noDiscountHintText+'</p>');
+
+           var lineItemDiscountAmnt = Number(currentItem.find('.mini-cart__item-price span').attr('data-original-price')/100) - cm_tier_amount; 
+            if(currentItem.find('.mini-cart__item-price span').attr('data-original-price')/100 == lineItemDiscountAmnt){
+              currentItem.find('.mini-cart__item-price span.updated-amount[data-upate-price]').remove();
+              console.log('inside If price match');
+            currentItem.find('.mini-cart__item-price').removeClass('text-strikethrough');
+            currentItem.find('.mini-cart__item-price').append('<span data-discount-price="'+cm_tier_amount*100+'" data-upate-price="'+lineItemDiscountAmnt*100+'" class="updated-amount hidden">$ '+lineItemDiscountAmnt+'</span>');
+            }else {
+              console.log('inside If price not match')
+              currentItem.find('.mini-cart__item-price span.updated-amount[data-upate-price]').remove();
+            currentItem.find('.mini-cart__item-price').addClass('text-strikethrough');
+            currentItem.find('.mini-cart__item-price').append('<span data-discount-price="'+cm_tier_amount*100+'" data-upate-price="'+lineItemDiscountAmnt*100+'" class="updated-amount">$ '+lineItemDiscountAmnt+'</span>');
+            }
+
+           var checkqty = Number(currentItem.find('input[data-cart-quantity-input]').val()); console.log('checkqty==:', checkqty)
+            var checkItemPrice = Number(currentItem.find('.mini-cart__item-price span.updated-amount[data-upate-price]').attr('data-upate-price')); console.log('checkItemPrice==:', checkItemPrice)
+            updateOriginalPrice = updateOriginalPrice + checkqty*currentItem.find('.mini-cart__item-price span').attr('data-original-price'); console.log('Updated Original SubtotalPrice 33', updateOriginalPrice);
+            // lineItemSubtotal = lineItemSubtotal + Number(checkqty * checkItemPrice); console.log('upatedSubtotal 22 => ', lineItemSubtotal);
+            lineItemSubtotal = lineItemSubtotal + updateOriginalPrice; console.log('upatedSubtotal 22 => ', lineItemSubtotal);
+            // Update ajax cart/change.js to update properties
+            var getLineId = currentItem.attr('data-line-id'); console.log('getDataId == ', getLineId);
+            var getLineVariantId = currentItem.attr('data-variant-id'); console.log('getLineVariantId == ', getLineVariantId);
+            var getLineKey = currentItem.attr('data-key'); console.log('getLineKey == ', getLineKey);
+            var discountItemQty = Number(currentItem.find('input[data-cart-quantity-input]').val()); console.log('111==========>', discountItemQty)
+            var lineItemData =  {
+              'line': getLineId,
+              'quantity': discountItemQty,
+              'properties': { 'freeShippingItemCount': freeShippingItemCount, 'discountAmount': discountItemQty*cm_tier_amount*100 }
+            }
+            console.log('==========>', lineItemData)
+            $.ajax({
+              url: '/cart/change.js',
+              dataType: 'json',
+              cache: false,
+              type: 'post',
+              async: false,
+              data: lineItemData,
+              success(data) {
+                console.log(data);
+              },
+            });
+
+            
+
+            }else {
+              console.log('outside BogoOff tag item 2233');
+              var checkqty = Number(currentItem.find('input[data-cart-quantity-input]').val()); console.log('checkqty==:', checkqty)
+              if(currentItem.find('.mini-cart__item-price span[data-upate-price-default]').length > 0){
+                var checkItemPrice = Number(currentItem.find('.mini-cart__item-price span[data-upate-price-default]').attr('data-upate-price-default')); console.log('checkItemPrice==:', checkItemPrice)
+              }else {
+                var checkItemPrice = Number(currentItem.find('.mini-cart__item-price span[data-upate-price]').attr('data-upate-price')); console.log('checkItemPrice==:', checkItemPrice)
+              }
+              //lineItemSubtotal = lineItemSubtotal + Number(checkqty * checkItemPrice); console.log('upatedSubtotal 33 => ', lineItemSubtotal)
+              updateOriginalPrice = updateOriginalPrice + checkqty*currentItem.find('.mini-cart__item-price span').attr('data-original-price'); console.log('Updated Original SubtotalPrice 22', updateOriginalPrice)
+
+              lineItemSubtotal = updateOriginalPrice; console.log('upatedSubtotal 33 => ', lineItemSubtotal)              
+              var lineItemData =  {
+                'line': getLineId,
+                'quantity': discountItemQty,
+                'properties': { 'freeShippingItemCount': '', 'discountAmount':'' }
+              }    
+              
+              console.log('LineItemData for ajax hit else 11', lineItemData);
+              $.ajax({
+                url: '/cart/change.js',
+                dataType: 'json',
+                cache: false,
+                type: 'post',
+                async: false,
+                data: lineItemData,
+                success(data) {
+                  console.log(data);
+                },
+              });
+              
+            }
+            
+
+          })
+        }
+      }
+      setTimeout(function(){
+        $.ajax({
+          url: '/cart.js',
+          dataType: 'json',
+          cache: false,
+          success(cart) {
+        
+        var updateProgressBar = Number(100/tier_4_line_qnty); console.log(updateProgressBar);
+      $(document).find('.progress-frame .progress-fill').css('width', updateProgressBar*cartQty+'%');
+     
+      // var recalculateSubTotal = Number($('header[data-desktop-header] .main-nav__wrapper .nav.nav--right .cart_subtotal.js-cart_subtotal span.right span').attr('data-sutotal-price')); 
+      var recalculateSubTotal = Number(cart.total_price);
+      console.log('FinalAmount of Subtotal', cart.original_total_price, '<======>', recalculateSubTotal);
+      if(cart.original_total_price != recalculateSubTotal)  {
+        console.log('inside subtotalNot Matched');
+        $('header[data-desktop-header] .main-nav__wrapper .nav.nav--right .cart_subtotal.js-cart_subtotal span.right span.update-subtotal-cart, header[data-desktop-header] .main-nav__wrapper .nav.nav--right .cart_subtotal.js-cart_subtotal .cart-total-saving').remove()
+        $('header[data-desktop-header] .main-nav__wrapper .nav.nav--right .cart_subtotal.js-cart_subtotal').addClass('line-through');
+        $('header[data-desktop-header] .main-nav__wrapper .nav.nav--right .cart_subtotal.js-cart_subtotal span.right').append('<span data-update-subtotal="'+cart.original_total_price+'" class="update-subtotal-cart"> $ '+recalculateSubTotal/100+'</span>');
+        $('header[data-desktop-header] .main-nav__wrapper .nav.nav--right .cart_subtotal.js-cart_subtotal span.right span[data-subtotal-cart-original]').text(' $ '+cart.original_total_price/100).attr('data-subtotal-cart-original', cart.original_total_price);
+        
+        var saveAmountOfSubtotalInPercent = Number(100 - Math.floor(recalculateSubTotal/cart.original_total_price*100)); console.log('saveAmountOfSubtotalInPercent', saveAmountOfSubtotalInPercent);
+        $('header[data-desktop-header] .main-nav__wrapper .nav.nav--right .cart_subtotal.js-cart_subtotal').append('<p class="cart-total-saving">You saved '+saveAmountOfSubtotalInPercent+'%</p>');
+      } else {
+        console.log('inside subtotalNot Matched===>')
+        $('header[data-desktop-header] .main-nav__wrapper .nav.nav--right .cart_subtotal.js-cart_subtotal').removeClass('line-through');
+        $('header[data-desktop-header] .main-nav__wrapper .nav.nav--right .cart_subtotal.js-cart_subtotal span.right span.update-subtotal-cart, header[data-desktop-header] .main-nav__wrapper .nav.nav--right .cart_subtotal.js-cart_subtotal .cart-total-saving').remove();
+      }  
+      $('body').removeClass('loader-on');
+      $('button[data-minicart-checkout-button]').removeAttr('disabled');
+    }
+    });
+      },1000)
+      
+    }    
+
+  window.productPage.productSwatches(); 
+
 });
 
 /*= ===========================================================================
@@ -1176,4 +1570,43 @@ $(document)
     if ($parentSection.hasClass('shopify-section--mega-menu')) {
       window.meganavManager.deselect();
     }
+  });
+
+  // Show mobile Mega Nav from localStorage
+  window.addEventListener("DOMContentLoaded", (event) => {
+    console.log("DOM fully loaded and parsed");
+    $(document).on('click', '.mega-nav-dropdown', () => {
+      console.log('hitMegaNav');
+      let getMobileNav = localStorage.getItem('mobileMegaNav');
+          console.log('mobileNav from LS', getMobileNav);
+          $(document).find('.top-bar--right').append(getMobileNav);
+          $(document).find('.mobile-mega-nav-wrapper').append('<span class="close-meganav-mobile"></span>');
+    });
+
+    $(document).on('click', '.close-meganav-mobile', () => {
+      console.log('hitMegaNav222');
+      $(document).find('.top-bar--right .nav-drop.mega-drop').remove();  
+      $(document).find('.mobile-mega-nav-wrapper .close-meganav-mobile').remove();
+    });
+
+    $(document).mouseup(function(e) 
+{
+    var container = $(".top-bar--right .nav-drop.mega-drop");
+
+    // if the target of the click isn't the container nor a descendant of the container
+    if (!container.is(e.target) && container.has(e.target).length === 0) 
+    {
+        container.remove();
+        if($('.close-meganav-mobile').is(':visible')){
+          $(document).find('.mobile-mega-nav-wrapper .close-meganav-mobile').remove();
+        }
+    }
+});
+
+// Go to scroll top event
+$(document).on('click', '.go-to-top', () => {
+  $('html, body').animate({
+    scrollTop: $("body").offset().top
+    }, 500)
+})    
   });

@@ -28,7 +28,7 @@
 <section class="section">
   <div class="container content">
     {% if section.settings.image == blank %}
-      <div class="one-half column">
+      <div class="one-half column full-width-content">
         {% if current_tags %}
           <h1 class="blog-title blog-tags--true">
             <a href="/blogs/{{ blog.handle }}/tagged/{{ current_tags | handleize }}" title="{{ blog.title | escape }}">{{ current_tags }}</a>
@@ -132,6 +132,15 @@
                     article: article,
                   %}
                 {% endif %}
+                <div class="rte">
+                  {% if article.excerpt.size > 0 %}
+                    {{ article.excerpt }}
+                  {% else %}
+                    <p>
+                      {{ article.content | strip_html | truncatewords: 100 }}
+                    </p>
+                  {% endif %}
+                </div>
 
                 {% if section.settings.blog_comment_count %}
                   {% if settings.disqus_enabled %}

@@ -1,0 +1,249 @@
+{% if section.blocks.size > 0 %}
+
+  <section class="shopify-section--tab">
+    <div class="section-tab">
+      {% if section.settings.title != blank %}
+        <h1>{{ section.settings.title }}</h1>
+      {% endif %}
+      <div class="tab-container">
+        <div class="tab-head">
+          <div class="section">
+            <ul class="columns is-mobile">
+              {% for block in section.blocks %}
+                {% assign blockTitle = block.settings.title %}
+                {% if blockTitle != blank %}
+                  <li id="tab-{{ forloop.index}}" class="column {% if forloop.index == 1 %}active{% endif %}">{{ blockTitle }}</li>
+                {% endif %}
+              {% endfor %}
+            </ul>
+          </div>
+        </div>
+        <div class="tab-body">
+
+          {% for block in section.blocks %}
+            <div class="body-content {% if forloop.index == 1 %}active-tab-content{% endif %}" data-id="tab-{{ forloop.index }}">
+              <div class="section">
+                {% for i in (1..4) %}
+                  {% capture videoLink %}iframe_video_{{ i }}{% endcapture %}
+                  {% capture videoLinkHtml %}html_video_{{ i }}{% endcapture %}
+                  {% comment %} Checks there is an HTML5 video {% endcomment %}
+                  {% if block.settings[videoLinkHtml] != blank %}
+                    {{ block.settings[videoLinkHtml] | video_tag: image_size: 'master', autoplay: false, muted: true, controls: false, loop: true }}
+                    {% comment %} Checks there is an iframe video (YouTube or Vimeo) {% endcomment %}
+                  {% elsif block.settings[videoLink] != blank %}
+                    {% if block.settings[videoLink].type == 'vimeo' %}
+                      <iframe
+                        src="https://player.vimeo.com/video/{{ block.settings[videoLink].id }}?loop=false&amp;byline=false&amp;portrait=false&amp;title=false&amp;speed=true&amp;transparent=0&amp;gesture=media"
+                        allowfullscreen
+                        allowtransparency
+                        allow="autoplay"></iframe>
+
+                    {% elsif block.settings[videoLink].type == 'youtube' %}
+                      <iframe
+                        src="https://www.youtube.com/embed/{{ block.settings[videoLink].id }}?origin=https://plyr.io&amp;iv_load_policy=3&amp;modestbranding=1&amp;playsinline=1&amp;showinfo=0&amp;rel=0&amp;enablejsapi=1"
+                        allowfullscreen
+                        allowtransparency
+                        allow="autoplay"></iframe>
+                    {% endif %}
+                  {% endif %}
+                {% endfor %}
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </section>
+{% endif %}
+
+
+{% schema %}
+  {
+    "name": "Tab",
+    "class": "tab-section",
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title",
+        "default": "Installation Guide"
+      }
+    ],
+    "max_blocks": 4,
+    "blocks": [
+      {
+        "type": "tab",
+        "name": "Tab Content",
+        "settings": [
+          {
+            "id": "title",
+            "type": "text",
+            "label": "Tab Title"
+          },
+          {
+            "type": "header",
+            "content": "Tab Content"
+          },
+          {
+            "type": "video_url",
+            "id": "iframe_video_1",
+            "label": "Video link 1",
+            "accept": [
+              "youtube", "vimeo"
+            ],
+            "default": "https://www.youtube.com/watch?v=_9VUPq3SxOc"
+          },
+          {
+            "type": "video_url",
+            "id": "iframe_video_2",
+            "label": "Video link 2",
+            "accept": [
+              "youtube", "vimeo"
+            ],
+            "default": "https://www.youtube.com/watch?v=_9VUPq3SxOc"
+          }, {
+            "type": "video_url",
+            "id": "iframe_video_3",
+            "label": "Video link 3",
+            "accept": [
+              "youtube", "vimeo"
+            ],
+            "default": "https://www.youtube.com/watch?v=_9VUPq3SxOc"
+          }, {
+            "type": "video_url",
+            "id": "iframe_video_4",
+            "label": "Video link 4",
+            "accept": [
+              "youtube", "vimeo"
+            ],
+            "default": "https://www.youtube.com/watch?v=_9VUPq3SxOc"
+          }
+
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Tab"
+      }
+    ]
+  }
+{% endschema %}
+<style>
+  /* section Tabs */
+  .shopify-section--tab h1 {
+    text-align: center;
+    color: #008ffd;
+    font-family: 'neuzeit_grotesk_regular';
+    font-size: 36px;
+    letter-spacing: 2px;
+    font-weight: 700;
+    padding: 60px 0;
+  }
+  .section-tab .tab-head .columns {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    border-bottom: 2px solid #afafaf;
+  }
+  .section-tab .tab-head .columns li {
+    padding: 10px 0;
+    cursor: pointer;
+    background-color: #f8f8f8;
+    border: none;
+    color: #333;
+    font-family: neuzeitgroteskblack;
+    font-size: 20px;
+    border: 2px solid #d7d7d7;
+    border-radius: 5px 5px 0 0;
+    font-family: neuzeitgroteskblack;
+    bottom: -2px;
+    position: relative;
+    flex: auto;
+    text-align: center;
+    margin-right: 15px;
+    margin-bottom: 0;
+    border-bottom: 0;
+    height: 43px;
+  }
+  .section-tab .tab-head .columns li:last-child {
+    margin-right: 0;
+  }
+  .section-tab .tab-head .columns li.active {
+    height: 45px;
+    border-color: #afafaf;
+    color: #008ffd;
+    background: #fff;
+  }
+  .body-content {
+    padding: 40px 0;
+    display: none;
+  }
+  .body-content.active-tab-content {
+    display: block;
+  }
+  .body-content video,
+  .body-content .lazyframe {
+    max-width: 100%;
+    margin-bottom: 40px;
+  }
+
+  @media screen and (max-width: 767px) {
+    .section-tab .tab-head .columns {
+      border-bottom: 0;
+    }
+    .section-tab .tab-head .columns li {
+      cursor: pointer;
+      background-color: #f8f8f8;
+      border: none;
+      padding: 10px 0;
+      font-size: 20px;
+      margin: 0;
+      border-radius: 0;
+      flex: 0 0 50%;
+    }
+
+    .section-tab .tab-head .columns li.active {
+      position: relative;
+      /*background-color: #0090fc;
+      color: #fff;*/
+      color: #fff;
+      background: #000;
+      border-color: #000;
+    }
+    .section-tab .tab-head .columns li.active:before {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+      width: 0;
+      height: 0;
+      border-left: 5px solid transparent;
+      border-right: 5px solid transparent;
+      border-bottom: 5px solid #fff;
+    }
+    .body-content {
+      padding: 10px 20px;
+    }
+  }
+</style>
+<script>
+  window.addEventListener("DOMContentLoaded", (event) => {
+    console.log('Dom Content loaded on common TABS')
+
+// PDP TAB System
+
+    $(document).on('click', '.tab-head li.column', function() {
+      console.log('hitTab')
+      $('.tab-body .body-content[data-id]').removeClass('active-tab-content');
+      var activeTab = $(this).attr('id');
+      console.log(activeTab);
+      $(this).addClass('active').siblings('li').removeClass('active');
+      $('.tab-body .body-content[data-id="' + activeTab + '"]').addClass('active-tab-content')
+    })
+  });
+</script>

@@ -96,7 +96,7 @@
   <div class="purchase-details">
     {% if settings.display_product_quantity %}
       <div class="purchase-details__quantity product-quantity-box">
-        <label for="quantity">{{ 'products.product.quantity' | t }}</label>
+        {% comment %} <label for="quantity">{{ 'products.product.quantity' | t }}</label> {% endcomment %}
         <span class="ss-icon product-minus js-change-quantity" data-func="minus"><span class="icon-minus"></span></span>
         <input type="number" min="1" size="2" class="quantity" name="quantity" id="quantity" value="1" {% if settings.limit_quantity and variant.inventory_management != blank and variant.inventory_policy == "deny" %}max="{{ variant.inventory_quantity }}"{% endif %} />
         <span class="ss-icon product-plus js-change-quantity" data-func="plus"><span class="icon-plus"></span></span>
@@ -129,6 +129,8 @@
           {% endif %}
         "
         data-label={{ add_to_cart_label | json }}
+
+        style="color:{{ section.settings.cta_text_color }}; background: {{section.settings.cta_bg_color}}; border: 1px solid {{ section.settings.cta_bg_color }};"
       >
         <span class="text">
           {% if product.available %}{{ add_to_cart_label }}{% else %}{{ 'products.product.sold_out' | t }}{% endif %}

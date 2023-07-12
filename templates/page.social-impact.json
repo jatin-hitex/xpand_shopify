@@ -1,0 +1,193 @@
+{
+  "sections": {
+    "main": {
+      "type": "page-template",
+      "disabled": true,
+      "settings": {}
+    },
+    "917fb3a7-cbab-4fe0-b651-8955cc1e6223": {
+      "type": "image-with-text-overlay",
+      "settings": {
+        "wide_display": true,
+        "image": "shopify:\/\/shop_images\/banner.png",
+        "pretext": "",
+        "title": "XPAND THELOVE",
+        "subtitle": "",
+        "button1": "",
+        "button1_link": "",
+        "button1_style": "global-button--banner",
+        "button2": "",
+        "button2_link": "",
+        "button2_style": "global-button--banner",
+        "text_position": "center",
+        "text_align": "center",
+        "caption_content_background": "original",
+        "mobile_text_below_image": false,
+        "mobile_text_color": "",
+        "css_class": "social-impact-banner-area",
+        "custom_css": ""
+      }
+    },
+    "505aab9e-65bd-46c5-9c80-081a07d065a3": {
+      "type": "featured-text",
+      "settings": {
+        "title": "",
+        "content": "<p>No matter what life looks like for you, our mission at Xpand is to help you move smarter. But, when our community showed us that our laces could do so much more, we knew we had to help. That's why we are committed to supporting initiatives to keep our communities safe and healthy. <\/p>",
+        "button_label": "",
+        "button_link": "",
+        "text_size": "featured_text",
+        "text_alignment": "center",
+        "css_class": "full-width-content-social-impact",
+        "custom_css": ""
+      }
+    },
+    "b502b4fe-e2f7-4126-b5bd-9829b6927d16": {
+      "type": "three-columns-icons-group",
+      "blocks": {
+        "9089d727-55c7-4e8f-ada9-9a3d8f06b212": {
+          "type": "col_item",
+          "settings": {
+            "title": "Donations to Hospitals",
+            "image": "shopify:\/\/shop_images\/icon_1.png",
+            "content": "<p>A portion of Xpand sales will be donated to local and international hospitals. If you would like us to add a hospital to our list, email us at <a href=\"mailto:hello@xpandlaces.com\">hello@xpandlaces.com<\/a>.<\/p>",
+            "btn_txt": "EMAIL US",
+            "link": "mailto:hello@xpandlaces.com"
+          }
+        },
+        "52e9db47-a782-49e8-a81a-2945e8102b79": {
+          "type": "col_item",
+          "settings": {
+            "title": "Donations to Medical Workers",
+            "image": "shopify:\/\/shop_images\/icon_2.png",
+            "content": "<p>We are donating our no-tie laces to hospitals in an effort to help ensure that medical workers stay safe and comfortable while they bravely tackle their work on the frontlines. <\/p>",
+            "btn_txt": "LEARN MORE",
+            "link": "https:\/\/heroes.xpandlaces.com\/"
+          }
+        },
+        "dee72588-443e-4c55-85db-3066ff032efc": {
+          "type": "col_item",
+          "settings": {
+            "title": "Elastics for DIY masks",
+            "image": "shopify:\/\/shop_images\/icon_3.png",
+            "content": "<p>We are also donating our laces to community members who are currently sewing protective masks to donate to our healthcare heroes.<\/p>",
+            "btn_txt": "DIY MASK TUTORIAL",
+            "link": "https:\/\/www.xpandlaces.com\/blogs\/news\/how-to-make-homemade-medical-face-mask"
+          }
+        }
+      },
+      "block_order": [
+        "9089d727-55c7-4e8f-ada9-9a3d8f06b212",
+        "52e9db47-a782-49e8-a81a-2945e8102b79",
+        "dee72588-443e-4c55-85db-3066ff032efc"
+      ],
+      "settings": {
+        "listing_title": "Here’s How We’re Helping",
+        "youtube_embeded_path": "<iframe src=\"https:\/\/www.youtube.com\/embed\/7RrAESvWnXo?wmode=opaque\" frameborder=\"0\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen=\"\" width=\"100%\" height=\"100%\"><\/iframe>",
+        "bottom_header": "We'll continue updating you with new social impact  initiatives that we are working on."
+      }
+    },
+    "f26f6853-ee9f-4ef2-a33d-2f6a3b81005e": {
+      "type": "counter-section",
+      "blocks": {
+        "8a8b76e7-8b6e-44a0-812f-689dbe23047d": {
+          "type": "counter_item",
+          "settings": {
+            "counter_value": "650+",
+            "counter_title": "No-Tie Elastic Laces to  healthcare heroes"
+          }
+        },
+        "8cfd0f39-c004-4a05-818e-10cd3776f826": {
+          "type": "counter_item",
+          "settings": {
+            "counter_value": "3,200+",
+            "counter_title": "No-Tie Elastic Laces  for DIY masks"
+          }
+        },
+        "28226554-696e-4651-a503-b68e2d8ff8d8": {
+          "type": "counter_item",
+          "settings": {
+            "counter_value": "650+",
+            "counter_title": "N95 Masks to  hospitals"
+          }
+        }
+      },
+      "block_order": [
+        "8a8b76e7-8b6e-44a0-812f-689dbe23047d",
+        "8cfd0f39-c004-4a05-818e-10cd3776f826",
+        "28226554-696e-4651-a503-b68e2d8ff8d8"
+      ],
+      "settings": {
+        "listing_title": "With your support  Xpand has donated",
+        "bottom_title": "and counting..."
+      }
+    },
+    "1c1ebe63-43aa-4f86-852c-533d92598af7": {
+      "type": "full-width-image",
+      "settings": {
+        "section_image": "shopify:\/\/shop_images\/full_image.png",
+        "image_url": "#"
+      }
+    },
+    "dc97b34e-e17d-4127-9be5-5b70fdb1b333": {
+      "type": "section-header",
+      "settings": {
+        "title": "XPAND YOUR PRIDE",
+        "content": "<p>On rainy days, we like to search for the rainbow. <br\/>So, while 2020 has been a challenging year, we are feeling more inspired than ever to incite positive change within the Xpand community and beyond. That’s why we are excited to announce some new initiatives we are launching in honour of Pride Month to support and celebrate the diverse and vibrant LGBTQ2S community.<\/p>"
+      }
+    },
+    "c1cd5888-1d2e-4179-bf1d-cef53fb4f670": {
+      "type": "product-description",
+      "blocks": {
+        "612c44c3-e7f1-455a-b302-4db3df0325a0": {
+          "type": "col_item",
+          "settings": {
+            "title": "RAINBOW LACES",
+            "product_image": "shopify:\/\/shop_images\/product_1.jpg",
+            "product_description": "<p>Every time you purchase a pair of our rainbow laces, we will donate a portion of our sales to organizations that support the LGBTQ2S community.<\/p>",
+            "pdp_link": "",
+            "left_aligned_img": true
+          }
+        },
+        "59240f4d-5191-4dd5-bafc-e62aa0af436d": {
+          "type": "col_item",
+          "settings": {
+            "title": "CUSHIONED NO-SHOW",
+            "product_image": "shopify:\/\/shop_images\/product_2.jpg",
+            "product_description": "<p>During the month of June, for every pair of socks purchased, we will donate a pair to youth shelters who serve the LGBTQ2S community.<\/p>",
+            "pdp_link": "https:\/\/www.xpandlaces.com\/products\/cushioned-no-show-socks?variant=30296303173743",
+            "left_aligned_img": false
+          }
+        }
+      },
+      "block_order": [
+        "612c44c3-e7f1-455a-b302-4db3df0325a0",
+        "59240f4d-5191-4dd5-bafc-e62aa0af436d"
+      ],
+      "settings": {}
+    },
+    "2dcd7396-7cc0-4e89-8141-2716c837037f": {
+      "type": "featured-text",
+      "settings": {
+        "title": "",
+        "content": "<p><strong>We want to take this opportunity to thank you, our loyal customers.<\/strong><\/p><p>We want you to be proud of wearing Xpand knowing that with every step you take you are helping us support initiatives that keep our communities safe and healthy.<\/p>",
+        "button_label": "",
+        "button_link": "",
+        "text_size": "featured_text",
+        "text_alignment": "center",
+        "css_class": "cm_bottom_content",
+        "custom_css": ""
+      }
+    }
+  },
+  "order": [
+    "main",
+    "917fb3a7-cbab-4fe0-b651-8955cc1e6223",
+    "505aab9e-65bd-46c5-9c80-081a07d065a3",
+    "b502b4fe-e2f7-4126-b5bd-9829b6927d16",
+    "f26f6853-ee9f-4ef2-a33d-2f6a3b81005e",
+    "1c1ebe63-43aa-4f86-852c-533d92598af7",
+    "dc97b34e-e17d-4127-9be5-5b70fdb1b333",
+    "c1cd5888-1d2e-4179-bf1d-cef53fb4f670",
+    "2dcd7396-7cc0-4e89-8141-2716c837037f"
+  ]
+}

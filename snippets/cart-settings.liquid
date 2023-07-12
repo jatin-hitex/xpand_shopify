@@ -1,0 +1,93 @@
+<div id="cart-settings-data" style="display: none!important" data-activefreeoffer="{% if settings.enable_free_product %}true{% else %}false{% endif %}">
+{% assign freeProducts = "" %}
+{% assign validProductsForFreeProduct = "" %}
+{% assign productsForDiscount = "" %}
+
+
+
+
+{%- paginate collections.all.products by 5000 -%}
+{% for product in collections.all.products %}
+{% assign proHandle = product.handle %}
+{% capture proObject %}{ id: null, shopify_product_id: "{{ product.id }}" },{% endcapture %}
+
+{% if product.tags contains "free-product" %}
+{% assign freeProducts = freeProducts|append:'"'|append:proHandle|append:'"'|append:',' %}
+{% endif %}
+
+{% if product.tags contains "valid-for-free-product" %}
+{% assign validProductsForFreeProduct = validProductsForFreeProduct|append:'"'|append:proHandle|append:'"'|append:',' %}
+{% endif %}
+
+{% if product.tags contains "discount-active" %}
+{% assign productsForDiscount = productsForDiscount|append:proObject %}
+{% endif %}
+
+{% endfor %}
+{%- endpaginate -%}
+
+
+<p data-prod="freeProducts">{{ freeProducts }}</p>
+<p data-prod="validProductsForFreeProduct">{{ validProductsForFreeProduct }}</p>
+<p data-prod="productsForDiscount">{{ productsForDiscount }}</p>
+</div>
+<div id="tier-qty-and-discount-wrapper" style="display: none!important;">
+{% for i in (1..4) %}
+  {%  capture tierQty %}tier_{{ i }}_line_qnty{% endcapture %}
+  {%  capture tierDiscountAmt %}tier_{{ i }}_dis_amount{% endcapture %}
+    {% if settings[tierQty] > 0 and  settings[tierDiscountAmt] != blank %}
+      <div data-tier_discount="{{ settings[tierDiscountAmt] | times: 100 | replace:'.0','' }}" data-tier_qty="{{ settings[tierQty] }}">{{ settings[tierQty] }}--{{ settings[tierDiscountAmt] }}</div>
+    {% endif %}
+{% endfor %}
+</div>
+<script>
+    window.addEventListener("DOMContentLoaded", (event) => {
+      var discountTiers = `[{% if settings.tier_1_line_qnty > 0 and settings.tier_1_dis_amount %}{
+        type: "MinimumLineItemQuantityTier",
+        min_cart_value: null,
+        discount_amount: {{ settings.tier_1_dis_amount| times: 100 | replace:'.0','' }},
+        discount_percent: null,
+        min_line_item_value: null,
+        min_cart_quantity: null,
+        min_line_item_quantity: {{ settings.tier_1_line_qnty }},
+        discount_type: "fixed_amount",
+        min_selected_products_quantity: null,
+        min_selected_products_value: null
+      },{% endif %}{% if settings.tier_2_line_qnty > 0 and settings.tier_2_dis_amount %}{
+        type: "MinimumLineItemQuantityTier",
+        min_cart_value: null,
+        discount_amount: {{ settings.tier_2_dis_amount| times: 100 | replace:'.0','' }},
+        discount_percent: null,
+        min_line_item_value: null,
+        min_cart_quantity: null,
+        min_line_item_quantity: {{ settings.tier_2_line_qnty }},
+        discount_type: "fixed_amount",
+        min_selected_products_quantity: null,0
+        min_selected_products_value: null
+      },{% endif %}{% if settings.tier_3_line_qnty > 0 and settings.tier_3_dis_amount %}{
+        type: "MinimumLineItemQuantityTier",
+        min_cart_value: null,
+        discount_amount: {{ settings.tier_3_dis_amount| times: 100 | replace:'.0','' }},
+        discount_percent: null,
+        min_line_item_value: null,
+        min_cart_quantity: null,
+        min_line_item_quantity: {{ settings.tier_3_line_qnty }},
+        discount_type: "fixed_amount",
+        min_selected_products_quantity: null,
+        min_selected_products_value: null
+      },{% endif %}{% if settings.tier_4_line_qnty > 0 and settings.tier_4_dis_amount %}{
+        type: "MinimumLineItemQuantityTier",
+        min_cart_value: null,
+        discount_amount: {{ settings.tier_4_dis_amount| times: 100 | replace:'.0','' }},
+        discount_percent: null,
+        min_line_item_value: null,
+        min_cart_quantity: null,
+        min_line_item_quantity: {{ settings.tier_4_line_qnty }},
+        discount_type: "fixed_amount",
+        min_selected_products_quantity: null,
+        min_selected_products_value: null
+      }{% endif %}]`
+    console.log("DOM fully loaded and parsed for cart settings==>");
+    });
+    
+</script>

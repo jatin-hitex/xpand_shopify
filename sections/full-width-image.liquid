@@ -1,0 +1,41 @@
+<style>
+    {% if request.path contains 'social-impact' %}
+
+.cm_full_width_image_section img {
+  width: 100%;
+}
+    {% endif %}
+    </style>
+<div class="cm_full_width_image_section">
+{% if section.settings.image_url != blank  %}<a href="{{ section.settings.image_url }}" aria-label="{{ section.settings.section_image.alt }}">{% endif %}
+  <img src="{{ section.settings.section_image|img_url:'master' }}" alt=""/>
+{% if section.settings.image_url != blank  %}</a>{% endif %}
+</div>
+
+{% schema %}
+  {
+    "name": "Full Width Image",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "section_image",
+        "label": "Section Image"
+      },{
+        "type": "url",
+        "id": "image_url",
+        "label": "Image Link"
+      }
+	],
+    "presets": [
+        {
+            "name": "Full Width Image" 
+        }
+    ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

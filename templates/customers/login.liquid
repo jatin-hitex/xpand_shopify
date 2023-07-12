@@ -1,29 +1,47 @@
+<style>
+  .customers-login .content h1 {
+    font-family: neuzeitgroteskblack;
+    font-size: 36px;
+    margin: 0 auto 50px;
+    padding: 0;
+    color: #0090fc;
+  }
+  input[type="submit"].global-button {
+    background: #008ffd;
+    border-color: #008ffd;
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    border-radius: 5px;
+  }
+  .right {
+    font-size: 14px;
+    font-family: 'neuzeit_grotesk_light';
+  }
+</style>
 <section class="section">
   <div class="container content">
-    <div
-      class="
-        one-whole
-        column
-        collection_nav
-      "
-    >
+    <div class="
+                        one-whole
+                        column
+                        collection_nav
+                      ">
       <h1>{{ 'customer.login.title' | t }}</h1>
       <div class="feature-divider"></div>
     </div>
 
     <div
       class="
-        three-eighths
-        columns
-        medium-down--one-whole
-        offset-by-five
-        is-hidden-offset-mobile-only
-        animated
-        fadeInUp
-      "
+                        three-eighths
+                        columns
+                        medium-down--one-whole
+                        offset-by-five
+                        is-hidden-offset-mobile-only
+                        animated
+                        fadeInUp
+                      "
       id="recover-password"
-      style="display: none;"
-    >
+      style="display: none;">
       <h4>{{ 'customer.recover_password.title' | t }}</h4>
 
       {% form 'recover_customer_password' %}
@@ -44,8 +62,7 @@
             name="email"
             id="recover-email"
             autocorrect="off"
-            autocapitalize="off"
-          >
+            autocapitalize="off">
         </div>
 
         <p>
@@ -55,12 +72,11 @@
         <div class="action_bottom">
           <input
             class="
-              global-button
-              global-button--primary
-            "
+                                          global-button
+                                          global-button--primary
+                                        "
             type="submit"
-            value="{{ 'customer.recover_password.submit' | t }}"
-          >
+            value="{{ 'customer.recover_password.submit' | t }}">
           <span class="note">
             {{ 'customer.recover_password.or' | t }}
             <a href="#" onclick="hideRecoverPasswordForm()">
@@ -71,18 +87,15 @@
       {% endform %}
     </div>
 
-    <div
-      class="
-        three-eighths
-        columns
-        medium-down--one-whole
-        offset-by-five
-        is-hidden-offset-mobile-only
-        animated
-        fadeInUp
-      "
-      id="login_form"
-    >
+    <div class="
+                    three-eighths
+                    columns
+                    medium-down--one-whole
+                    offset-by-five
+                    is-hidden-offset-mobile-only
+                    animated
+                    fadeInUp
+                  " id="login_form">
       {% if reset_success %}
         <p>
           <em class="note">{{ 'customer.recover_password.success' | t }}</em>
@@ -102,8 +115,7 @@
           size="30"
           autocorrect="off"
           autocapitalize="off"
-          tabindex="1"
-        >
+          tabindex="1">
 
         {% if form.password_needed %}
           {% comment %}
@@ -121,27 +133,25 @@
           <label for="customer_password" class="login">{{ 'customer.login.password' | t }}</label>
           <input
             class="
-              large
-              password
-            "
+                                          large
+                                          password
+                                        "
             id="customer_password"
             type="password"
             value=""
             name="customer[password]"
             size="16"
-            tabindex="2"
-          >
+            tabindex="2">
         {% endif %}
 
         <input
           class="
-            global-button
-            global-button--primary
-          "
+                                    global-button
+                                    global-button--primary
+                                  "
           type="submit"
           value="{{ 'customer.login.sign_in' | t }}"
-          tabindex="3"
-        >
+          tabindex="3">
 
         {% unless shop.checkout.guest_login %}
           <p class="right" style="padding-top: 10px;">
@@ -155,14 +165,15 @@
 
       <div class="large--right">
         {% if shop.checkout.guest_login %}
-          <span class="or"> {{ 'customer.login.or' | t }} </span>
+          <span class="or">
+            {{ 'customer.login.or' | t }}
+          </span>
 
           {% form 'guest_login' %}
             <input
               class="guest_button"
               type="submit"
-              value="{{ 'customer.login.guest_title_html' | t }}"
-            >
+              value="{{ 'customer.login.guest_title_html' | t }}">
           {% endform %}
         {% endif %}
       </div>
@@ -174,23 +185,22 @@
 
 <script type="text/javascript">
   function showRecoverPasswordForm() {
-    document.getElementById('recover-password').style.display = 'block';
-    document.getElementById('login_form').style.display='none';
-    return false;
-  }
-
-  function hideRecoverPasswordForm() {
-    document.getElementById('recover-password').style.display = 'none';
-    document.getElementById('login_form').style.display = 'block';
-    return false;
-  }
-
-  if (window.location.hash == '#recover') {
-    showRecoverPasswordForm()
-  }
-
-  // reset_success is only true when the reset form is
-  {% if reset_success %}
+  document.getElementById('recover-password').style.display = 'block';
+        document.getElementById('login_form').style.display='none';
+        return false;
+      }
+    
+      function hideRecoverPasswordForm() {
+        document.getElementById('recover-password').style.display = 'none';
+        document.getElementById('login_form').style.display = 'block';
+        return false;
+      }
+    
+      if (window.location.hash == '#recover') {
+        showRecoverPasswordForm()
+      }
+    
+      // reset_success is only true when the reset form is{% if reset_success %}
     hideRecoverPasswordForm();
   {% endif %}
 </script>

@@ -1,0 +1,190 @@
+<style>
+    {% if request.path contains 'social-impact' %}
+
+.cm_pdp_section {
+    background: rgba(167,217,239,1);
+    width: 100%;
+    height: 460px;
+    position: relative;
+  }
+  .cm_pdp_section .cm_pdp_section_inner .container {
+    justify-content: center;
+  }
+  .cm_pdp_section_col_listing {
+    display: flex;
+    align-items: center;
+  }
+  
+  
+  .cm_pdp_img_col {
+    width: 50%;
+  }
+  
+  .cm_pdp_section_col_listing > div {
+    width: 50%;
+    text-align: center;
+  }
+  
+  .cm_pdp_des, .page .cm_pdp_des p {
+    font-family:'neuzeit_grotesk_regular';
+    font-weight: 400;
+    font-style: normal;
+    font-size: 24px;
+    max-width: 380px;
+    line-height: 29px;
+    margin: 0 auto;
+  }
+  
+  .cm_pdp_btn > a {
+    width: 360px;
+    height: 50px;
+    background: rgba(246,76,36,1);
+    display: block;
+    margin: 50px auto 0;
+    line-height: 50px;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    font-family:'neuzeit_grotesk_light';
+  }
+  
+  .cm_pdp_btn > a:hover {
+    background: rgba(221,52,23,1);
+    box-shadow: none;
+    color: #ffffff;
+  }
+  
+  .cm_pdp_section.left-aligned-false {
+    background: #f27d47;
+  }
+  
+  .cm_pdp_section.left-aligned-false .cm_pdp_btn > a {
+    background: rgba(255,219,27,1);
+    color: #000000;
+    height: 41px;
+    line-height: 41px;
+  }
+  
+  .cm_pdp_section.left-aligned-false  .cm_pdp_des {
+    color: #fff;
+  }
+  
+  .cm_pdp_section.left-aligned-false .cm_pdp_section_col_listing {
+    flex-direction: row-reverse;
+  }
+  
+  .cm_pdp_section.left-aligned-false .cm_pdp_btn > a:hover {
+    background: rgba(230,188,17,1);
+    box-shadow: none;
+    color: #000000;
+  }
+  @media screen and (max-width: 767px) {
+    .cm_pdp_section {
+        height: auto;
+        padding: 0 20px 40px;
+    }
+    .cm_pdp_section_col_listing>div {
+    width: 100%;
+    }
+    .cm_pdp_section_col_listing {
+    display: block;
+}
+.cm_pdp_btn>a {
+    margin-top: 30px;
+    width: auto;
+    display: inline-block;
+    padding: 10px;
+    white-space: normal;
+    height: auto!important;
+    line-height: 1.2!important;
+}
+.cm_pdp_section_col_listing>div img {
+    max-width: 100%;
+}
+  }
+  
+    {% endif %}
+</style>
+{% for block in section.blocks %}
+    <div class="cm_pdp_section left-aligned-{{ block.settings.left_aligned_img }}">
+      <div class="cm_pdp_section_inner">
+        <div class="container">
+          <div class="cm_pdp_section_col_listing">
+        
+            <div class="cm_pdp_img_col">
+              <img src="{{ block.settings.product_image|img_url:'master' }}" alt=""/>
+            </div>
+            <div class="cm_pdp_des_col">
+              
+              <div class="cm_pdp_des_col_inner">
+                <div class="cm_pdp_des">
+                  {{ block.settings.product_description }}
+                </div>
+                <div class="cm_pdp_btn">
+                  <a href="{{ block.settings.pdp_link }}">SHOP OUR {{ block.settings.title }}  ⟶</a>
+                </div>
+              </div>
+              
+            </div>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+    
+    {% schema %}
+      {
+        "name": "Product Description",
+        "max_blocks": 3,
+        "blocks": [
+          {
+            "type": "col_item",
+            "name": "Column Item",
+            "settings": [
+                {
+                   "type":      "text",
+                   "id":        "title",
+                   "label":     "Title",
+                   "placeholder": "Title"
+                },
+                {
+                  "type": "image_picker",
+                  "id": "product_image",
+                  "label": "Product Image"
+                },
+                {
+                   "type": "richtext",
+                   "id": "product_description",
+                   "label": "Description",
+                   "default": "<p>Default <em>richtext</em> <a href=\"https://example.com/\">content</a></p>"
+                },
+                {
+                  "id": "pdp_link",
+                  "type": "url",
+                  "label": "PDP Link"
+                },
+                {
+                  "type": "checkbox",
+                  "id": "left_aligned_img",
+                  "label": "Left Aligned Image"
+                }
+            ]
+          }
+        ],
+        "presets": [
+            {
+                "name": "Product Description"
+            }
+        ]
+    
+      }
+    {% endschema %}
+    
+    {% stylesheet %}
+    {% endstylesheet %}
+    
+    {% javascript %}
+    {% endjavascript %}
+    
