@@ -1,0 +1,168 @@
+<style>
+    {% if request.path contains 'social-impact' %}
+    .cm_counter_section {
+  background: rgba(138,210,236,1);
+  padding: 50px 0;
+  text-align: center;
+}
+.cm_counter_section .container {
+    justify-content: center;
+}
+
+.cm_counter_list_title > h1 {
+  color: rgb(30, 30, 30);
+  font-family:'neuzeitgroteskblack';
+  font-size: 40px;
+  font-weight: bold;
+  line-height: 1.2;
+  max-width: 400px;
+  margin: 50px auto 30px;
+}
+
+.cm-counter-content-listing-inner {
+  display: flex;
+}
+
+.cm-counter-content-listing-inner > .cm-counter-col {
+  width: 33.33%;
+  padding: 0 15px;
+}
+
+h2.cm_counter_val {
+  color: rgb(255, 255, 255);
+  font-family:'neuzeitgroteskblack';
+  font-size: 72px;
+  font-weight: bold;
+  line-height: 1;
+  margin: 0 0 20px;
+}
+
+h3.cm_counter_title {
+  color: rgb(30, 30, 30);
+  font-family:'neuzeit_grotesk_light';
+  font-weight: 600;
+  font-style: normal;
+  font-size: 20px;
+    letter-spacing: 0.5px;
+}
+
+.cm-counter-col-inner {
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+.cm_counter_bottom_title > h3 {
+    font-family:'neuzeit_grotesk_regular';
+  font-size: 28px;
+  color: rgb(30, 30, 30);
+  font-weight: bold;
+}
+
+.cm_counter_bottom_title {
+  margin: 40px 0 0;
+}
+@media screen and (max-width: 767px) {
+    .cm_counter_section {
+        padding-top: 210px;
+    background-position: center top;
+    }
+    .cm_counter_list_title > h1{
+        font-size: 28px;
+    line-height: 36px;
+    padding: 0 15px;
+    }
+    .cm-counter-content-listing-inner > .cm-counter-col{
+        width: 100%;
+        padding-bottom: 15px;
+    }
+    h2.cm_counter_val {
+    font-size: 40px;
+    margin: 0 0 10px;
+    color: #000;
+}
+.cm-counter-content-listing-inner{
+    flex-wrap: wrap;
+}
+h3.cm_counter_title {
+    font-size: 18px;
+    line-height: 1.2;
+}
+    
+}
+    {% endif %}
+    </style>
+<div class="cm_counter_section">
+  <div class="container">
+    <div class="cm_counter_section_inner">
+      <div class="cm_counter_list_title">
+        <h1>{{ section.settings.listing_title }}</h1>
+      </div>
+      <div class="cm-counter-content-listing">
+        <div class="cm-counter-content-listing-inner">
+          {% for block in section.blocks %}
+          <div class="cm-counter-col">
+            <div class="cm-counter-col-inner">
+              <h2 class="cm_counter_val">{{ block.settings.counter_value }}</h2>
+              <h3 class="cm_counter_title">{{ block.settings.counter_title }}</h3>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+      <div class="cm_counter_bottom_title">
+        <h3>{{ section.settings.bottom_title }}</h3>
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Counter Section",
+    "settings": [
+		{
+           "type":      "text",
+           "id":        "listing_title",
+           "label":     "Listing Title",
+           "placeholder": "Title"
+        },
+		{
+           "type":      "text",
+           "id":        "bottom_title",
+           "label":     "Bottom Title",
+           "placeholder": "Title"
+        }
+	],
+    "max_blocks": 3,
+    "blocks": [
+      {
+        "type": "counter_item",
+        "name": "Counter Item",
+        "settings": [
+          {
+            "type": "text",
+            "id": "counter_value",
+            "label": "Counter Value"
+          },
+			{
+            "type": "text",
+            "id": "counter_title",
+            "label": "Counter Title"
+          }
+        ]
+      }
+    ],
+    "presets": [
+        {
+            "name": "Counter Section"
+        }
+    ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

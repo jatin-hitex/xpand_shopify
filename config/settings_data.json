@@ -1,26 +1,13 @@
 {
   "current": {
-    "checkout_logo_image": "shopify:\/\/shop_images\/logo-header-thin-icon.png",
-    "checkout_logo_position": "left",
-    "checkout_logo_size": "small",
-    "checkout_body_background_image": "",
-    "checkout_body_background_color": "#333333",
-    "checkout_input_background_color_mode": "white",
-    "checkout_sidebar_background_image": "",
-    "checkout_sidebar_background_color": "#fafafa",
-    "checkout_heading_font": "Helvetica Neue",
-    "checkout_body_font": "Helvetica Neue",
-    "checkout_accent_color": "#03a196",
-    "checkout_button_color": "#03a196",
-    "checkout_error_color": "#e1255f",
     "performance": "ludicrous",
     "image_loading_style": "blur-up",
     "custom_scripts": "",
     "logo_color": "#ffffff",
     "regular_color": "#333333",
     "headline_color": "#333333",
-    "headline_footer_text_color": "#7f8c8d",
-    "sub_footer_text_color": "#6b6b6b",
+    "headline_footer_text_color": "#bebebe",
+    "sub_footer_text_color": "#757575",
     "sale_color": "#d54d4d",
     "was_price_color": "#8c8b8b",
     "product_hover_text_color": "#ffffff",
@@ -32,14 +19,14 @@
     "top_bar_color": "#f4f4f4",
     "top_bar_color_hover": "#03a196",
     "nav_color": "#d9d9d9",
-    "nav_color_home": "#ffffff",
-    "nav_color_hover": "#ffffff",
+    "nav_color_home": "#606060",
+    "nav_color_hover": "#008ffd",
     "link_color": "#03a196",
     "link_hover_color": "#03857c",
     "sidebar_nav_color": "#363636",
     "sidebar_nav_color_hover": "#03a196",
-    "sub_footer_link_color": "#7f8c8d",
-    "sub_footer_link_color_hover": "#ffffff",
+    "sub_footer_link_color": "#757575",
+    "sub_footer_link_color_hover": "#000000",
     "btn_color": "#151515",
     "btn_hover_color": "#03a196",
     "btn_text_color": "#ffffff",
@@ -59,7 +46,7 @@
     "headline_border_color": "#aaaaaa",
     "headline_border": "0",
     "divider_style": "solid",
-    "sub_footer_border_color": "#1b1f23",
+    "sub_footer_border_color": "#f4f4f4",
     "sale_banner_color": "#d54d4d",
     "new_banner_color": "#03a196",
     "search_section_color": "#ffffff",
@@ -68,7 +55,7 @@
     "testimonial_bg_color": "#03a196",
     "featured_promotions_color": "#fff",
     "featured_promotions_color_hover": "#ffffff",
-    "featured_promotions_background": "#000000",
+    "featured_promotions_background": "#151515",
     "featured_promotions_mobile_background": true,
     "modal_background_color": "#ffffff",
     "modal_text_color": "#2b2e38",
@@ -77,7 +64,7 @@
     "repeat_bg": "repeat",
     "bg_fixed": false,
     "bg_stretched": false,
-    "top_bar_bg_color": "#1b1f23",
+    "top_bar_bg_color": "#ffffff",
     "top_bar_cart_bg_color": "#d54d4d",
     "minicart_bg_color": "#ffffff",
     "header_bg_color": "#1b1f23",
@@ -87,20 +74,20 @@
     "shop_home_page_content_bg_color": "#f6f7f9",
     "featured_links_background": "#ffffff",
     "product_hover_bg_color": "#000000",
-    "sub_footer_color": "#1b1f23",
+    "sub_footer_color": "#ffffff",
     "footer_bg": "",
     "footer_bg_stretched": false,
     "newsletter_popup_background_color": "#ffffff",
     "newsletter_section_background_color": "#f4f4f4",
     "password_page_text_color": "#ffffff",
     "password_page_background_color": "#000000",
-    "logo__font": "century_gothic_n7",
-    "logo_font_style": "uppercase",
+    "logo__font": "din_neuzeit_grotesk_n3",
+    "logo_font_style": "none",
     "logo_font_size": 20,
     "top_bar_font_size": 12,
     "top_bar_letter_spacing": 1,
-    "nav__font": "century_gothic_n4",
-    "nav_font_style": "uppercase",
+    "nav__font": "din_neuzeit_grotesk_n3",
+    "nav_font_style": "none",
     "nav_font_size": 16,
     "nav_letter_spacing": 1,
     "nav_shadow": false,
@@ -109,35 +96,36 @@
     "button_font_size": 12,
     "mega_text_font_size": 14,
     "mega_text_letter_spacing": 1,
-    "headline__font": "century_gothic_n4",
-    "headline_font_style": "uppercase",
+    "headline__font": "din_neuzeit_grotesk_n3",
+    "headline_font_style": "none",
     "headline_font_size": 24,
     "headline_letter_spacing": 2,
-    "slideshow_headline__font": "century_gothic_n7",
-    "slideshow_headline_font_style": "uppercase",
+    "slideshow_headline__font": "din_neuzeit_grotesk_n7",
+    "slideshow_headline_font_style": "none",
     "slideshow_headline_size": 60,
     "slideshow_headline_letter_spacing": 1,
     "slideshow_headline_shadow": false,
-    "slideshow_subtitle__font": "century_gothic_n4",
-    "slideshow_subtitle_font_style": "uppercase",
+    "slideshow_subtitle__font": "din_neuzeit_grotesk_n3",
+    "slideshow_subtitle_font_style": "none",
     "slideshow_subtitle_size": 18,
     "slideshow_subtitle_letter_spacing": 1,
     "slideshow_shadow": false,
-    "regular__font": "century_gothic_n4",
+    "regular__font": "din_neuzeit_grotesk_n3",
     "regular_font_style": "none",
     "regular_font_size": 16,
     "footer_logo_font_size": 20,
-    "footer_heading_font_size": 16,
-    "footer_font_size": 14,
+    "footer_heading_font_size": 22,
+    "footer_font_size": 16,
     "mega_menu_1": false,
     "mega_menu_2": false,
-    "mega_menu_3": true,
+    "mega_menu_3": false,
     "mega_menu_4": false,
     "mega_menu_5": false,
     "search_option": "product",
     "enable_autocomplete": true,
     "search_to_display": 5,
-    "product_form_style": "swatches",
+    "product_form_style": "radio",
+    "show_dynamic_checkout_button": false,
     "display_product_quantity": true,
     "limit_quantity": false,
     "display_inventory_left": false,
@@ -160,10 +148,25 @@
     "show_lock_icon": true,
     "display_tos_checkbox": false,
     "tos_page": "",
-    "go_to_checkout": false,
-    "display_special_instructions": true,
+    "go_to_checkout": true,
+    "display_special_instructions": false,
     "display_savings": true,
     "cart_message": "",
+    "cart_discount_applied_text": "Congrats, you just received discountPercentage% off!",
+    "cart_free_shipping_hint_text": "You are quantity pack away from free shipping!",
+    "enable_free_product": false,
+    "cart_free_product_hint_text": "You are quantity pack away to get a free product!",
+    "tier_1_dis_amount": "1.99",
+    "tier_2_dis_amount": "5.33",
+    "tier_3_dis_amount": "5.74",
+    "tier_4_line_qnty": 12,
+    "tier_4_dis_amount": "5.74",
+    "cart_progress_bar_color": "#1ec865",
+    "cart_discount_hint_color": "#24726e",
+    "cart_saving_text": "You saved savingPercentage",
+    "recommended_product_1": "cushioned-no-show-socks",
+    "recommended_product_2": "urban-belt",
+    "recommended_product_3": "explorer-belt",
     "show_shipping_calculator": false,
     "shipping_calculator_default_country": "United States",
     "currency_format": "money_format",
@@ -191,9 +194,28 @@
     "popup_button2_highlight": false,
     "newsletter_popup_seconds": 8,
     "newsletter_popup_days": "7",
+    "facebook_link": "https:\/\/www.facebook.com\/Xpandlaces\/",
+    "instagram_link": "https:\/\/www.instagram.com\/xpandlaces",
+    "twitter_link": "https:\/\/twitter.com\/xpandlaces",
     "favicon": "",
     "disqus_enabled": false,
     "disqus_shortname": "",
+    "checkout_logo_image": "shopify:\/\/shop_images\/xpand-dark-logo.png",
+    "checkout_logo_position": "left",
+    "checkout_logo_size": "small",
+    "checkout_body_background_image": "",
+    "checkout_body_background_color": "#ffffff",
+    "checkout_input_background_color_mode": "white",
+    "checkout_sidebar_background_image": "",
+    "checkout_sidebar_background_color": "#fafafa",
+    "checkout_heading_font": "Helvetica Neue",
+    "checkout_body_font": "Helvetica Neue",
+    "checkout_accent_color": "#197bbd",
+    "checkout_button_color": "#197bbd",
+    "checkout_error_color": "#e1255f",
+    "recommended_product_one": "cushioned-no-show-socks",
+    "recommended_product_two": "urban-belt",
+    "recommended_product_three": "explorer-belt",
     "notify_me_richtext": "<p>Notify me when this product is available:<\/p>",
     "sold_out_text": "Sold Out",
     "search_pagination_type": "basic_pagination",
@@ -721,23 +743,93 @@
     "sections": {
       "header": {
         "type": "header",
+        "blocks": {
+          "d3fd4efb-50f5-43bb-9a40-01e4e2235980": {
+            "type": "mega_item",
+            "settings": {
+              "enable_block": true,
+              "image": "shopify:\/\/shop_images\/Navigation_Banner_-_Flat-min.png",
+              "name": "Original No-Tie",
+              "caption": "<p>Flat Laces<\/p>",
+              "link": "shopify:\/\/products\/no-tie-original-elastic-lacing-system"
+            }
+          },
+          "94e905c2-7c9f-4756-8762-05d38dcfedfb": {
+            "type": "mega_item",
+            "settings": {
+              "enable_block": true,
+              "image": "shopify:\/\/shop_images\/Navigation_Banner_-_Round-min.png",
+              "name": "Quick-Release",
+              "caption": "<p>Round Laces<\/p>",
+              "link": "shopify:\/\/products\/quick-release-round-lacing-system"
+            }
+          },
+          "ef86e50b-b317-4ee6-b898-56f3329b51e9": {
+            "type": "mega_item",
+            "settings": {
+              "enable_block": true,
+              "image": "shopify:\/\/shop_images\/Urban_Belt_Main.png",
+              "name": "Magnetic Urban",
+              "caption": "<p>Elastic Belt<\/p>",
+              "link": "shopify:\/\/products\/urban-belt"
+            }
+          },
+          "546f108e-5941-45f0-b039-646185ab2b3e": {
+            "type": "mega_item",
+            "settings": {
+              "enable_block": true,
+              "image": "shopify:\/\/shop_images\/Explorer_Belt_-_Black_1.png",
+              "name": "Aluminum Explorer",
+              "caption": "<p>Elastic Belt<\/p>",
+              "link": "shopify:\/\/products\/explorer-belt"
+            }
+          },
+          "66538e64-a4f3-43c3-9585-e78dcbb6053c": {
+            "type": "mega_item",
+            "settings": {
+              "enable_block": true,
+              "image": "shopify:\/\/shop_images\/Untitled_design_4.png",
+              "name": "No-Show No-Slip",
+              "caption": "<p>Cushioned Socks<\/p>",
+              "link": "shopify:\/\/products\/cushioned-no-show-socks"
+            }
+          }
+        },
+        "block_order": [
+          "d3fd4efb-50f5-43bb-9a40-01e4e2235980",
+          "94e905c2-7c9f-4756-8762-05d38dcfedfb",
+          "ef86e50b-b317-4ee6-b898-56f3329b51e9",
+          "546f108e-5941-45f0-b039-646185ab2b3e",
+          "66538e64-a4f3-43c3-9585-e78dcbb6053c"
+        ],
         "settings": {
-          "promo_text": "<p><a href=\"\/collections\/yoga-props\" title=\"Yoga Props\">20% OFF ESSENTIALS FOR YOUR AT-HOME WORKOUT<\/a><\/p>",
+          "announcement_bar_enabled": true,
+          "promo_text_1": "<p>Mix & match laces or socks<\/p>",
+          "promo_text_2": "<p><strong>Limited Time: <\/strong>Any 6 for $40 | Any 8  for $50<\/p>",
+          "promo_text_3": "<p><strong>Free Shipping on Orders Over $30<\/strong><\/p>",
+          "ab_text_color": "#000000",
+          "ab_bg_color": "#ffd828",
+          "show_alert_bar": true,
+          "alert_text": "<p><strong>OVER 2 MILLION HAPPY CUSTOMERS<\/strong><\/p>",
+          "alert_text_color": "#ffffff",
+          "alert_bg_color": "#008ffd",
           "social_icons_header": false,
-          "phone_number": "1-800-555-5555",
-          "top_bar_menu": "top-menu",
+          "phone_number": "",
+          "top_bar_menu": "",
           "show_cart": true,
-          "cart_icon": "bag",
-          "show_locale_selector": true,
-          "show_currency_selector": true,
-          "logo_display_width": 160,
-          "logo": "shopify:\/\/shop_images\/logo_home_portland_410x_d790bc90-5d6b-46f7-b235-a0fc4f9b18f1.png",
-          "logo_mobile": "shopify:\/\/shop_images\/logo_mobile.png",
-          "main_linklist": "main-menu",
-          "main_linklist2": "main-menu-2-phase-1",
-          "vertical_menu": false,
-          "dropdown_click": true,
-          "search_enabled": true,
+          "cart_icon": "cart",
+          "show_locale_selector": false,
+          "show_currency_selector": false,
+          "logo_display_width": 70,
+          "logo": "shopify:\/\/shop_images\/xpand-dark-logo_410x1_1b6691b5-3267-44aa-a692-2bb6e607b6ee.png",
+          "mobile_cta_text": "SHOP",
+          "desktop_cta_text": "SHOP",
+          "main_linklist": "primary-desktop-menu",
+          "main_linklist2": "secondary-desktop-menu",
+          "main_mobile_linklist": "mobile-menu",
+          "vertical_menu": true,
+          "dropdown_click": false,
+          "search_enabled": false,
           "fixed_header": true,
           "logo_position": "center",
           "logo_alignment": "center",
@@ -748,47 +840,60 @@
       "footer": {
         "type": "footer",
         "blocks": {
-          "a082d354-b780-43ce-9cac-541366929ad7": {
+          "5be0268b-c32a-48ca-a37b-17c6269c3dba": {
             "type": "logo",
             "settings": {
-              "image": "shopify:\/\/shop_images\/logo_mobile.png",
+              "image": "shopify:\/\/shop_images\/xpand-dark-logo_410x1_1b6691b5-3267-44aa-a692-2bb6e607b6ee.png",
               "text_align": "left",
               "social_icons_footer": false
             }
           },
-          "9667f6e4-d140-4ca2-b5d5-31a4eb4167ad": {
-            "type": "empty",
-            "settings": {
-              "social_icons_footer": false
-            }
-          },
-          "649c129b-3f98-426b-80d4-dd81ff41af60": {
+          "6b67dfaf-4a11-4cec-841c-9a8f8cf2c680": {
             "type": "link_list",
             "settings": {
-              "menu": "footer-phase-1",
+              "menu": "new-footer-menu-3",
               "social_icons_footer": false
             }
           },
-          "1489125420927": {
-            "type": "page",
+          "d0893317-9750-4ea4-b72c-af861abbfa0d": {
+            "type": "link_list",
             "settings": {
-              "page": "courtesy",
-              "social_icons_footer": true
+              "menu": "support",
+              "social_icons_footer": false
+            }
+          },
+          "dccd0d38-bf0a-400b-96e7-1a4a405dd35f": {
+            "type": "link_list",
+            "settings": {
+              "menu": "contact-us",
+              "social_icons_footer": false
+            }
+          },
+          "497be6b9-977d-4850-a627-63549f49fc78": {
+            "type": "newsletter",
+            "settings": {
+              "title": "Sign up & get 10% off",
+              "newsletter_text": "",
+              "show_firstname": false,
+              "show_lastname": false,
+              "show_social": true
             }
           }
         },
         "block_order": [
-          "a082d354-b780-43ce-9cac-541366929ad7",
-          "9667f6e4-d140-4ca2-b5d5-31a4eb4167ad",
-          "649c129b-3f98-426b-80d4-dd81ff41af60",
-          "1489125420927"
+          "5be0268b-c32a-48ca-a37b-17c6269c3dba",
+          "6b67dfaf-4a11-4cec-841c-9a8f8cf2c680",
+          "d0893317-9750-4ea4-b72c-af861abbfa0d",
+          "dccd0d38-bf0a-400b-96e7-1a4a405dd35f",
+          "497be6b9-977d-4850-a627-63549f49fc78"
         ],
         "settings": {
           "copyright_text": "",
-          "display_designed_by": true,
+          "display_designed_by": false,
           "display_payment_methods": false,
-          "show_locale_selector": true,
-          "show_currency_selector": false
+          "show_locale_selector": false,
+          "show_currency_selector": false,
+          "go_to_top": true
         }
       },
       "1489125525070": {
@@ -1004,7 +1109,7 @@
       "newsletter": {
         "type": "newsletter",
         "settings": {
-          "wide_display": true,
+          "wide_display": false,
           "display_first_name": false,
           "display_last_name": false,
           "newsletter_title": "Sign up for our Newsletter",
@@ -1237,7 +1342,6 @@
             "type": "column",
             "settings": {
               "richtext_top": "",
-              "image_top": "shopify:\/\/shop_images\/women.jpg",
               "image_caption_top": "Women's activewear on sale!",
               "image_link_top": "",
               "menu_1": "",
@@ -1248,7 +1352,6 @@
               "menu_3_link": "",
               "menu_4": "",
               "menu_4_link": "",
-              "image_bottom": "",
               "image_caption_bottom": "",
               "image_link_bottom": "",
               "richtext_bottom": ""
@@ -1258,10 +1361,9 @@
             "type": "column",
             "settings": {
               "richtext_top": "",
-              "image_top": "",
               "image_caption_top": "",
               "image_link_top": "",
-              "menu_1": "womens-apparel",
+              "menu_1": "",
               "menu_1_link": "shopify:\/\/collections\/womens-apparel",
               "menu_2": "",
               "menu_2_link": "",
@@ -1269,7 +1371,6 @@
               "menu_3_link": "",
               "menu_4": "",
               "menu_4_link": "",
-              "image_bottom": "",
               "image_caption_bottom": "",
               "image_link_bottom": "",
               "richtext_bottom": ""
@@ -1279,28 +1380,6 @@
             "type": "column",
             "settings": {
               "richtext_top": "",
-              "image_top": "",
-              "image_caption_top": "",
-              "image_link_top": "",
-              "menu_1": "mens-apparel",
-              "menu_1_link": "",
-              "menu_2": "",
-              "menu_2_link": "",
-              "menu_3": "",
-              "menu_3_link": "",
-              "menu_4": "",
-              "menu_4_link": "",
-              "image_bottom": "",
-              "image_caption_bottom": "",
-              "image_link_bottom": "",
-              "richtext_bottom": ""
-            }
-          },
-          "1496938566234": {
-            "type": "column",
-            "settings": {
-              "richtext_top": "",
-              "image_top": "shopify:\/\/shop_images\/men.jpg",
               "image_caption_top": "",
               "image_link_top": "",
               "menu_1": "",
@@ -1311,7 +1390,25 @@
               "menu_3_link": "",
               "menu_4": "",
               "menu_4_link": "",
-              "image_bottom": "",
+              "image_caption_bottom": "",
+              "image_link_bottom": "",
+              "richtext_bottom": ""
+            }
+          },
+          "1496938566234": {
+            "type": "column",
+            "settings": {
+              "richtext_top": "",
+              "image_caption_top": "",
+              "image_link_top": "",
+              "menu_1": "",
+              "menu_1_link": "",
+              "menu_2": "",
+              "menu_2_link": "",
+              "menu_3": "",
+              "menu_3_link": "",
+              "menu_4": "",
+              "menu_4_link": "",
               "image_caption_bottom": "",
               "image_link_bottom": "",
               "richtext_bottom": ""
@@ -1335,10 +1432,9 @@
             "type": "column",
             "settings": {
               "richtext_top": "",
-              "image_top": "",
               "image_caption_top": "",
               "image_link_top": "",
-              "menu_1": "yoga-props",
+              "menu_1": "",
               "menu_1_link": "shopify:\/\/collections\/yoga-props",
               "menu_2": "",
               "menu_2_link": "",
@@ -1346,7 +1442,6 @@
               "menu_3_link": "",
               "menu_4": "",
               "menu_4_link": "",
-              "image_bottom": "",
               "image_caption_bottom": "",
               "image_link_bottom": "",
               "richtext_bottom": ""
@@ -1356,10 +1451,9 @@
             "type": "column",
             "settings": {
               "richtext_top": "",
-              "image_top": "",
               "image_caption_top": "",
               "image_link_top": "",
-              "menu_1": "yoga-mats-towels",
+              "menu_1": "",
               "menu_1_link": "shopify:\/\/collections\/yoga-mats-towels",
               "menu_2": "",
               "menu_2_link": "",
@@ -1367,7 +1461,6 @@
               "menu_3_link": "",
               "menu_4": "",
               "menu_4_link": "",
-              "image_bottom": "",
               "image_caption_bottom": "",
               "image_link_bottom": "",
               "richtext_bottom": ""
@@ -1377,7 +1470,6 @@
             "type": "column",
             "settings": {
               "richtext_top": "",
-              "image_top": "shopify:\/\/shop_images\/cork.png",
               "image_caption_top": "Try our new Cork Yoga Brick for soft but solid support",
               "image_link_top": "shopify:\/\/products\/cork-yoga-brick",
               "menu_1": "",
@@ -1388,7 +1480,6 @@
               "menu_3_link": "",
               "menu_4": "",
               "menu_4_link": "",
-              "image_bottom": "",
               "image_caption_bottom": "",
               "image_link_bottom": "",
               "richtext_bottom": ""
@@ -1398,10 +1489,9 @@
             "type": "column",
             "settings": {
               "richtext_top": "",
-              "image_top": "",
               "image_caption_top": "",
               "image_link_top": "",
-              "menu_1": "yoga-bags",
+              "menu_1": "",
               "menu_1_link": "shopify:\/\/collections\/yoga-bags",
               "menu_2": "",
               "menu_2_link": "",
@@ -1409,7 +1499,6 @@
               "menu_3_link": "",
               "menu_4": "",
               "menu_4_link": "",
-              "image_bottom": "",
               "image_caption_bottom": "",
               "image_link_bottom": "",
               "richtext_bottom": ""
@@ -1419,7 +1508,6 @@
             "type": "column",
             "settings": {
               "richtext_top": "",
-              "image_top": "",
               "image_caption_top": "",
               "image_link_top": "",
               "menu_1": "",
@@ -1430,7 +1518,6 @@
               "menu_3_link": "",
               "menu_4": "",
               "menu_4_link": "",
-              "image_bottom": "",
               "image_caption_bottom": "",
               "image_link_bottom": "",
               "richtext_bottom": "<p>Check out our full lineup of yoga accessories to help you with your daily meditation practice and fitness goals...<\/p>"
@@ -1453,10 +1540,9 @@
         "blocks": {
           "1497044240407": {
             "type": "column",
-            "disabled": true,
             "settings": {
-              "richtext_top": "",
-              "image_top": "shopify:\/\/shop_images\/pic3_538c3e3b-48f3-4bee-9c2b-428fc7f69384.jpg",
+              "richtext_top": "<p>test<\/p>",
+              "image_top": "shopify:\/\/shop_images\/Navigation_Banner_-_Round-min.png",
               "image_caption_top": "Time to get excited about our new collection for Men!",
               "image_link_top": "shopify:\/\/collections\/mens-apparel",
               "menu_1": "",
@@ -1478,9 +1564,9 @@
               "richtext_top": "",
               "image_caption_top": "",
               "image_link_top": "",
-              "menu_1": "womens-apparel",
+              "menu_1": "",
               "menu_1_link": "shopify:\/\/collections\/womens-apparel",
-              "menu_2": "mens-apparel",
+              "menu_2": "",
               "menu_2_link": "shopify:\/\/collections\/mens-apparel",
               "menu_3": "",
               "menu_3_link": "",
@@ -1497,9 +1583,9 @@
               "richtext_top": "",
               "image_caption_top": "",
               "image_link_top": "",
-              "menu_1": "yoga-bags",
+              "menu_1": "",
               "menu_1_link": "shopify:\/\/collections\/yoga-bags",
-              "menu_2": "yoga-mats-towels",
+              "menu_2": "",
               "menu_2_link": "shopify:\/\/collections\/yoga-mats-towels",
               "menu_3": "",
               "menu_3_link": "",
@@ -1516,9 +1602,9 @@
               "richtext_top": "",
               "image_caption_top": "",
               "image_link_top": "",
-              "menu_1": "yoga-props",
+              "menu_1": "",
               "menu_1_link": "shopify:\/\/collections\/yoga-props",
-              "menu_2": "shop-our-deals",
+              "menu_2": "",
               "menu_2_link": "shopify:\/\/collections\/sale",
               "menu_3": "",
               "menu_3_link": "",
@@ -1533,7 +1619,6 @@
             "type": "column",
             "settings": {
               "richtext_top": "",
-              "image_top": "shopify:\/\/shop_images\/team-2.jpg",
               "image_caption_top": "Meet our lovely team!",
               "image_link_top": "shopify:\/\/pages\/our-team",
               "menu_1": "",
@@ -1863,6 +1948,107 @@
           "newsletter_section_text_align": "center",
           "css_class": "",
           "custom_css": ""
+        }
+      },
+      "faq": {
+        "type": "faq",
+        "blocks": {
+          "4f441e93-84fd-409c-835f-fb5941b6a7ee": {
+            "type": "content",
+            "settings": {
+              "title": "Will Xpand Laces work on my shoes or boots?",
+              "answer": "<p>Xpand Lacing System works on all types of shoes - from kids shoes, adults sneakers, Timberlands to  high-top boots.<\/p>"
+            }
+          },
+          "5797509b-c830-4db3-a805-b1b9c992ee19": {
+            "type": "content",
+            "settings": {
+              "title": "Are the Xpand Laces adjustable?",
+              "answer": "<p>Yes! Finding the perfect fit is easy with Xpand Laces. We recommend trying out the length before you trim the laces. Always set the initial adjustment on the loose side, so that you can always tighten them up if needed.<\/p>"
+            }
+          },
+          "9878da8d-a50b-41d2-98dd-460c53047d3c": {
+            "type": "content",
+            "settings": {
+              "title": "How long are the laces?",
+              "answer": "<p>Xpand Laces are 52 inches long, and can stretch out to over twice that length, which makes them long enough for all types of shoes or boots.<\/p>"
+            }
+          },
+          "33625dfd-aa9d-492d-8d17-ab384295c3ee": {
+            "type": "content",
+            "settings": {
+              "title": "What is your return and exchange policy?",
+              "answer": "<p>Xpand offers a 90 day satisfaction guarantee. If you are not 100% satisfied for any reason, we will refund your order. No questions asked!<\/p>"
+            }
+          }
+        },
+        "block_order": [
+          "4f441e93-84fd-409c-835f-fb5941b6a7ee",
+          "5797509b-c830-4db3-a805-b1b9c992ee19",
+          "9878da8d-a50b-41d2-98dd-460c53047d3c",
+          "33625dfd-aa9d-492d-8d17-ab384295c3ee"
+        ],
+        "settings": {
+          "sec_bg": "#f7f7f7",
+          "title": "Frequently Asked Questions",
+          "link": "shopify:\/\/pages\/faqs",
+          "link_text": "SEE ALL FAQs",
+          "sec_top": 80,
+          "sec_bottom": 80
+        }
+      },
+      "how-it-work-tab": {
+        "type": "how-it-work-tab",
+        "blocks": {
+          "2d02bed7-975f-4adb-a8ae-a9a75fca3c82": {
+            "type": "tab",
+            "settings": {
+              "title": "Original No-Tie",
+              "iframe_video_1": "https:\/\/www.youtube.com\/watch?v=eMSbyA9wNBo",
+              "iframe_video_2": "https:\/\/www.youtube.com\/watch?v=xp-4EMkwNQQ",
+              "iframe_video_3": "",
+              "iframe_video_4": ""
+            }
+          },
+          "3f03cdd5-42e0-41dd-8ae4-c5724993cd5a": {
+            "type": "tab",
+            "settings": {
+              "title": "Quick-Release",
+              "iframe_video_1": "https:\/\/www.youtube.com\/watch?v=8hMcup2C-ds",
+              "iframe_video_2": "",
+              "iframe_video_3": "",
+              "iframe_video_4": ""
+            }
+          },
+          "7753067e-4602-4002-b21c-afb61c758aac": {
+            "type": "tab",
+            "settings": {
+              "title": "Urban belt",
+              "iframe_video_1": "https:\/\/www.youtube.com\/watch?v=c3k8GxAx5HE",
+              "iframe_video_2": "",
+              "iframe_video_3": "",
+              "iframe_video_4": ""
+            }
+          },
+          "fa7ae70a-827e-4924-bd8e-929eaf0ab723": {
+            "type": "tab",
+            "settings": {
+              "title": "Explorer belt",
+              "iframe_video_1": "https:\/\/www.youtube.com\/watch?v=u8ZQmC5kzdY",
+              "iframe_video_2": "",
+              "iframe_video_3": "",
+              "iframe_video_4": ""
+            }
+          }
+        },
+        "block_order": [
+          "2d02bed7-975f-4adb-a8ae-a9a75fca3c82",
+          "3f03cdd5-42e0-41dd-8ae4-c5724993cd5a",
+          "7753067e-4602-4002-b21c-afb61c758aac",
+          "fa7ae70a-827e-4924-bd8e-929eaf0ab723"
+        ],
+        "settings": {
+          "title": "How It Works"
         }
       }
     },

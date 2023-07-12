@@ -1,0 +1,32 @@
+{% layout none %}
+{% comment %}
+<div id="temp-cart-data">
+<script>
+    var cartTempObj = {
+    "cartobj": [
+        {% for item in cart.items %}
+            {
+                "data_line_id": {{ forloop.index }},
+                "data_variant_id": {{ item.id }},
+                "data_tags":"
+                {% for tag in item.product.tags %}
+                  {% if tag == 'BOGOOFF' %}
+                    {{ tag }}{% endif %}
+                {% endfor %}"
+            }{% unless forloop.last %},{% endunless %}
+        {% endfor %}
+    ]
+}
+</script>
+</div>
+{% endcomment %}
+
+<div id="temp-cart-data">
+{% for item in cart.items %}
+<div
+class="cart-temp-data"
+data-line-id="{{ forloop.index }}"
+data-variant-id="{{ item.id }}"
+data-tags="{% for tag in item.product.tags %}{% if tag =='BOGOOFF' %}{{ tag }}{% endif %}{% endfor %}"></div>
+{% endfor %}
+</div>

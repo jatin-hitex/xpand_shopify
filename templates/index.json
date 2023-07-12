@@ -1,243 +1,119 @@
 {
   "sections": {
-    "image-with-text-overlay-1": {
-      "type": "image-with-text-overlay",
+    "b619a8be-7c8f-49e8-9051-78f443438c49": {
+      "type": "slideshow",
+      "blocks": {
+        "template--15136041599087__b619a8be-7c8f-49e8-9051-78f443438c49-16825912694215c06d-0": {
+          "type": "image",
+          "settings": {
+            "type": "video",
+            "video_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/1206\/8416\/files\/Updated_Stop_Motion_Flat_Laces.mp4?v=1595018607",
+            "video_poster": "shopify:\/\/shop_images\/Thumbnail_0d247f6c-11fb-4052-bbca-dd589fe25ec9.jpg",
+            "pretext": "",
+            "title": "",
+            "subtitle": "",
+            "button1": "",
+            "button1_link": "",
+            "button1_style": "global-button--banner",
+            "button2": "",
+            "button2_link": "",
+            "button2_style": "global-button--banner",
+            "text_position": "center",
+            "text_align": "center",
+            "caption_content_background": "original"
+          }
+        }
+      },
+      "block_order": [
+        "template--15136041599087__b619a8be-7c8f-49e8-9051-78f443438c49-16825912694215c06d-0"
+      ],
       "settings": {
         "wide_display": true,
-        "image": "shopify:\/\/shop_images\/hero-banner-stocksy.jpg",
-        "pretext": "",
-        "title": "Everyday Yoga Essentials",
-        "subtitle": "<p>To assist and elevate your practice<\/p>",
-        "button1": "shop clothing",
-        "button1_link": "shopify:\/\/collections\/apparel",
-        "button1_style": "global-button--banner-highlighted",
-        "button2": "shop props",
-        "button2_link": "shopify:\/\/collections\/yoga-props",
-        "button2_style": "global-button--banner-highlighted",
-        "text_position": "left",
-        "text_align": "left",
-        "caption_content_background": "original",
+        "slideshow_text_animation": "",
+        "slideshow_animation": "slide",
+        "slideshow_speed": 6,
+        "activate_adaptiveHeight": false,
         "mobile_text_below_image": false,
-        "mobile_text_color": "",
+        "mobile_text_color": "#03a196",
         "css_class": "",
         "custom_css": ""
       }
     },
-    "1631543569c907f287": {
-      "type": "divider",
+    "df8ceda1-9819-455f-98a1-34334a39aa53": {
+      "type": "text-banner",
       "settings": {
-        "divider_spacing": 20,
-        "divider_border": false,
-        "css_class": "",
-        "custom_css": ""
+        "title": "NEVER TIE YOUR SHOES AGAIN",
+        "text": "<p><strong>No-Tie Shoelace System for Adults & Kids<\/strong><\/p>",
+        "primary_cta_text": "SHOP NOW",
+        "primary_cta_link": "shopify:\/\/products\/no-tie-original-elastic-lacing-system",
+        "primary_cta_text_color": "#ffffff",
+        "primary_cta_bg_color": "#008ffd",
+        "enable_secondary_cta": true,
+        "secondary_cta_text": "HOW IT WORKS",
+        "secondary_cta_link": "shopify:\/\/pages\/install-video",
+        "secondary_cta_text_color": "#ffffff",
+        "secondary_cta_bg_color": "#a6b4be"
       }
     },
-    "featured-text-1": {
-      "type": "featured-text",
-      "settings": {
-        "title": "High Quality and Mindful Products",
-        "content": "<p>We aim to provide you with support, ease and confidence<br\/>so you can stay connected and focused on your yoga practice.<\/p>",
-        "button_label": "Learn more",
-        "button_link": "shopify:\/\/pages\/our-story",
-        "text_size": "featured_text",
-        "text_alignment": "center",
-        "css_class": "",
-        "custom_css": ""
-      }
-    },
-    "1631543635c1f072b3": {
-      "type": "divider",
-      "settings": {
-        "divider_spacing": 20,
-        "divider_border": false,
-        "css_class": "",
-        "custom_css": ""
-      }
-    },
-    "1631543637f7855f0e": {
-      "type": "featured-collection",
-      "settings": {
-        "title": "",
-        "collection_description": false,
-        "collection": "new",
-        "collection_style": "slider",
-        "products_per": 3,
-        "products_limit": 12,
-        "css_class": "",
-        "custom_css": ""
-      }
-    },
-    "165790005380b9589d": {
-      "type": "shoppable-image",
+    "4f32cbc4-47c1-4a16-9034-e75c8f8be3fc": {
+      "type": "logo-bar",
       "blocks": {
-        "1657900053c86da342-0": {
-          "type": "shoppable-image",
+        "template--15136041599087__4f32cbc4-47c1-4a16-9034-e75c8f8be3fc-1682596656447a8bc5-0": {
+          "type": "logo_image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/shoppable-3.jpg",
-            "card_styling": "square",
-            "elements_outline": true,
-            "hotspot_color": "",
-            "product_1": "refined-tee",
-            "image_alignment_1": "center-center",
-            "x_axis_1": 23,
-            "y_axis_1": 69,
-            "button_label_1": "View product",
-            "product_2": "presence-top",
-            "image_alignment_2": "center-center",
-            "x_axis_2": 66,
-            "y_axis_2": 62,
-            "button_label_2": "View product",
-            "product_3": "skye-barre-leggings-black",
-            "image_alignment_3": "center-center",
-            "x_axis_3": 75,
-            "y_axis_3": 33,
-            "button_label_3": "View product",
-            "product_4": "athletic-maxtowel",
-            "image_alignment_4": "center-center",
-            "x_axis_4": 51,
-            "y_axis_4": 11,
-            "button_label_4": "View product",
-            "call_to_action": "Bring up the intensity",
-            "subtitle": "",
-            "text_align": "center",
-            "button_label": "Shop what's new",
-            "button_link": "shopify:\/\/collections\/new",
-            "button_style": "global-button--primary",
-            "cta_bg_color": "#f2f2f2"
+            "image": "shopify:\/\/shop_images\/today_show_010ba4e0-504a-4bcd-94d4-dcbd3802eaff.png",
+            "link": "https:\/\/www.today.com\/home\/10-must-have-products-make-even-busiest-mornings-easy-t137729",
+            "lcn-content": "<p>The Today Show<\/p>"
           }
         },
-        "7772ae39-fc7d-4905-b370-98bdb9f83c4f": {
-          "type": "shoppable-image",
+        "template--15136041599087__4f32cbc4-47c1-4a16-9034-e75c8f8be3fc-1682596656447a8bc5-1": {
+          "type": "logo_image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/shoppable-4.jpg",
-            "card_styling": "square",
-            "elements_outline": true,
-            "hotspot_color": "",
-            "product_1": "crop-top",
-            "image_alignment_1": "center-center",
-            "x_axis_1": 41,
-            "y_axis_1": 57,
-            "button_label_1": "View product",
-            "product_2": "stretch-leggings",
-            "image_alignment_2": "center-center",
-            "x_axis_2": 73,
-            "y_axis_2": 46,
-            "button_label_2": "View product",
-            "product_3": "performance-cork-yoga-mat-5mm",
-            "image_alignment_3": "center-center",
-            "x_axis_3": 59,
-            "y_axis_3": 13,
-            "button_label_3": "View product",
-            "product_4": "grippy-yoga-gloves",
-            "image_alignment_4": "center-center",
-            "x_axis_4": 9,
-            "y_axis_4": 85,
-            "button_label_4": "View product",
-            "call_to_action": "Cool down in comfort",
-            "subtitle": "",
-            "text_align": "center",
-            "button_label": "Shop women",
-            "button_link": "shopify:\/\/collections\/womens-apparel",
-            "button_style": "global-button--primary",
-            "cta_bg_color": "#f2f2f2"
+            "image": "shopify:\/\/shop_images\/Ellen_1_3f85b3d6-3179-4276-91eb-023d6f292629.png",
+            "link": "https:\/\/twitter.com\/TheEllenShow\/status\/994695612812611584",
+            "lcn-content": "<p>Ellen DeGeneres<\/p>"
+          }
+        },
+        "template--15136041599087__4f32cbc4-47c1-4a16-9034-e75c8f8be3fc-1682596656447a8bc5-2": {
+          "type": "logo_image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/50777438-90041a00-12d6-11e9-9e68-d06f82c61f25_3166b84a-248d-4ded-8be7-dd934af86662.png",
+            "link": "https:\/\/www.cbc.ca\/news\/business\/shoelace-shoes-fitness-fashion-health-foot-health-podiatry-christmas-gifts-1.4949031",
+            "lcn-content": "<p>CBC National<\/p>"
+          }
+        },
+        "template--15136041599087__4f32cbc4-47c1-4a16-9034-e75c8f8be3fc-1682596656447a8bc5-3": {
+          "type": "logo_image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Kickstarter_logo1_1_618076b8-15dd-4391-985a-d29a6142fd08.png",
+            "link": "https:\/\/www.kickstarter.com\/projects\/914635363\/xpand-lacing-system",
+            "lcn-content": "<p>The $1.2 Million<\/p><p>Kickstarter success<\/p>"
+          }
+        },
+        "1a162373-a611-4745-94a3-8ac5142ae7b4": {
+          "type": "logo_image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Breakfast_Television_logo_1_4a1b4307-72f7-4522-af5f-335ff11828d4.png",
+            "link": "https:\/\/www.bttoronto.ca\/videos\/the-6-dad-is-in-the-house\/",
+            "lcn-content": "<p>Breakfast Television<\/p>"
           }
         }
       },
       "block_order": [
-        "1657900053c86da342-0",
-        "7772ae39-fc7d-4905-b370-98bdb9f83c4f"
+        "template--15136041599087__4f32cbc4-47c1-4a16-9034-e75c8f8be3fc-1682596656447a8bc5-0",
+        "template--15136041599087__4f32cbc4-47c1-4a16-9034-e75c8f8be3fc-1682596656447a8bc5-1",
+        "template--15136041599087__4f32cbc4-47c1-4a16-9034-e75c8f8be3fc-1682596656447a8bc5-2",
+        "template--15136041599087__4f32cbc4-47c1-4a16-9034-e75c8f8be3fc-1682596656447a8bc5-3",
+        "1a162373-a611-4745-94a3-8ac5142ae7b4"
       ],
       "settings": {
-        "wide_display": false,
-        "slideshow_text_animation": "fadeInDown",
-        "slideshow_animation": "fade",
-        "slideshow_speed": 0,
-        "title": "",
-        "quick_view": true,
-        "bottom_bar": true,
-        "product_thumbnails": true,
-        "cta": true,
-        "bottom_bar_image_style": "natural",
+        "title": "As Featured On",
+        "layout": "slider",
+        "sec_bg": "#f1f2f2",
         "css_class": "",
-        "custom_css": ""
-      }
-    },
-    "163154378857b6bff2": {
-      "type": "divider",
-      "settings": {
-        "divider_spacing": 25,
-        "divider_border": false,
-        "css_class": "",
-        "custom_css": ""
-      }
-    },
-    "16315436514b9a8b41": {
-      "type": "featured-promotions",
-      "blocks": {
-        "16315436514b9a8b41-0": {
-          "type": "image",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/shop-women-1.jpg",
-            "link": "shopify:\/\/collections\/womens-apparel",
-            "title": "Shop Women",
-            "text": "",
-            "button_label": ""
-          }
-        },
-        "16315436514b9a8b41-1": {
-          "type": "image",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/shop-men-1_1200c002-ead0-48a0-8715-e9be76fd9bb6.jpg",
-            "link": "shopify:\/\/collections\/mens-apparel",
-            "title": "shop men",
-            "text": "",
-            "button_label": ""
-          }
-        }
-      },
-      "block_order": [
-        "16315436514b9a8b41-0",
-        "16315436514b9a8b41-1"
-      ],
-      "settings": {
-        "wide_display": false,
-        "promo_text_on_image_enabled": true,
-        "featured_promos_per_row": 2,
-        "featured_links_animation": "fadeIn",
-        "feature_style": "square",
-        "css_class": "",
-        "custom_css": ""
-      }
-    },
-    "1631543981571b53f1": {
-      "type": "divider",
-      "settings": {
-        "divider_spacing": 20,
-        "divider_border": false,
-        "css_class": "",
-        "custom_css": ""
-      }
-    },
-    "16315439842a06c96b": {
-      "type": "featured-collection",
-      "settings": {
-        "title": "",
-        "collection_description": false,
-        "collection": "tops-1",
-        "collection_style": "slider",
-        "products_per": 3,
-        "products_limit": 12,
-        "css_class": "",
-        "custom_css": ""
-      }
-    },
-    "163154403243d91c4d": {
-      "type": "divider",
-      "settings": {
-        "divider_spacing": 10,
-        "divider_border": false,
-        "css_class": "",
-        "custom_css": ""
+        "custom_css": "",
+        "sec_top": 30,
+        "sec_bottom": 20
       }
     },
     "16315440459bd794b1": {
@@ -247,78 +123,320 @@
           "type": "text_block",
           "settings": {
             "enable_image": true,
-            "image": "shopify:\/\/shop_images\/yoga-mats.jpg",
-            "title": "Eco-friendly Mats",
-            "heading_size": "large_text",
-            "text": "<p>Innovative with extra cushioning, our mats are both supportive and sustainably sourced – meet your new go-to mat.<\/p>",
-            "button_label": "Shop Now",
-            "button_link": "shopify:\/\/collections\/mats",
-            "align_text": "left",
-            "border_style": "none"
+            "image": "shopify:\/\/shop_images\/Flat_Lace_3_1.jpg",
+            "title": "Original No-Tie <br> Lacing System",
+            "heading_size": "regular_text",
+            "text": "",
+            "button_label": "SHOP FLAT LACES",
+            "button_link": "shopify:\/\/products\/no-tie-original-elastic-lacing-system",
+            "align_text": "center",
+            "border_style": "none",
+            "link_text_color": "#ffffff",
+            "link_bg_color": "#0090fc"
           }
         },
         "16315440459bd794b1-1": {
           "type": "text_block",
           "settings": {
             "enable_image": true,
-            "image": "shopify:\/\/shop_images\/yoga-props.jpg",
-            "title": "Helpful Extras",
-            "heading_size": "large_text",
-            "text": "<p>From yoga blocks, to bags and socks – simple designs that are perfect for almost anything related to your yoga practice.<\/p>",
-            "button_label": "Shop Now",
-            "button_link": "shopify:\/\/collections\/accessories",
-            "align_text": "left",
-            "border_style": "none"
+            "image": "shopify:\/\/shop_images\/Round_Lace_1.jpg",
+            "title": "Quick-Release <br> Lacing System",
+            "heading_size": "regular_text",
+            "text": "",
+            "button_label": "SHOP ROUND LACES",
+            "button_link": "shopify:\/\/products\/quick-release-round-lacing-system",
+            "align_text": "center",
+            "border_style": "none",
+            "link_text_color": "#ffffff",
+            "link_bg_color": "#0090fc"
+          }
+        },
+        "25fb6d2d-c187-4690-b0f2-b761d614ff8b": {
+          "type": "text_block",
+          "settings": {
+            "enable_image": true,
+            "image": "shopify:\/\/shop_images\/Urban_belt_Insert_for_Website-smallest.jpg",
+            "title": "Magnetic Urban <br> Elastic Belt",
+            "heading_size": "regular_text",
+            "text": "",
+            "button_label": "SHOP URBAN BELT",
+            "button_link": "shopify:\/\/products\/urban-belt",
+            "align_text": "center",
+            "border_style": "none",
+            "link_text_color": "#ffffff",
+            "link_bg_color": "#0090fc"
+          }
+        },
+        "bd3a6469-81d2-4769-bf97-fcdfe27706ab": {
+          "type": "text_block",
+          "settings": {
+            "enable_image": true,
+            "image": "shopify:\/\/shop_images\/noshowsockss_1.png",
+            "title": "Cushioned <br> No-Show Socks",
+            "heading_size": "regular_text",
+            "text": "",
+            "button_label": "SHOP SOCKS",
+            "button_link": "shopify:\/\/products\/cushioned-no-show-socks",
+            "align_text": "center",
+            "border_style": "none",
+            "link_text_color": "#ffffff",
+            "link_bg_color": "#0090fc"
           }
         }
       },
       "block_order": [
         "16315440459bd794b1-0",
-        "16315440459bd794b1-1"
+        "16315440459bd794b1-1",
+        "25fb6d2d-c187-4690-b0f2-b761d614ff8b",
+        "bd3a6469-81d2-4769-bf97-fcdfe27706ab"
       ],
       "settings": {
+        "layout": "grid",
         "title": "",
-        "css_class": "",
+        "link_text": "",
+        "link": "",
+        "link_text_color": "#ffffff",
+        "link_bg_color": "#ff085a",
+        "sec_bg": "#f1f2f2",
+        "css_class": "featured-box",
+        "custom_css": "",
+        "sec_top": 30,
+        "sec_bottom": 0
+      }
+    },
+    "24a492b5-ae5b-4733-8f59-11b8eba2f0de": {
+      "type": "text-columns-with-images",
+      "blocks": {
+        "template--15136041599087__24a492b5-ae5b-4733-8f59-11b8eba2f0de-1682601552bc1c764e-0": {
+          "type": "text_block",
+          "settings": {
+            "enable_image": true,
+            "image": "shopify:\/\/shop_images\/icon1.png",
+            "title": "Secure Fit",
+            "heading_size": "regular_text",
+            "text": "<p>Set it and forget it with our patented lace anchor technology. Zero distractions, perfect support, all day long.<\/p>",
+            "button_label": "",
+            "button_link": "",
+            "align_text": "center",
+            "border_style": "none",
+            "link_text_color": "",
+            "link_bg_color": ""
+          }
+        },
+        "template--15136041599087__24a492b5-ae5b-4733-8f59-11b8eba2f0de-1682601552bc1c764e-1": {
+          "type": "text_block",
+          "settings": {
+            "enable_image": true,
+            "image": "shopify:\/\/shop_images\/icon2.png",
+            "title": "Adjustable Tension",
+            "heading_size": "regular_text",
+            "text": "<p>Designed to move with you and work for you. Need more compression? Need more room? Xpand laces are easy to adjust on the fly.<\/p>",
+            "button_label": "",
+            "button_link": "",
+            "align_text": "center",
+            "border_style": "none",
+            "link_text_color": "",
+            "link_bg_color": ""
+          }
+        },
+        "279c2789-0b7e-4580-8d18-ff137becebac": {
+          "type": "text_block",
+          "settings": {
+            "enable_image": true,
+            "image": "shopify:\/\/shop_images\/icon3.png",
+            "title": "One Size Fits All",
+            "heading_size": "regular_text",
+            "text": "<p>No need to search for the right size and hope for the best. Whether you’re shopping for an adult or a child, sneakers, or boots, you can’t go wrong. Trim to your desired length and you’re good to go!<\/p>",
+            "button_label": "",
+            "button_link": "",
+            "align_text": "center",
+            "border_style": "none",
+            "link_text_color": "",
+            "link_bg_color": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--15136041599087__24a492b5-ae5b-4733-8f59-11b8eba2f0de-1682601552bc1c764e-0",
+        "template--15136041599087__24a492b5-ae5b-4733-8f59-11b8eba2f0de-1682601552bc1c764e-1",
+        "279c2789-0b7e-4580-8d18-ff137becebac"
+      ],
+      "settings": {
+        "layout": "grid",
+        "title": "Feel the Differnece",
+        "link_text": "",
+        "link": "",
+        "link_text_color": "#ffffff",
+        "link_bg_color": "#ff085a",
+        "sec_bg": "",
+        "css_class": "featured-banner-area",
+        "custom_css": "",
+        "sec_top": 40,
+        "sec_bottom": 40
+      }
+    },
+    "d11d965a-e275-4b0a-8fcd-69482d0027c3": {
+      "type": "custom-html",
+      "settings": {
+        "title": "Over 2 Million Customers",
+        "custom_html": "<div id=\"stamped-reviews-widget\" data-widget-type=\"visual-gallery\" data-feed-type=\"carousel\" data-min-rating=\"3\" data-with-photos=\"true\"><\/div>",
+        "css_class": "stamped-reviwed-section",
         "custom_css": ""
       }
     },
-    "1631544130288fe1ad": {
-      "type": "divider",
+    "f17be46f-e031-40af-8cac-bb37b68eb353": {
+      "type": "text-columns-with-images",
+      "blocks": {
+        "template--15136041599087__f17be46f-e031-40af-8cac-bb37b68eb353-168268913550fe9399-0": {
+          "type": "text_block",
+          "settings": {
+            "enable_image": true,
+            "image": "shopify:\/\/shop_images\/icons-01.png",
+            "title": "",
+            "heading_size": "regular_text",
+            "text": "<p>Try Xpand<\/p><p>for 90 days<\/p>",
+            "button_label": "",
+            "button_link": "",
+            "align_text": "center",
+            "border_style": "none",
+            "link_text_color": "",
+            "link_bg_color": ""
+          }
+        },
+        "template--15136041599087__f17be46f-e031-40af-8cac-bb37b68eb353-168268913550fe9399-1": {
+          "type": "text_block",
+          "settings": {
+            "enable_image": true,
+            "image": "shopify:\/\/shop_images\/icons-03.png",
+            "title": "",
+            "heading_size": "regular_text",
+            "text": "<p>Free North America<\/p><p>shipping<\/p>",
+            "button_label": "",
+            "button_link": "",
+            "align_text": "center",
+            "border_style": "none",
+            "link_text_color": "",
+            "link_bg_color": ""
+          }
+        },
+        "9e06b700-1a99-4dd6-8075-38a88fd35c3b": {
+          "type": "text_block",
+          "settings": {
+            "enable_image": true,
+            "image": "shopify:\/\/shop_images\/icons-02.png",
+            "title": "",
+            "heading_size": "regular_text",
+            "text": "<p>100% money back<\/p><p>guarantee!<\/p>",
+            "button_label": "",
+            "button_link": "",
+            "align_text": "center",
+            "border_style": "none",
+            "link_text_color": "",
+            "link_bg_color": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--15136041599087__f17be46f-e031-40af-8cac-bb37b68eb353-168268913550fe9399-0",
+        "template--15136041599087__f17be46f-e031-40af-8cac-bb37b68eb353-168268913550fe9399-1",
+        "9e06b700-1a99-4dd6-8075-38a88fd35c3b"
+      ],
       "settings": {
-        "divider_spacing": 0,
-        "divider_border": false,
-        "css_class": "",
-        "custom_css": ""
+        "layout": "slider",
+        "title": "100% Satisfaction Guarantee",
+        "link_text": "SHOP NOW",
+        "link": "shopify:\/\/products\/no-tie-original-elastic-lacing-system",
+        "link_text_color": "#ffffff",
+        "link_bg_color": "#008ffd",
+        "sec_bg": "#42aca7",
+        "css_class": "three-item-banner",
+        "custom_css": "",
+        "sec_top": 25,
+        "sec_bottom": 25
       }
     },
-    "1631544138de39fa71": {
-      "type": "newsletter",
+    "18848a44-fcb3-477f-bebd-00e85475a9a6": {
+      "type": "featured-products",
+      "blocks": {
+        "5e7e5bbf-e688-45ae-a44f-58090cde80a6": {
+          "type": "product",
+          "settings": {
+            "enable_block": true,
+            "product": "no-tie-original-elastic-lacing-system",
+            "variant_id": "19252571471983",
+            "image": "shopify:\/\/shop_images\/Black_Pop_colors.jpg",
+            "title": "ORIGINAL NO-TIE LACING SYSTEM",
+            "caption": "<p>BLACK<\/p>",
+            "font_color": "#ffffff",
+            "link_text": "view product"
+          }
+        },
+        "67f505ba-bb8e-48ae-a05c-3653251384cd": {
+          "type": "product",
+          "settings": {
+            "enable_block": true,
+            "product": "no-tie-original-elastic-lacing-system",
+            "variant_id": "19252660273263",
+            "image": "shopify:\/\/shop_images\/White_Pop.jpg",
+            "title": "ORIGINAL NO-TIE LACING SYSTEM",
+            "caption": "<p>WHITE<\/p>",
+            "font_color": "#ffffff",
+            "link_text": "view product"
+          }
+        },
+        "48b194da-6e47-44a2-98da-375a201afd4f": {
+          "type": "product",
+          "settings": {
+            "enable_block": true,
+            "product": "no-tie-original-elastic-lacing-system",
+            "variant_id": "19252660764783",
+            "image": "shopify:\/\/shop_images\/Red_Pop_colors.jpg",
+            "title": "ORIGINAL NO-TIE LACING SYSTEM",
+            "caption": "<p>RED<\/p>",
+            "font_color": "#000000",
+            "link_text": "view product"
+          }
+        },
+        "9d331677-d522-4786-ae0f-ad6547983b98": {
+          "type": "product",
+          "settings": {
+            "enable_block": true,
+            "product": "quick-release-round-lacing-system",
+            "variant_id": "19252728004719",
+            "image": "shopify:\/\/shop_images\/Blue_Pop_colors.jpg",
+            "title": "QUICK-RELEASE LACING SYSTEM",
+            "caption": "<p>TRUE BLUE<\/p>",
+            "font_color": "#ffffff",
+            "link_text": "view product"
+          }
+        }
+      },
+      "block_order": [
+        "5e7e5bbf-e688-45ae-a44f-58090cde80a6",
+        "67f505ba-bb8e-48ae-a05c-3653251384cd",
+        "48b194da-6e47-44a2-98da-375a201afd4f",
+        "9d331677-d522-4786-ae0f-ad6547983b98"
+      ],
       "settings": {
-        "wide_display": true,
-        "display_first_name": false,
-        "display_last_name": false,
-        "newsletter_title": "Sign up today!",
-        "newsletter_text": "<p>Subscribe to our newsletter for exclusive deals and early access.<\/p>",
-        "newsletter_section_text_align": "center",
-        "css_class": "",
-        "custom_css": ""
+        "title": "Best Sellers",
+        "link_text": "VIEW ALL COLORS",
+        "link": "shopify:\/\/products\/no-tie-original-elastic-lacing-system",
+        "link_text_color": "#ffffff",
+        "link_bg_color": "#008ffd",
+        "sec_bg": "#f3f4f4",
+        "sec_top": 45,
+        "sec_bottom": 45
       }
     }
   },
   "order": [
-    "image-with-text-overlay-1",
-    "1631543569c907f287",
-    "featured-text-1",
-    "1631543635c1f072b3",
-    "1631543637f7855f0e",
-    "165790005380b9589d",
-    "163154378857b6bff2",
-    "16315436514b9a8b41",
-    "1631543981571b53f1",
-    "16315439842a06c96b",
-    "163154403243d91c4d",
+    "b619a8be-7c8f-49e8-9051-78f443438c49",
+    "df8ceda1-9819-455f-98a1-34334a39aa53",
+    "4f32cbc4-47c1-4a16-9034-e75c8f8be3fc",
     "16315440459bd794b1",
-    "1631544130288fe1ad",
-    "1631544138de39fa71"
+    "24a492b5-ae5b-4733-8f59-11b8eba2f0de",
+    "d11d965a-e275-4b0a-8fcd-69482d0027c3",
+    "f17be46f-e031-40af-8cac-bb37b68eb353",
+    "18848a44-fcb3-477f-bebd-00e85475a9a6"
   ]
 }

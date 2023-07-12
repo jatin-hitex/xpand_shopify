@@ -1,6 +1,52 @@
 {% comment %}
 Set the extension of your color files below. Use 'png', 'jpeg', 'jpg' or 'gif'.
 {% endcomment %}
+{% if template.suffix == 'primary' or template.suffix == 'primary-alternate' %}
+  <style>
+    .product-block.product-block--price {
+      align-items: flex-start;
+    }
+  </style>
+{% endif %}
+
+{% assign prodType = product.type | downcase %}
+{% if template.suffix != 'primary' or template.suffix == 'primary-alternate' %}
+  <style>
+    .product-block.product-block--price {
+      align-items: flex-start;
+    }
+  </style>
+
+  {% assign colors_jsonData = product.metafields.global.colors_group.value %}
+  <p style="display: none;">{{ colors_jsonData }}</p>
+  {% if prodType contains 'flat' %}
+    {% assign colorinit = 'flat-' %}
+  {% else %}
+    {% assign colorinit = 'round-' %}
+  {% endif %}
+  {% if colors_jsonData != blank %}
+    <div class="pdp-custom-swatch">
+      {% for groupItem in colors_jsonData %}
+        {% assign color_group = groupItem.group %}
+        {% assign colors_list = groupItem.colors | remove: ']' | remove: '[' | split: ',' %}
+        <h3 class="pdp-custom-swatch-heading">{{ color_group }}</h3>
+        <ul class="pdp-custom-swatch-lists xyz">
+          {% for list in colors_list %}
+            {% assign itemName = list | handleize | append: '.png' | prepend: colorinit | downcase | asset_url %}
+            <li class="pdp-custom-swatch-list-item" data-color="{{ list | remove: '"' | strip | downcase }}">
+              <img
+                loading="lazy"
+                src="{{ itemName }}"
+                alt="{{ list | remove: '"'  | strip }}" /></li>
+          {% endfor %}
+        </ul>
+
+      {% endfor %}
+    </div>
+  {% endif %}
+{% endif %}
+
+
 
 {%- assign file_extension = 'png' -%}
 {%- assign swatch = option -%}
@@ -20,7 +66,11 @@ Set the extension of your color files below. Use 'png', 'jpeg', 'jpg' or 'gif'.
   {% endif %}
 {% endfor %}
 
-<div class="swatch is-flex is-flex-wrap" data-option-index="{{ option_index }}">
+<div
+  class="swatch is-flex is-flex-wrap"
+  data-option-index="{{ option_index }}"
+  data-template="{{ template.name }}"
+  data-title="{{ swatch | downcase }}">
   <div class="option_title">{{ swatch }}</div>
 
   {%- assign values = '' -%}
@@ -33,24 +83,213 @@ Set the extension of your color files below. Use 'png', 'jpeg', 'jpg' or 'gif'.
       {%- assign values = values | append: ',' | append: value -%}
       {%- assign values = values | split: ',' -%}
 
-      <input id="swatch-{{ option_index }}-{{ value | replace: ' ', '-' }}-{{ product.id }}{% if section.id %}-{{ section.id }}{% endif %}" type="radio" name="option-{{ option_index }}" aria-label="{{ value | escape }}" tabindex="0" value="{{ value | escape }}"{% if forloop.first %} checked{% endif %} />
+      <input
+        id="swatch-{{ option_index }}-{{ value | replace: ' ', '-' }}-{{ product.id }}{% if section.id %}-{{ section.id }}{% endif %}"
+        type="radio"
+        name="option-{{ option_index }}"
+        aria-label="{{ value | escape }}"
+        tabindex="0"
+        data-value="{{ value | escape | downcase }}"
+        value="{{ value | escape }}"
+        {% if forloop.first %}
+        checked
+        {% endif %} />
 
-      <div tabindex="0"  value="{{ value | escape }}" data-value="{{ value | escape }}" data-id="{{ variant.id }}" class="swatch-element {% if is_color %}color{% endif %} {{ value | handle }}-swatch {% if variant.available %}available{% else %}soldout{% endif %}">
+      <div
+        tabindex="0"
+        data-variant-avail="{{ variant.available }}"
+        value="{{ value | escape }}"
+        data-option="{{option.name}}--{{ swatch }}"
+        data-value="{{ value | downcase }}"
+        data-val="{{ value | downcase | remove: '"' }}"
+        data-id="{{ variant.id }}"
+        class="swatch-element {% if is_color %}color{% endif %} {{ value | handle }}-swatch {% if variant.available %}available{% endif %} {% if variant.available ==  false %}soldout{% endif %}">
         {% if is_color %}
           <div class="tooltip">{{ value }}</div>
         {% endif %}
 
         {% if is_color %}
-          <label {% if variant.featured_image %}data-image="{{ variant.featured_image | product_img_url: '600x' }}"{% endif %} for="swatch-{{ option_index }}-{{ value | replace: ' ', '-' }}-{{ product.id }}{% if section.id %}-{{ section.id }}{% endif %}" style="background-image: url({{ value | handle | append: '.' | append: file_extension | asset_img_url: '50x' | prepend: 'https:' }}); background-color: {{ value | split: ' ' | last | handle }};">
-            <img class="crossed-out" src="{{ 'soldout.png' | asset_url }}" aria-label="sold out" alt="sold out"/>
+          <label
+            {% if variant.featured_image %}data-image="{{ variant.featured_image | product_img_url: '600x' }}"{% endif %}
+            for="swatch-{{ option_index }}-{{ value | replace: ' ', '-' }}-{{ product.id }}{% if section.id %}-{{ section.id }}{% endif %}"
+            style="background-image: url({{ value | handle | append: '.' | append: file_extension | asset_img_url: '50x' | prepend: 'https:' }}); background-color: {{ value | split: ' ' | last | handle }};">
+            <img
+              class="crossed-out"
+              src="{{ 'soldout.png' | asset_url }}"
+              aria-label="sold out"
+              alt="sold out" />
           </label>
         {% else %}
           <label {% if variant.featured_image %}data-image="{{ variant.featured_image | product_img_url: '600x' }}"{% endif %} for="swatch-{{ option_index }}-{{ value | replace: ' ', '-' }}-{{ product.id }}{% if section.id %}-{{ section.id }}{% endif %}">
             {{ value }}
-            <img class="crossed-out" src="{{ 'soldout.png' | asset_url }}" aria-label="sold out" alt="sold out"/>
+            <img
+              class="crossed-out"
+              src="{{ 'soldout.png' | asset_url }}"
+              aria-label="sold out"
+              alt="sold out" />
           </label>
         {% endif %}
       </div>
     {% endunless %}
   {% endfor %}
+
 </div>
+{% unless template.suffix == 'primary' or template.suffix == 'priamry-alternate' %}
+  {% if is_color %}
+    <p
+      class="selected-swatch-text desktop hide_mobile"
+      data-template="{{ template.suffix }}"
+      data-type="color">Color:
+      <span class="selected-swatch-text-value"></span>
+    </p>
+  {% endif %}
+{% endunless %}
+{% unless template.suffix == 'primary' or template.suffix == 'primary-alternate' %}
+  {% if section.settings.promo_1 != blank or section.settings.promo_2 != blank or section.settings.promo_3 != blank %}
+    <div class="promo desktop hide_desktop pp">
+      <h3>HUGE SAVINGS ON BUNDLES</h3>
+      <div class="text">
+        {% for i in (1..3) %}
+          {% capture pdpPromo %}promo_{{ i }}{% endcapture %}
+          {% if section.settings[pdpPromo] != blank %}
+            {{ section.settings[pdpPromo] }}{% endif %}
+        {% endfor %}
+      </div>
+    </div>
+  {% endif %}
+{% endunless %}
+<script>
+  window.addEventListener("DOMContentLoaded", (event) => {
+    console.log('Dom Content loaded on PDP')
+
+// $('.pdp-custom-swatch-list-item[data-color="Golden Tan"]').trigger('click');
+
+    $('.swatch[data-option-index][data-title="color"] .swatch-element').each(function() {
+      let checkColor = $(this).attr('data-value'); // console.log('checkColro==>', checkColor);
+      if ($(this).hasClass('soldout')) {
+        $('.swatch_options .pdp-custom-swatch-list-item[data-color="' + checkColor + '"]').addClass('hide');
+      }
+    })
+
+    $(document).on('click', '.pdp-custom-swatch-list-item', function() {
+      $('.pdp-custom-swatch .pdp-custom-swatch-list-item').removeClass('active');
+      let selectedColor = $(this).attr('data-color');
+      $(this).addClass('active');
+      updatepdpImg(selectedColor);
+    });
+
+    $(document).on('click', '#pdp-custom-swatch-size-selected-option', function() {
+      $(this).addClass('clicked');
+      $('.pdp-custom-swatch-dropdown-lists').slideDown();
+    });
+
+    $(document).on('click', '.pdp-custom-swatch-dropdown-lists li', function() {
+      $(this).removeClass('clicked');
+      $(this).addClass('active').siblings().removeClass('active');
+      let selectedOption = $(this).attr('data-size').replaceAll('"', '~');
+      console.log('selectedOption', selectedOption);
+      $('.swatch[data-option-index][data-title="size"] .swatch-element[data-value]').each(function() {
+        let $this = $(this);
+        let dataVal = $(this).attr('data-value').replaceAll('"', '~');
+        console.log('dataVal', dataVal);
+        if (dataVal == selectedOption) {
+          $('#pdp-custom-swatch-size-selected-option').text($this.attr('data-value'));
+          $this.find('label').trigger('click');
+        }
+      })
+
+// $('.swatch[data-option-index][data-title="size"] .swatch-element[data-value="'+selectedOption+'"] label').trigger('click');
+      $('.pdp-custom-swatch-dropdown-lists').slideUp();
+    })
+
+    $(document).on('click', '.pdp-custom-swatch-dropdown-item-swatch', function() {
+      $(this).addClass('active').siblings().removeClass('active');
+      let selectedOption = $(this).attr('data-size').replaceAll('"', '~');
+      console.log('selectedOption', selectedOption);
+      $('.selected-swatch-text[data-type="size"] .selected-swatch-text-value').text(selectedOption);
+      $('.swatch[data-option-index][data-title="size"] .swatch-element[data-value]').each(function() {
+        let $this = $(this);
+        let dataVal = $(this).attr('data-value').replaceAll('"', '~');
+        console.log('dataVal', dataVal);
+
+        if (dataVal == selectedOption) {
+          $this.find('label').trigger('click');
+        }
+      })
+    })
+    $(document).mouseup(function(e) {
+      var container = $('.pdp-custom-swatch-dropdown-lists');
+
+// if the target of the click isn't the container nor a descendant of the container
+      if (! container.is(e.target) && container.has(e.target).length === 0) {
+        container.slideUp();
+      }
+    });
+
+    $(document).on('click', '.data-product-gallery-nav span', function(){
+        $(this).addClass('active').siblings().removeClass('active');
+        let getId = Number($(this).attr('data-id'));
+        $('.product-gallery__thumbnail.showThis').eq(getId-1).trigger('click');
+    });
+
+  });
+  window.addEventListener("load", (event) => {
+
+// console.log("page is fully loaded");
+    if ($('.swatch[data-option-index][data-title="size"]').length > 0) {
+      let selectedSizeOnLoad = $('.swatch[data-option-index][data-title="size"] input:checked').attr('data-value');
+      console.log('OnLoadSize = ', selectedSizeOnLoad);
+      $('#pdp-custom-swatch-size-selected-option').text(selectedSizeOnLoad); // .trigger('click');
+      if ($('.pdp-custom-swatch-dropdown ').hasClass('with-swatch')) {
+        $('.pdp-custom-swatch-dropdown-item-swatch').each(function() {
+          let $this = $(this);
+          if ($this.attr('data-size') == selectedSizeOnLoad) {
+            $this.addClass('active');
+          }
+        })
+      } else {
+        $('.pdp-custom-swatch-dropdown-item').each(function() {
+          let $this = $(this);
+          if ($this.attr('data-size') == selectedSizeOnLoad) {
+            $this.addClass('active');
+          }
+        })
+      }
+    }
+    let selectedColorOnLoad = $('.swatch[data-option-index] input:checked').attr('data-value');
+    console.log('OnLoadColor = ', selectedColorOnLoad);
+    updatepdpImg(selectedColorOnLoad);
+    $('.selected-swatch-text[data-type="size"] .selected-swatch-text-value').text($('.swatch[data-option-index][data-title="size"] input:checked').attr('data-value'));
+
+    $('.pdp-custom-swatch-list-item[data-color="' + selectedColorOnLoad + '"]').trigger('click');
+  });
+
+
+  function updatepdpImg(selectedColor) {
+    $(document).find('.data-product-gallery-nav').remove();
+    $('.selected-swatch-text[data-type="color"] .selected-swatch-text-value').text(selectedColor);
+    $('.product_gallery_nav.product-gallery__thumbnails .product-gallery__thumbnail').removeClass('showThis');
+    let selectedColorSrc = selectedColor.replaceAll(' ', '_')
+
+// console.log('selectedColor', selectedColor, '============', selectedColorSrc);
+    $('.swatch .swatch-element.color[data-value="' + selectedColor + '"] label').trigger('click');
+    $('.product_gallery_nav.product-gallery__thumbnails .product-gallery__thumbnail img[alt="' + selectedColor + '"]').parent().addClass('showThis');
+    let checkVisibleThumbnailsLen = Number($('.product-gallery__thumbnail.showThis').length); console.log("checkVisibleThumbnailsLen===>",checkVisibleThumbnailsLen);
+    var bullets = '<div class="data-product-gallery-nav">';
+    for( var i=1; i <= checkVisibleThumbnailsLen; i++ ){
+      //console.log(checkVisibleThumbnailsLen[i]);
+      if(i == 1){
+        bullets += '<span class="active" data-id="'+i+'">'+i+'</span>'
+      }else {
+        bullets += '<span data-id="'+i+'">'+i+'</span>'
+      }
+      
+    }
+    bullets += '</div>';
+    console.log("bullets", bullets)
+    $('.product_gallery[data-product-gallery]').append(bullets);
+  }
+  function updatepdpSizeOption(selectedSize) {
+    $('.swatch[data-option-index][data-title="size"]  .swatch-element[data-value="' + selectedSize + '"] label').trigger('click');
+  }
+</script>

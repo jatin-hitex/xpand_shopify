@@ -1,0 +1,104 @@
+<style>
+  {% if request.path contains '/social-impact' %}
+   .cm_section_header {
+    padding: 90px 0;
+    text-align: center;
+  }
+  .cm_section_header .container {
+    justify-content: center;
+  }
+  .cm_header > h1 {
+    color: rgb(24, 120, 251);
+    font-family:'neuzeitgroteskblack';
+    font-size: 50px;
+    font-weight: bolder;
+    line-height: 58px;
+  }
+  
+  .cm_section_header_content {
+    color: rgb(30, 30, 30);
+    font-family:'neuzeit_grotesk_regular';
+    font-weight: 400;
+    font-style: normal;
+    font-size: 20px;
+    max-width: 690px;
+    margin: 20px auto 0;
+  }
+  
+
+.cm_header > h1 > span:first-child {
+    display: block;
+  }
+  
+  .cm_header > h1 > span:first-child + span {
+    margin-right: 20px;
+    color: rgb(246, 76, 36);
+  }
+  
+  .cm_header > h1 > span:first-child + span + span {
+    color: rgb(253, 214, 0);
+  }
+  
+  .cm_counter_section {
+    background-image: url('https://cdn.shopify.com/s/files/1/1206/8416/files/shoes.png?v=1591946749');
+    background-repeat: no-repeat;
+    background-position: 85% 0;
+  }
+  @media screen and (max-width: 767px) {
+    .cm_section_header {
+        padding: 40px 20px;
+    }
+    .cm_header>h1 {
+    font-size: 30px;
+    line-height: 36px;
+}
+  }
+
+{% endif %}
+</style>
+<div class="cm_section_header">
+  <div class="container">
+    <div class="cm_section_header_inner_wrapper">
+      <div class="cm_header">
+        {% assign title = section.settings.title|split:' ' %}
+        <h1>{% for item in title %}<span>{{ item }}</span>{% endfor %}</h1>
+      </div>
+      
+      <div class="cm_section_header_content">
+        {{ section.settings.content }}
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Section Header",
+    "settings": [
+      {
+        "type":"text",
+        "id":"title",
+        "label":"Title",
+        "placeholder":"Title"
+      },
+      {
+         "type": "richtext",
+         "id": "content",
+         "label": "Content",
+         "default": "<p>Default <em>richtext</em> <a href=\"https://example.com/\">content</a></p>"
+      }
+	],
+    "presets": [
+        {
+            "name": "Section Header"
+        }
+    ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

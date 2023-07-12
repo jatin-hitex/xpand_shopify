@@ -88,6 +88,13 @@
 
           {% unless article.image and section.settings.featured_image == 'banner' %}
             <div class="one-whole column">
+              {% if article.image and section.settings.featured_image == 'content' %}
+              {%
+                render 'image-element',
+                image: article.image,
+                alt: article.image.alt,
+              %}
+            {% endif %}
               <h1 class="align_left article_title">{{ article.title }}</h1>
               <div class="feature-divider"></div>
             </div>
@@ -132,15 +139,15 @@
           </div>
 
           <div class="article_content one-whole column">
-            {% if article.image and section.settings.featured_image == 'content' %}
+           {%  comment %}  {% if article.image and section.settings.featured_image == 'content' %}
               {%
                 render 'image-element',
                 image: article.image,
                 alt: article.image.alt,
               %}
             {% endif %}
-
-            <div class="rte has-padding-top">
+{% endcomment %}
+            <div class="rte">
               {{ article.content }}
             </div>
           </div>

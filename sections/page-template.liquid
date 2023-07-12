@@ -1,19 +1,20 @@
-<section class="section">
+<section
+  class="section">
   <div
     class="
-      container
-      content
-      page
-    "
-  >
-    <div class="one-whole column">
+            container
+            content
+            page
+          ">
+    <div
+      class="one-whole column">
       <h1>{{ page.title }}</h1>
-      <div class="feature-divider"></div>
+      <div
+        class="feature-divider"></div>
     </div>
 
     {%
-      render 'page-multi-column',
-      content: page.content,
-    %}
+       render 'page-multi-column',
+       content: page.content, %}
   </div>
 </section>
