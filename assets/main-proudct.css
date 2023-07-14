@@ -7,6 +7,7 @@ body.product .product-main .product_section.container {
 .product__images.three-fifths {
     max-width: 700px;
     padding: 10px;
+    min-height: 400px;
 }
 .product__details--product-page {
     max-width: 360px;
@@ -1090,6 +1091,14 @@ body[data-template=primary-alternate] .pdp-custom-swatch-dropdown .pdp-custom-sw
     display: inline-block;
     font-family: 'neuzeitgroteskblack';
 }
+}
+@media screen and (max-width: 798px) {
+    .product__images.three-fifths {
+        max-width: 100%;
+        padding: 0;
+        overflow: hidden;
+        min-height: 300px;
+    }
 }
 @media screen and (min-width: 768px) {
     body[data-template=primary] h1.product_name {
