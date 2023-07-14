@@ -13,7 +13,6 @@
 {%- if section.settings.show_locale_selector and shop.published_locales.size > 1 -%}
   {%- assign locale_selector = true -%}
 {%- endif -%}
-
 <footer class="footer">
   {% if section.settings.go_to_top %}
     <div class="go-to-top">
@@ -45,11 +44,11 @@
                   style="object-fit: cover; object-position: {{ block.settings.image.presentation.focal_point }}; max-width: {{- block.settings.image.width -}}px"
                   data-src="{{ block.settings.image | img_url: '2048x' }}"
                   data-srcset="{{ block.settings.image | img_url: '200x' }} 200w,
-                                                                                                                                      {{ block.settings.image | img_url: '300x' }} 300w,
-                                                                                                                                      {{ block.settings.image | img_url: '400x' }} 400w,
-                                                                                                                                      {{ block.settings.image | img_url: '500x' }} 500w,
-                                                                                                                                      {{ block.settings.image | img_url: '600x' }} 600w,
-                                                                                                                                      {{ block.settings.image | img_url: '1000x' }} 1000w" />
+                                                                                                                                                          {{ block.settings.image | img_url: '300x' }} 300w,
+                                                                                                                                                          {{ block.settings.image | img_url: '400x' }} 400w,
+                                                                                                                                                          {{ block.settings.image | img_url: '500x' }} 500w,
+                                                                                                                                                          {{ block.settings.image | img_url: '600x' }} 600w,
+                                                                                                                                                          {{ block.settings.image | img_url: '1000x' }} 1000w" />
               {% else %}
                 <div class="logo">{{ shop.name }}</div>
               {% endif %}
