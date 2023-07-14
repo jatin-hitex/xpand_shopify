@@ -1240,7 +1240,8 @@
         "blocks": {
           "1489175056408": {
             "type": "search",
-            "settings": {}
+            "settings": {
+            }
           },
           "1489175058545": {
             "type": "recent_posts",
