@@ -205,7 +205,7 @@
           "type": "specs",
           "settings": {
             "name": "details",
-            "accessories_title": "",
+            "accessories_title": "SIZE CHART",
             "accessories_description": "",
             "accessories_full_width": false,
             "flat_title": "In the package",
@@ -227,8 +227,8 @@
           "type": "installation",
           "settings": {
             "name": "installation",
-            "accessories_iframe_video_1": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
-            "accessories_iframe_video_2": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
+            "accessories_iframe_video_1": "https:\/\/youtu.be\/c3k8GxAx5HE",
+            "accessories_iframe_video_2": "",
             "flat_iframe_video_1": "https:\/\/www.youtube.com\/watch?v=eMSbyA9wNBo",
             "flat_iframe_video_2": "https:\/\/www.youtube.com\/watch?v=xp-4EMkwNQQ",
             "round_iframe_video_1": "https:\/\/www.youtube.com\/watch?v=8hMcup2C-ds",
