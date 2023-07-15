@@ -201,8 +201,9 @@
           "type": "specs",
           "settings": {
             "name": "details",
-            "accessories_title": "",
-            "accessories_description": "",
+            "accessories_title": "In the package",
+            "accessories_description": "<p><strong>Each pack completes one pair of shoes<br\/><br\/><br\/><\/strong>2 elastic laces, 2 Locking Anchors, 2 End Clips<\/p>",
+            "accessories_image": "shopify:\/\/shop_images\/Round-Specs_2f372dcb-f7fc-4a6f-beb1-de8649e5323f.jpg",
             "accessories_full_width": false,
             "flat_title": "In the package",
             "flat_description": "<p><strong>Each pack completes one pair of shoes<\/strong><\/p><p>-<br\/>2 elastic laces (52 inches - trim to fit)<\/p><p>4 Lace Anchors<\/p><p>4 End Clips<\/p>",
