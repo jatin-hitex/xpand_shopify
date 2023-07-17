@@ -224,12 +224,6 @@
             "accessories_sizechart_content_img": "shopify:\/\/shop_images\/Screen-Shot-2019-10-02-at-11.32.01-PM-v1570084331111.png"
           }
         },
-        "662c1e88-d615-4160-84e4-c1aa37b90be6": {
-          "type": "reviews",
-          "settings": {
-            "name": "reviews"
-          }
-        },
         "dc3141dc-1917-4bc9-8b9c-7e614e2b0bd7": {
           "type": "installation",
           "settings": {
@@ -241,13 +235,58 @@
             "round_iframe_video_1": "https:\/\/www.youtube.com\/watch?v=8hMcup2C-ds",
             "round_iframe_video_2": ""
           }
+        },
+        "cabff4bb-965e-464d-933b-ad6dd5125fab": {
+          "type": "about",
+          "settings": {
+            "name": "Social Impact",
+            "title": "We believe in the power of giving",
+            "block_desc": "<h1>At Xpand, we believe in altruism. Oftentimes, the tiniest action of goodwill can domino into a positive change, especially for those in need. It starts with a small step in the right direction.<br\/><br\/>Socks are the most needed but also least donated item of clothing in homeless shelters. A pair of socks may not seem like a big deal for many, but for some, it can mean protection from low temperatures, infections and diseases.<br\/><br\/><br\/>For every purchase made, we donate a pair of socks to someone in need.<\/h1>",
+            "accessories_1_type": "image",
+            "accessories_video1_heading": "For every purchase made, we donate a pair of socks to someone in need.",
+            "accessories_video1_text": "",
+            "accessories_2_type": "image",
+            "accessories_video2_heading": "",
+            "accessories_video2_text": "",
+            "accessories_3_type": "image",
+            "accessories_video3_heading": "",
+            "accessories_video3_text": "",
+            "accessories_4_type": "image",
+            "accessories_video4_heading": "",
+            "accessories_video4_text": "",
+            "flat_video1_text": "",
+            "flat_video2_text": "",
+            "flat_video3_text": "",
+            "flat_video4_text": "",
+            "highlight_bg": "",
+            "flat_highlight1_type": "image",
+            "flat_highlight1_title": "",
+            "flat_highlight1_caption": "",
+            "flat_highlight1_text": "",
+            "flat_highlight2_type": "image",
+            "flat_highlight2_title": "",
+            "flat_highlight2_caption": "",
+            "flat_highlight2_text": "",
+            "round_video1_text": "",
+            "round_video2_text": "",
+            "round_video3_text": "",
+            "round_video4_text": "",
+            "round_highlight1_type": "image",
+            "round_highlight1_title": "",
+            "round_highlight1_caption": "",
+            "round_highlight1_text": "",
+            "round_highlight2_type": "image",
+            "round_highlight2_title": "",
+            "round_highlight2_caption": "",
+            "round_highlight2_text": ""
+          }
         }
       },
       "block_order": [
         "4552172f-fa4d-41a8-8267-93ce62f3acd5",
         "98d75cb0-4d74-41f3-82f5-e860a9501597",
-        "662c1e88-d615-4160-84e4-c1aa37b90be6",
-        "dc3141dc-1917-4bc9-8b9c-7e614e2b0bd7"
+        "dc3141dc-1917-4bc9-8b9c-7e614e2b0bd7",
+        "cabff4bb-965e-464d-933b-ad6dd5125fab"
       ],
       "settings": {
       }
