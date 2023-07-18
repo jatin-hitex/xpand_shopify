@@ -144,7 +144,7 @@
         "4552172f-fa4d-41a8-8267-93ce62f3acd5": {
           "type": "about",
           "settings": {
-            "name": "Overview",
+            "name": "OVERVIEW",
             "title": "Introducing the Urban Belt",
             "block_desc": "<p>In keeping with our mission to develop everyday products that do more for you, we have reexamined the belt and made further improvements to help you move smarter.<\/p><p>Following the success of the Xpand Explorer belt, we set out to design another universal belt that’s just as secure, comfortable, and compact. We introduced a new magnetic buckle to the familiar elastic strap, creating a system that quickly adjusts and unlocks so you can find your perfect fit every time.<\/p><h3>Meet the Urban.<\/h3><p>A belt so secure and comfortable, you’ll forget you’re wearing it.<\/p>",
             "accessories_1_type": "image",
@@ -201,45 +201,69 @@
             "round_highlight2_text": ""
           }
         },
-        "dc41cea6-d28c-4d5b-9aa4-fa905f8922c1": {
+        "896667b8-96bf-48d7-a7e7-4f53b73c4c48": {
+          "type": "size_chart",
+          "settings": {
+            "name": "SIZE CHART & MATERIALS",
+            "accessories_sizechart_top_title": "SIZE CHART",
+            "accessories_sizechart_top_description": "",
+            "accessories_sizechart_table_1_type": "UNISEX",
+            "accessories_sizechart_table_1_heading": "WAIST SIZE (INCHES), EXPAND BELT SIZE",
+            "accessories_sizechart_table_1_row_1_content": "25\" - 30\", S (Small)",
+            "accessories_sizechart_table_1_row_2_content": "30\" - 35\", M (Medium)",
+            "accessories_sizechart_table_1_row_3_content": "35\" - 40\",L (Large)",
+            "accessories_sizechart_table_1_row_4_content": "40\" - 45\", XL (X Large)",
+            "accessories_sizechart_table_1_row_5_content": "45\" - 55\", XXL (XX Large)",
+            "accessories_sizechart_table_2_type": "",
+            "accessories_sizechart_table_2_heading": "",
+            "accessories_sizechart_table_2_row_1_content": "",
+            "accessories_sizechart_table_2_row_2_content": "",
+            "accessories_sizechart_table_2_row_3_content": "",
+            "accessories_sizechart_table_2_row_4_content": "",
+            "accessories_sizechart_table_2_row_5_content": "",
+            "accessories_sizechart_table_3_type": "",
+            "accessories_sizechart_table_3_heading": "",
+            "accessories_sizechart_table_3_row_1_content": "",
+            "accessories_sizechart_table_3_row_2_content": "",
+            "accessories_sizechart_table_3_row_3_content": "",
+            "accessories_sizechart_table_3_row_4_content": "",
+            "accessories_sizechart_table_3_row_5_content": "",
+            "accessories_sizechart_content": "<h3>Materials<\/h3><p>Buckle: High-grade plastic and ultra-strong magnets<br\/>Belt Strap: Stretch elastic<\/p>"
+          }
+        },
+        "46516016-8664-4c84-9eac-03043ddd0557": {
           "type": "specs",
           "settings": {
-            "name": "details",
-            "accessories_title": "SIZE CHART",
+            "name": "TECH",
+            "accessories_title": "",
             "accessories_description": "",
+            "accessories_image": "shopify:\/\/shop_images\/Urban-Belt-Tech-v1612541768604.jpg",
             "accessories_full_width": false,
-            "flat_title": "In the package",
-            "flat_description": "<p><strong>Each pack completes one pair of shoes<\/strong><\/p><p>-<br\/>2 elastic laces (52 inches - trim to fit)<\/p><p>4 Lace Anchors<\/p><p>4 End Clips<\/p>",
-            "flat_image": "shopify:\/\/shop_images\/flat_specs.jpg",
+            "flat_title": "",
+            "flat_description": "",
             "flat_full_width": false,
             "round_title": "",
             "round_description": "",
             "round_full_width": false
           }
         },
-        "662c1e88-d615-4160-84e4-c1aa37b90be6": {
-          "type": "reviews",
-          "settings": {
-            "name": "reviews"
-          }
-        },
         "dc3141dc-1917-4bc9-8b9c-7e614e2b0bd7": {
           "type": "installation",
           "settings": {
-            "name": "installation",
+            "name": "INSTALLATION",
             "accessories_iframe_video_1": "https:\/\/youtu.be\/c3k8GxAx5HE",
             "accessories_iframe_video_2": "",
-            "flat_iframe_video_1": "https:\/\/www.youtube.com\/watch?v=eMSbyA9wNBo",
-            "flat_iframe_video_2": "https:\/\/www.youtube.com\/watch?v=xp-4EMkwNQQ",
-            "round_iframe_video_1": "https:\/\/www.youtube.com\/watch?v=8hMcup2C-ds",
+            "flat_iframe_video_1": "",
+            "flat_iframe_video_2": "",
+            "round_iframe_video_1": "",
             "round_iframe_video_2": ""
           }
         }
       },
       "block_order": [
         "4552172f-fa4d-41a8-8267-93ce62f3acd5",
-        "dc41cea6-d28c-4d5b-9aa4-fa905f8922c1",
-        "662c1e88-d615-4160-84e4-c1aa37b90be6",
+        "896667b8-96bf-48d7-a7e7-4f53b73c4c48",
+        "46516016-8664-4c84-9eac-03043ddd0557",
         "dc3141dc-1917-4bc9-8b9c-7e614e2b0bd7"
       ],
       "settings": {
