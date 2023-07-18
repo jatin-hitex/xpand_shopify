@@ -257,12 +257,27 @@
                       {{ block.settings[installVideoHtml] | video_tag: image_size: 'master', autoplay: true, muted: true, controls: false, loop: true }}
                           {% comment %} Checks there is an iframe video (YouTube or Vimeo) {% endcomment %}
                     {% elsif block.settings[installVideoyoutube] != blank %}
-                      {% if block.settings[installVideoyoutube].type == 'vimeo' %}
+                      {% comment %} {{ block.settings[installVideoyoutube] }} === {{ block.settings[installVideoyoutube] | split: '/watch?v=' | last }} {% endcomment %}
+                      {% comment %} {% if block.settings[installVideoyoutube].type == 'vimeo' %}
                         <iframe src="https://player.vimeo.com/video/{{ block.settings[installVideoyoutube].id }}?loop=false&amp;byline=false&amp;portrait=false&amp;title=false&amp;speed=true&amp;transparent=0&amp;gesture=media" allowfullscreen allowtransparency allow="autoplay"></iframe> 
 
                       {% elsif block.settings[installVideoyoutube].type == 'youtube' %}
                         <iframe src="https://www.youtube.com/embed/{{ block.settings[installVideoyoutube].id }}?origin=https://plyr.io&amp;iv_load_policy=3&amp;modestbranding=1&amp;playsinline=1&amp;showinfo=0&amp;rel=0&amp;enablejsapi=1" allowfullscreen allowtransparency allow="autoplay"></iframe> 
-                      {% endif %}                    
+                      {% endif %}                     {% endcomment %}
+                      {% if block.settings[installVideoyoutube] contains 'vimeo' %}
+                      {%  assign videoId = block.settings[installVideoyoutube] | split: '/watch?v=' | last %}
+                      <iframe src="https://player.vimeo.com/video/{{ videoId }}?loop=false&amp;byline=false&amp;portrait=false&amp;title=false&amp;speed=true&amp;transparent=0&amp;gesture=media" allowfullscreen allowtransparency allow="autoplay"></iframe> 
+
+                    {% elsif block.settings[installVideoyoutube] contains 'youtube' or block.settings[installVideoyoutube] contains 'youtu.be' %}
+                      {% if block.settings[installVideoyoutube] contains 'youtu.be' %}
+                      
+                      {%  assign videoId = block.settings[installVideoyoutube] | split: 'youtu.be/' | last %}
+                      {% else %}
+                      {%  assign videoId = block.settings[installVideoyoutube] | split: '/watch?v=' | last %}
+                    {% endif %}
+                      <iframe src="https://www.youtube.com/embed/{{ videoId }}?origin=https://plyr.io&amp;iv_load_policy=3&amp;modestbranding=1&amp;playsinline=1&amp;showinfo=0&amp;rel=0&amp;enablejsapi=1" allowfullscreen allowtransparency allow="autoplay"></iframe> 
+                    {% endif %}
+
                     {% endif %}
 
 
@@ -849,26 +864,18 @@
             "content": "Accessories System"
           },
           {
-            "type": "video_url",
+            "type": "text",
             "id": "accessories_iframe_video_1",
-            "label": "Video link",
-            "accept": [
-              "youtube", "vimeo"
-            ],
-            "default": "https://www.youtube.com/watch?v=_9VUPq3SxOc"
+            "label": "Video link"
           },
           {
             "type": "video",
             "id": "accessories_video1_url",
             "label": "Video #1 URL"
           }, {
-            "type": "video_url",
+            "type": "text",
             "id": "accessories_iframe_video_2",
-            "label": "Video link",
-            "accept": [
-              "youtube", "vimeo"
-            ],
-            "default": "https://www.youtube.com/watch?v=_9VUPq3SxOc"
+            "label": "Video link"
           }, {
             "type": "video",
             "id": "accessories_video2_url",
@@ -879,26 +886,18 @@
             "content": "Flat Lacing System"
           },
           {
-            "type": "video_url",
+            "type": "text",
             "id": "flat_iframe_video_1",
-            "label": "Video link",
-            "accept": [
-              "youtube", "vimeo"
-            ],
-            "default": "https://www.youtube.com/watch?v=_9VUPq3SxOc"
+            "label": "Video link"
           },
           {
             "type": "video",
             "id": "flat_video1_url",
             "label": "Video #1 URL"
           }, {
-            "type": "video_url",
+            "type": "text",
             "id": "flat_iframe_video_2",
-            "label": "Video link",
-            "accept": [
-              "youtube", "vimeo"
-            ],
-            "default": "https://www.youtube.com/watch?v=_9VUPq3SxOc"
+            "label": "Video link"
           }, {
             "type": "video",
             "id": "flat_video2_url",
@@ -907,25 +906,17 @@
             "type": "header",
             "content": "Round Lacing System"
           }, {
-            "type": "video_url",
+            "type": "text",
             "id": "round_iframe_video_1",
-            "label": "Video link",
-            "accept": [
-              "youtube", "vimeo"
-            ],
-            "default": "https://www.youtube.com/watch?v=_9VUPq3SxOc"
+            "label": "Video link"
           }, {
             "type": "video",
             "id": "round_video1_url",
             "label": "Video #1 URL"
           }, {
-            "type": "video_url",
+            "type": "text",
             "id": "round_iframe_video_2",
-            "label": "Video link",
-            "accept": [
-              "youtube", "vimeo"
-            ],
-            "default": "https://www.youtube.com/watch?v=_9VUPq3SxOc"
+            "label": "Video link"
           }, {
             "type": "video",
             "id": "round_video2_url",
