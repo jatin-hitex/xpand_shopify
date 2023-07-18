@@ -95,23 +95,23 @@
           "settings": {
             "text": "Free Shipping",
             "text_mobile": "Free Shipping",
-            "icon": "shopify:\/\/shop_images\/icons-01-v1582732985230.png"
+            "icon": "shopify:\/\/shop_images\/icons-03-v1582727801057.png"
           }
         },
         "c13026da-c946-44b6-b274-fe67f0228a74": {
           "type": "item",
           "settings": {
-            "text": "Try Xpand for <br>90 days",
+            "text": "Try Xpand for 90 days",
             "text_mobile": "Try Xpand for 90 Days",
-            "icon": "shopify:\/\/shop_images\/mobile-heart.png"
+            "icon": "shopify:\/\/shop_images\/icons-01-v1582732985230_3085d0f7-b27b-4a4f-9cbd-b6e6c1844649.png"
           }
         },
         "c14c80d0-1b31-4f23-accb-e9b3ac583984": {
           "type": "item",
           "settings": {
-            "text": "100% Money Back<br>Guarantee",
+            "text": "100% Money BackGuarantee",
             "text_mobile": "100% Satisfaction Guarantee",
-            "icon": "shopify:\/\/shop_images\/mobile-check.png"
+            "icon": "shopify:\/\/shop_images\/icons-02-v1582732279688.png"
           }
         }
       },
