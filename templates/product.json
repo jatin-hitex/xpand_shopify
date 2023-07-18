@@ -13,11 +13,13 @@
       "blocks": {
         "title": {
           "type": "title",
-          "settings": {}
+          "settings": {
+          }
         },
         "5a3dd3eb-8b9d-44a1-ac37-a69e1a645dbc": {
           "type": "rating",
-          "settings": {}
+          "settings": {
+          }
         },
         "price": {
           "type": "price",
@@ -28,16 +30,19 @@
         "description": {
           "type": "description",
           "disabled": true,
-          "settings": {}
+          "settings": {
+          }
         },
         "form": {
           "type": "form",
-          "settings": {}
+          "settings": {
+          }
         },
         "share": {
           "type": "share",
           "disabled": true,
-          "settings": {}
+          "settings": {
+          }
         },
         "27b7e7a7-b6bc-47b5-acf5-c1bfbfab6c6c": {
           "type": "popup",
@@ -141,6 +146,19 @@
           "settings": {
             "name": "Overview",
             "title": "Get to know the laces",
+            "block_desc": "",
+            "accessories_1_type": "video",
+            "accessories_video1_heading": "",
+            "accessories_video1_text": "Demo Test",
+            "accessories_2_type": "video",
+            "accessories_video2_heading": "",
+            "accessories_video2_text": "",
+            "accessories_3_type": "video",
+            "accessories_video3_heading": "",
+            "accessories_video3_text": "",
+            "accessories_4_type": "video",
+            "accessories_video4_heading": "",
+            "accessories_video4_text": "",
             "flat_top_video_url": "shopify:\/\/files\/videos\/XPAND.mp4",
             "flat_video1_url": "shopify:\/\/files\/videos\/Flat_-_Hidden_and_Visible.mp4",
             "flat_video1_text": "HIDDEN & VISIBLE MODE",
@@ -161,29 +179,41 @@
             "flat_highlight2_caption": "PATENTED TECHNOLOGY",
             "flat_highlight2_text": "<p>Our patented Lace Anchors secure your laces in place through any intense activities, while maintaining an amazing comfortable fit.<\/p>",
             "flat_highlight2_image": "shopify:\/\/shop_images\/Flat_Lace_Specs.jpg",
-            "round_video1_text": "",
-            "round_video2_text": "",
-            "round_video3_text": "",
-            "round_video4_text": "",
+            "round_video1_url": "shopify:\/\/files\/videos\/Round_-_Vertical_Active_to_Relaxed.mp4",
+            "round_video1_text": "LOCK & UNLOCK MODE",
+            "round_video2_url": "shopify:\/\/files\/videos\/Round_-_Slip_On.mp4",
+            "round_video2_text": "SLIP ON & GO",
+            "round_video3_url": "shopify:\/\/files\/videos\/Round_-_Install.mp4",
+            "round_video3_text": "ESAY TO INSTALL",
+            "round_video4_url": "shopify:\/\/files\/videos\/Round_-_Low_Profile.mp4",
+            "round_video4_text": "LAY FLAT",
             "round_highlight1_type": "image",
-            "round_highlight1_title": "",
-            "round_highlight1_caption": "",
-            "round_highlight1_text": "",
+            "round_highlight1_title": "Guaranteed Not to Slip",
+            "round_highlight1_caption": "PERFORMANCE & DURABILITY",
+            "round_highlight1_text": "<p>The Xpand Lock holds over 30 pounds (16.5 kg) of pressure, ensuring that your feet are secure in your shoe, even during physical activities. The Xpand Lacing System has been tested to be 4 times stronger than any other clip design<\/p>",
+            "round_highlight1_image": "shopify:\/\/shop_images\/Amazon_Strengths_V2_1.webp",
             "round_highlight2_type": "image",
-            "round_highlight2_title": "",
-            "round_highlight2_caption": "",
-            "round_highlight2_text": ""
+            "round_highlight2_title": "Quick-Release Locking System",
+            "round_highlight2_caption": "PATENT-PENDING TECHNOLOGY",
+            "round_highlight2_text": "<p>The Xpand Quick-Release Lock is a one piece design that is simple to install and even easier to use. Made with fiber reinforced resin, the patent-pending Quick-Release Lock is nearly indestructible.<\/p>",
+            "round_highlight2_image": "shopify:\/\/shop_images\/Round_Locks_1.webp"
           }
         },
         "dc41cea6-d28c-4d5b-9aa4-fa905f8922c1": {
           "type": "specs",
           "settings": {
             "name": "details",
+            "accessories_title": "",
+            "accessories_description": "",
+            "accessories_full_width": false,
             "flat_title": "In the package",
             "flat_description": "<p><strong>Each pack completes one pair of shoes<\/strong><\/p><p>-<br\/>2 elastic laces (52 inches - trim to fit)<\/p><p>4 Lace Anchors<\/p><p>4 End Clips<\/p>",
             "flat_image": "shopify:\/\/shop_images\/flat_specs.jpg",
-            "round_title": "",
-            "round_description": ""
+            "flat_full_width": false,
+            "round_title": "In the package",
+            "round_description": "<p><strong>Each pack completes one pair of shoes<\/strong><\/p><p>-<br\/>2 elastic laces, 2 Locking Anchors, 2 End Clips<\/p>",
+            "round_image": "shopify:\/\/shop_images\/Round-Specs_2f372dcb-f7fc-4a6f-beb1-de8649e5323f.jpg",
+            "round_full_width": false
           }
         },
         "662c1e88-d615-4160-84e4-c1aa37b90be6": {
@@ -196,6 +226,8 @@
           "type": "installation",
           "settings": {
             "name": "installation",
+            "accessories_iframe_video_1": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
+            "accessories_iframe_video_2": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
             "flat_iframe_video_1": "https:\/\/www.youtube.com\/watch?v=eMSbyA9wNBo",
             "flat_iframe_video_2": "https:\/\/www.youtube.com\/watch?v=xp-4EMkwNQQ",
             "round_iframe_video_1": "https:\/\/www.youtube.com\/watch?v=8hMcup2C-ds",
@@ -209,7 +241,8 @@
         "662c1e88-d615-4160-84e4-c1aa37b90be6",
         "dc3141dc-1917-4bc9-8b9c-7e614e2b0bd7"
       ],
-      "settings": {}
+      "settings": {
+      }
     },
     "ff7c6ca4-f31a-42f4-9b0d-2190b71016f5": {
       "type": "custom-html",
