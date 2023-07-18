@@ -146,7 +146,7 @@
           "settings": {
             "name": "OVERVIEW",
             "title": "Introducing the Urban Belt",
-            "block_desc": "<p>In keeping with our mission to develop everyday products that do more for you, we have reexamined the belt and made further improvements to help you move smarter.<\/p><p>Following the success of the Xpand Explorer belt, we set out to design another universal belt that’s just as secure, comfortable, and compact. We introduced a new magnetic buckle to the familiar elastic strap, creating a system that quickly adjusts and unlocks so you can find your perfect fit every time.<\/p><h3>Meet the Urban.<\/h3><p>A belt so secure and comfortable, you’ll forget you’re wearing it.<\/p>",
+            "block_desc": "<p>{{ product.metafields.custom.primary_overview_description | metafield_tag }}<\/p>",
             "accessories_1_type": "image",
             "accessories_1_image": "shopify:\/\/shop_images\/download.gif",
             "accessories_video1_icon": "shopify:\/\/shop_images\/customized-v1600774757782.svg",
