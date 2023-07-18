@@ -251,7 +251,7 @@
           "type": "installation",
           "settings": {
             "name": "INSTALLATION",
-            "accessories_iframe_video_1": "",
+            "accessories_iframe_video_1": "{{ product.metafields.custom.primary_installation.value }}",
             "accessories_iframe_video_2": "",
             "flat_iframe_video_1": "",
             "flat_iframe_video_2": "",
