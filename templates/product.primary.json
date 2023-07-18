@@ -237,7 +237,7 @@
             "name": "TECH",
             "accessories_title": "",
             "accessories_description": "",
-            "accessories_image": "shopify:\/\/shop_images\/Urban-Belt-Tech-v1612541768604.jpg",
+            "accessories_image": "{{ product.metafields.custom.primary_tech.value }}",
             "accessories_full_width": false,
             "flat_title": "",
             "flat_description": "",
