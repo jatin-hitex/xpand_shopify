@@ -16,6 +16,12 @@
           "settings": {
           }
         },
+        "743770d4-49ae-40cf-bda3-31d01c1f3a57": {
+          "type": "text",
+          "settings": {
+            "text": "<p>{{ product.metafields.custom.product_subheading.value }}<\/p>"
+          }
+        },
         "5a3dd3eb-8b9d-44a1-ac37-a69e1a645dbc": {
           "type": "rating",
           "settings": {
@@ -61,6 +67,7 @@
       },
       "block_order": [
         "title",
+        "743770d4-49ae-40cf-bda3-31d01c1f3a57",
         "5a3dd3eb-8b9d-44a1-ac37-a69e1a645dbc",
         "acdd1f33-c781-4997-8856-8de88bf35d19",
         "price",
