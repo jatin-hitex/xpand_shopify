@@ -18,7 +18,6 @@
         },
         "743770d4-49ae-40cf-bda3-31d01c1f3a57": {
           "type": "text",
-          "disabled": true,
           "settings": {
             "text": "<p>{{ product.metafields.custom.product_subheading.value }}<\/p>"
           }
@@ -30,6 +29,7 @@
         },
         "acdd1f33-c781-4997-8856-8de88bf35d19": {
           "type": "custom-liquid",
+          "disabled": true,
           "settings": {
             "custom_liquid": "<div class=\"social-impact-data\"><span>One Pair Purchased<\/span> <img class=\" lazyloaded\" src=\"\/\/images.accentuate.io?c_options=w_60&amp;shop=xpandlaces.myshopify.com&amp;image=https:\/\/cdn.accentuate.io\/4166139019375\/10780445081711\/Heart-v1570143219398.png?199x222\"> <span>One Pair Donated<\/span><\/div>"
           }
