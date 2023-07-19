@@ -1,0 +1,343 @@
+{
+  "wrapper": "div.shopify-section-wrapper",
+  "sections": {
+    "sidebar": {
+      "type": "product-sidebar",
+      "disabled": true,
+      "settings": {
+        "toggle": false
+      }
+    },
+    "main": {
+      "type": "product-template",
+      "blocks": {
+        "title": {
+          "type": "title",
+          "settings": {
+          }
+        },
+        "743770d4-49ae-40cf-bda3-31d01c1f3a57": {
+          "type": "text",
+          "settings": {
+            "text": "<p>{{ product.metafields.custom.product_subheading.value }}<\/p>"
+          }
+        },
+        "5a3dd3eb-8b9d-44a1-ac37-a69e1a645dbc": {
+          "type": "rating",
+          "settings": {
+          }
+        },
+        "acdd1f33-c781-4997-8856-8de88bf35d19": {
+          "type": "custom-liquid",
+          "settings": {
+            "custom_liquid": "<div class=\"social-impact-data\"><span>One Pair Purchased<\/span> <img class=\" lazyloaded\" src=\"\/\/images.accentuate.io?c_options=w_60&amp;shop=xpandlaces.myshopify.com&amp;image=https:\/\/cdn.accentuate.io\/4166139019375\/10780445081711\/Heart-v1570143219398.png?199x222\"> <span>One Pair Donated<\/span><\/div>"
+          }
+        },
+        "price": {
+          "type": "price",
+          "settings": {
+            "display_savings": true
+          }
+        },
+        "description": {
+          "type": "description",
+          "disabled": true,
+          "settings": {
+          }
+        },
+        "form": {
+          "type": "form",
+          "settings": {
+          }
+        },
+        "share": {
+          "type": "share",
+          "disabled": true,
+          "settings": {
+          }
+        },
+        "27b7e7a7-b6bc-47b5-acf5-c1bfbfab6c6c": {
+          "type": "popup",
+          "settings": {
+            "text": "Pop-up link text",
+            "text_alignment": "left",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "title",
+        "743770d4-49ae-40cf-bda3-31d01c1f3a57",
+        "5a3dd3eb-8b9d-44a1-ac37-a69e1a645dbc",
+        "acdd1f33-c781-4997-8856-8de88bf35d19",
+        "price",
+        "description",
+        "form",
+        "share",
+        "27b7e7a7-b6bc-47b5-acf5-c1bfbfab6c6c"
+      ],
+      "settings": {
+        "main_bg_color": "#f1f2f2",
+        "product_breadcrumb": false,
+        "media_position": "is-flex-row",
+        "set_product_height": false,
+        "product_height": 500,
+        "video_looping": false,
+        "product_thumbs": true,
+        "gallery_arrows": false,
+        "enable_product_lightbox": false,
+        "activate_zoom": false,
+        "slideshow_speed": 0,
+        "slideshow_animation": "fade",
+        "thumbnail_position": "left",
+        "enable_thumbnail_slider": true,
+        "price_note_desktop": "{{ product.metafields.custom.price_note_desktop.value }}",
+        "price_note_mobile": "{{ product.metafields.custom.price_note_mobile.value }}",
+        "cta_text_color": "#ffffff",
+        "cta_bg_color": "#008ffd",
+        "promo_title": "",
+        "promo_1": "<p>Everyone is wearing socks, but with Xpand, you’re wearing a statement.<\/p>",
+        "promo_2": "",
+        "promo_3": ""
+      }
+    },
+    "16873a58-8aa6-4705-a96d-904b0c9f437e": {
+      "type": "product-feature",
+      "blocks": {
+        "f02eac51-3f0f-4869-8ae0-e43a3a3a4583": {
+          "type": "item",
+          "settings": {
+            "text": "Free <br>Shipping",
+            "text_mobile": "Free Shipping",
+            "icon": "shopify:\/\/shop_images\/mobile-box.png"
+          }
+        },
+        "c13026da-c946-44b6-b274-fe67f0228a74": {
+          "type": "item",
+          "settings": {
+            "text": "Try Xpand for <br>90 days",
+            "text_mobile": "Try Xpand for 90 Days",
+            "icon": "shopify:\/\/shop_images\/mobile-heart.png"
+          }
+        },
+        "c14c80d0-1b31-4f23-accb-e9b3ac583984": {
+          "type": "item",
+          "settings": {
+            "text": "100% Money Back<br>Guarantee",
+            "text_mobile": "100% Satisfaction Guarantee",
+            "icon": "shopify:\/\/shop_images\/mobile-check.png"
+          }
+        }
+      },
+      "block_order": [
+        "f02eac51-3f0f-4869-8ae0-e43a3a3a4583",
+        "c13026da-c946-44b6-b274-fe67f0228a74",
+        "c14c80d0-1b31-4f23-accb-e9b3ac583984"
+      ],
+      "settings": {
+        "text_color": "#36807c",
+        "sec_top": 35,
+        "sec_bottom": 35
+      }
+    },
+    "recommendations": {
+      "type": "product-recommendations",
+      "disabled": true,
+      "settings": {
+        "show_product_recommendations": false,
+        "wide_display": false,
+        "product_recommendations_style": "slider",
+        "product_recommendations_heading": "You may also like",
+        "products_per_row": 4,
+        "recommended_products_limit": 10
+      }
+    },
+    "6efb6157-dfb0-4b03-9444-cbf09eb48127": {
+      "type": "product-tabs",
+      "blocks": {
+        "4552172f-fa4d-41a8-8267-93ce62f3acd5": {
+          "type": "about",
+          "settings": {
+            "name": "Overview",
+            "title": "Meet the world’s most comfortable socks",
+            "block_desc": "",
+            "accessories_1_type": "video",
+            "accessories_video1_url": "shopify:\/\/files\/videos\/(GIF-1)-Cushioned-No-Show-v1585155742390_5be89c6e-7a11-448c-88fe-c8e01f6274cd.mp4",
+            "accessories_video1_icon": "shopify:\/\/shop_images\/Countour-Seam-v1585586263310_37152b2b-fc9f-468c-a7ab-b8fdd044357d.svg",
+            "accessories_video1_heading": "Completely Hidden",
+            "accessories_video1_text": "Hides neatly under the collar of your shoes.",
+            "accessories_2_type": "image",
+            "accessories_2_image": "shopify:\/\/shop_images\/download2.gif",
+            "accessories_video2_icon": "shopify:\/\/shop_images\/Anti-heel-slip-v1585586100508_651f2551-45dd-41b1-80bd-97b0df5c9398.svg",
+            "accessories_video2_heading": "Anti-slip Heel Lock",
+            "accessories_video2_text": "Keeps your no-shows intact throughout the day as well as slipping on and off shoes.",
+            "accessories_3_type": "image",
+            "accessories_3_image": "shopify:\/\/shop_images\/download3.webp",
+            "accessories_video3_icon": "shopify:\/\/shop_images\/Ergonomic-v1585586113490_1ce16e33-7534-4e3a-bec3-690c1860c876.svg",
+            "accessories_video3_heading": "Ergonomic Cushioning",
+            "accessories_video3_text": "Triple-layered, strong and bouncy padding for an incredible comfortable feel.",
+            "accessories_4_type": "image",
+            "accessories_4_image": "shopify:\/\/shop_images\/download4.webp",
+            "accessories_video4_icon": "shopify:\/\/shop_images\/Breathable-v1585586243160_e526e5f5-96e0-4a61-8371-7757e3dfee90.svg",
+            "accessories_video4_heading": "Breathable Fabric",
+            "accessories_video4_text": "Designed to breathe easy and keep your feet dry.",
+            "flat_top_video_url": "shopify:\/\/files\/videos\/XPAND.mp4",
+            "flat_video1_url": "shopify:\/\/files\/videos\/Flat_-_Hidden_and_Visible.mp4",
+            "flat_video1_text": "HIDDEN & VISIBLE MODE",
+            "flat_video2_url": "shopify:\/\/files\/videos\/Flat_-_Slip_On.mp4",
+            "flat_video2_text": "SLIP ON & GO",
+            "flat_video3_url": "shopify:\/\/files\/videos\/Flat_-_Install_and_Adjust.mp4",
+            "flat_video3_text": "EASY TO USE",
+            "flat_video4_url": "shopify:\/\/files\/videos\/Flat_-_Less_Pain.mp4",
+            "flat_video4_text": "ULTIMATE COMFORT",
+            "highlight_bg": "#f7f7f7",
+            "flat_highlight1_type": "video",
+            "flat_highlight1_title": "Long-Lasting Elastic Laces",
+            "flat_highlight1_caption": "PERFORMANCE & DURABILITY",
+            "flat_highlight1_text": "<p>Xpand Laces are made with zero-memory elastic rubber, which ensure a consistent comfortable fit throughout your day and during your workouts. Xpand Laces work on all types of shoes and boots as you simply trim off the excess ends.<\/p>",
+            "flat_highlight1_video_url": "shopify:\/\/files\/videos\/Flat_-_Horizontal_Sretch.mp4",
+            "flat_highlight2_type": "image",
+            "flat_highlight2_title": "Lace Anchor Clips",
+            "flat_highlight2_caption": "PATENTED TECHNOLOGY",
+            "flat_highlight2_text": "<p>Our patented Lace Anchors secure your laces in place through any intense activities, while maintaining an amazing comfortable fit.<\/p>",
+            "flat_highlight2_image": "shopify:\/\/shop_images\/Flat_Lace_Specs.jpg",
+            "round_video1_text": "",
+            "round_video2_text": "",
+            "round_video3_text": "",
+            "round_video4_text": "",
+            "round_highlight1_type": "image",
+            "round_highlight1_title": "",
+            "round_highlight1_caption": "",
+            "round_highlight1_text": "",
+            "round_highlight2_type": "image",
+            "round_highlight2_title": "",
+            "round_highlight2_caption": "",
+            "round_highlight2_text": ""
+          }
+        },
+        "98d75cb0-4d74-41f3-82f5-e860a9501597": {
+          "type": "size_chart",
+          "settings": {
+            "name": "Details & Sizing",
+            "accessories_sizechart_top_title": "SIZE CHART",
+            "accessories_sizechart_top_description": "",
+            "accessories_sizechart_table_1_type": "Women",
+            "accessories_sizechart_table_1_heading": "SHOE SIZE US, XPAND SOCK SIZE",
+            "accessories_sizechart_table_1_row_1_content": "6-8, S",
+            "accessories_sizechart_table_1_row_2_content": "8.5-10, M",
+            "accessories_sizechart_table_1_row_3_content": "10.5-13, L",
+            "accessories_sizechart_table_1_row_4_content": "",
+            "accessories_sizechart_table_1_row_5_content": "",
+            "accessories_sizechart_table_2_type": "Men",
+            "accessories_sizechart_table_2_heading": "SHOE SIZE US, XPAND SOCK SIZE",
+            "accessories_sizechart_table_2_row_1_content": "6-7.5, S",
+            "accessories_sizechart_table_2_row_2_content": "8-9.5, M",
+            "accessories_sizechart_table_2_row_3_content": "10-12, L",
+            "accessories_sizechart_table_2_row_4_content": "",
+            "accessories_sizechart_table_2_row_5_content": "",
+            "accessories_sizechart_table_3_type": "",
+            "accessories_sizechart_table_3_heading": "",
+            "accessories_sizechart_table_3_row_1_content": "",
+            "accessories_sizechart_table_3_row_2_content": "",
+            "accessories_sizechart_table_3_row_3_content": "",
+            "accessories_sizechart_table_3_row_4_content": "",
+            "accessories_sizechart_table_3_row_5_content": "",
+            "accessories_sizechart_content": "<h3>Materials<\/h3><p>Tencel which comes from the eucalyptus tree, is 50% more absorbent than cotton. Tencel makes your socks more breathable and less susceptible to odorous bacteria growth, helping you maintain happy feet.<\/p><h3>Washing Instructions<\/h3><p>Machine wash cold on gentle cycle. Do not bleach. Tumble dry on low. Do not dry-clean or iron.<\/p>",
+            "accessories_sizechart_content_img": "shopify:\/\/shop_images\/Screen-Shot-2019-10-02-at-11.32.01-PM-v1570084331111.png"
+          }
+        },
+        "2eb496a0-8435-428d-89ea-b978b9701b3f": {
+          "type": "specs",
+          "settings": {
+            "name": "Social Impact",
+            "accessories_title": "We believe in the power of giving",
+            "accessories_description": "<p>At Xpand, we believe in altruism. Oftentimes, the tiniest action of goodwill can domino into a positive change, especially for those in need. It starts with a small step in the right direction.<br\/><br\/>Socks are the most needed but also least donated item of clothing in homeless shelters. A pair of socks may not seem like a big deal for many, but for some, it can mean protection from low temperatures, infections and diseases.<\/p><p><\/p><p><strong>For every purchase made, we donate a pair of socks to someone in need.<\/strong><br\/><br\/><\/p>",
+            "accessories_image": "shopify:\/\/shop_images\/Donation-Icon-_1_-v1570132415501_4d996e91-0caf-45d5-a6b2-6453fa5568e2.png",
+            "accessories_full_width": true,
+            "flat_title": "",
+            "flat_description": "",
+            "flat_full_width": false,
+            "round_title": "",
+            "round_description": "",
+            "round_full_width": false
+          }
+        }
+      },
+      "block_order": [
+        "4552172f-fa4d-41a8-8267-93ce62f3acd5",
+        "98d75cb0-4d74-41f3-82f5-e860a9501597",
+        "2eb496a0-8435-428d-89ea-b978b9701b3f"
+      ],
+      "settings": {
+      }
+    },
+    "ff7c6ca4-f31a-42f4-9b0d-2190b71016f5": {
+      "type": "custom-html",
+      "custom_css": [
+        "h2 {font-size: 28px; font-weight: 700; color: #008ffd; letter-spacing: 0; margin-bottom: 30px; text-align: center; font-family: inherit;}"
+      ],
+      "settings": {
+        "title": "Customer Reviews",
+        "custom_html": "<div id=\"stamped-reviews-widget\" data-widget-type=\"visual-gallery\" data-min-rating=\"3\" data-random=\"true\" data-feed-type=\"carousel\" data-with-photos=\"true\"><\/div>",
+        "css_class": "",
+        "custom_css": ""
+      }
+    },
+    "817d4b3d-7e40-4b23-b84e-dd690db248f0": {
+      "type": "faq",
+      "blocks": {
+        "template--15136042287215__817d4b3d-7e40-4b23-b84e-dd690db248f0-168362432268695d48-1": {
+          "type": "content",
+          "settings": {
+            "title": "Will Xpand Laces work on my shoes or boots?",
+            "answer": "<p>Xpand Lacing System works on all types of shoes - from kids shoes, adults sneakers, Timberlands to  high-top boots.<\/p>"
+          }
+        },
+        "template--15136042287215__817d4b3d-7e40-4b23-b84e-dd690db248f0-168362432268695d48-2": {
+          "type": "content",
+          "settings": {
+            "title": "Are the Xpand Laces adjustable?",
+            "answer": "<p>Yes! Finding the perfect fit is easy with Xpand Laces. We recommend trying out the length before you trim the laces. Always set the initial adjustment on the loose side, so that you can always tighten them up if needed.<\/p>"
+          }
+        },
+        "template--15136042287215__817d4b3d-7e40-4b23-b84e-dd690db248f0-168362432268695d48-3": {
+          "type": "content",
+          "settings": {
+            "title": "How long are the laces?",
+            "answer": "<p>Xpand Laces are 52 inches long, and can stretch out to over twice that length, which makes them long enough for all types of shoes or boots.<\/p>"
+          }
+        },
+        "template--15136042287215__817d4b3d-7e40-4b23-b84e-dd690db248f0-168362432268695d48-5": {
+          "type": "content",
+          "settings": {
+            "title": "What is your return and exchange policy?",
+            "answer": "<p>Xpand offers a 90 day satisfaction guarantee. If you are not 100% satisfied for any reason, we will refund your order. No questions asked!<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "template--15136042287215__817d4b3d-7e40-4b23-b84e-dd690db248f0-168362432268695d48-1",
+        "template--15136042287215__817d4b3d-7e40-4b23-b84e-dd690db248f0-168362432268695d48-2",
+        "template--15136042287215__817d4b3d-7e40-4b23-b84e-dd690db248f0-168362432268695d48-3",
+        "template--15136042287215__817d4b3d-7e40-4b23-b84e-dd690db248f0-168362432268695d48-5"
+      ],
+      "settings": {
+        "sec_bg": "#f7f7f7",
+        "title": "Frequently Asked Questions",
+        "link": "shopify:\/\/pages\/faqs",
+        "link_text": "See All FAQs",
+        "sec_top": 80,
+        "sec_bottom": 80
+      }
+    }
+  },
+  "order": [
+    "sidebar",
+    "main",
+    "16873a58-8aa6-4705-a96d-904b0c9f437e",
+    "recommendations",
+    "6efb6157-dfb0-4b03-9444-cbf09eb48127",
+    "ff7c6ca4-f31a-42f4-9b0d-2190b71016f5",
+    "817d4b3d-7e40-4b23-b84e-dd690db248f0"
+  ]
+}
