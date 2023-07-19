@@ -18,6 +18,7 @@
         },
         "743770d4-49ae-40cf-bda3-31d01c1f3a57": {
           "type": "text",
+          "disabled": true,
           "settings": {
             "text": "<p>{{ product.metafields.custom.product_subheading.value }}<\/p>"
           }
@@ -154,6 +155,7 @@
     },
     "6efb6157-dfb0-4b03-9444-cbf09eb48127": {
       "type": "product-tabs",
+      "disabled": true,
       "blocks": {
         "4552172f-fa4d-41a8-8267-93ce62f3acd5": {
           "type": "about",
@@ -273,6 +275,7 @@
     },
     "ff7c6ca4-f31a-42f4-9b0d-2190b71016f5": {
       "type": "custom-html",
+      "disabled": true,
       "custom_css": [
         "h2 {font-size: 28px; font-weight: 700; color: #008ffd; letter-spacing: 0; margin-bottom: 30px; text-align: center; font-family: inherit;}"
       ],
@@ -285,6 +288,7 @@
     },
     "817d4b3d-7e40-4b23-b84e-dd690db248f0": {
       "type": "faq",
+      "disabled": true,
       "blocks": {
         "template--15136042287215__817d4b3d-7e40-4b23-b84e-dd690db248f0-168362432268695d48-1": {
           "type": "content",
