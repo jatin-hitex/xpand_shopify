@@ -52,7 +52,8 @@
         "secondary_cta_text": "HOW IT WORKS",
         "secondary_cta_link": "shopify:\/\/pages\/install-video",
         "secondary_cta_text_color": "#ffffff",
-        "secondary_cta_bg_color": "#a6b4be"
+        "secondary_cta_bg_color": "#a6b4be",
+        "css_class": ""
       }
     },
     "4f32cbc4-47c1-4a16-9034-e75c8f8be3fc": {
@@ -94,7 +95,7 @@
           "type": "logo_image",
           "settings": {
             "image": "shopify:\/\/shop_images\/Breakfast_Television_logo_1_4a1b4307-72f7-4522-af5f-335ff11828d4.png",
-            "link": "https:\/\/www.bttoronto.ca\/videos\/the-6-dad-is-in-the-house\/",
+            "link": "#",
             "lcn-content": "<p>Breakfast Television<\/p>"
           }
         }

@@ -246,71 +246,27 @@
             "accessories_sizechart_content_img": "shopify:\/\/shop_images\/Screen-Shot-2019-10-02-at-11.32.01-PM-v1570084331111.png"
           }
         },
-        "dc3141dc-1917-4bc9-8b9c-7e614e2b0bd7": {
-          "type": "installation",
-          "disabled": true,
-          "settings": {
-            "name": "installation",
-            "accessories_iframe_video_1": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
-            "accessories_iframe_video_2": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
-            "flat_iframe_video_1": "https:\/\/www.youtube.com\/watch?v=eMSbyA9wNBo",
-            "flat_iframe_video_2": "https:\/\/www.youtube.com\/watch?v=xp-4EMkwNQQ",
-            "round_iframe_video_1": "https:\/\/www.youtube.com\/watch?v=8hMcup2C-ds",
-            "round_iframe_video_2": ""
-          }
-        },
-        "cabff4bb-965e-464d-933b-ad6dd5125fab": {
-          "type": "about",
+        "2eb496a0-8435-428d-89ea-b978b9701b3f": {
+          "type": "specs",
           "settings": {
             "name": "Social Impact",
-            "title": "We believe in the power of giving",
-            "block_desc": "<p>At Xpand, we believe in altruism. Oftentimes, the tiniest action of goodwill can domino into a positive change, especially for those in need. It starts with a small step in the right direction.<br\/><br\/>Socks are the most needed but also least donated item of clothing in homeless shelters. A pair of socks may not seem like a big deal for many, but for some, it can mean protection from low temperatures, infections and diseases.<br\/><\/p><h2><strong>For every purchase made, we donate a pair of socks to someone in need.<\/strong><br\/><br\/><\/h2>",
-            "accessories_1_type": "image",
-            "accessories_video1_icon": "shopify:\/\/shop_images\/Donation-Icon-_1_-v1570132415501_4d996e91-0caf-45d5-a6b2-6453fa5568e2.png",
-            "accessories_video1_heading": "",
-            "accessories_video1_text": "",
-            "accessories_2_type": "image",
-            "accessories_video2_heading": "",
-            "accessories_video2_text": "",
-            "accessories_3_type": "image",
-            "accessories_video3_heading": "",
-            "accessories_video3_text": "",
-            "accessories_4_type": "image",
-            "accessories_video4_heading": "",
-            "accessories_video4_text": "",
-            "flat_video1_text": "",
-            "flat_video2_text": "",
-            "flat_video3_text": "",
-            "flat_video4_text": "",
-            "highlight_bg": "",
-            "flat_highlight1_type": "image",
-            "flat_highlight1_title": "",
-            "flat_highlight1_caption": "",
-            "flat_highlight1_text": "",
-            "flat_highlight2_type": "image",
-            "flat_highlight2_title": "",
-            "flat_highlight2_caption": "",
-            "flat_highlight2_text": "",
-            "round_video1_text": "",
-            "round_video2_text": "",
-            "round_video3_text": "",
-            "round_video4_text": "",
-            "round_highlight1_type": "image",
-            "round_highlight1_title": "",
-            "round_highlight1_caption": "",
-            "round_highlight1_text": "",
-            "round_highlight2_type": "image",
-            "round_highlight2_title": "",
-            "round_highlight2_caption": "",
-            "round_highlight2_text": ""
+            "accessories_title": "We believe in the power of giving",
+            "accessories_description": "<p>At Xpand, we believe in altruism. Oftentimes, the tiniest action of goodwill can domino into a positive change, especially for those in need. It starts with a small step in the right direction.<br\/><br\/>Socks are the most needed but also least donated item of clothing in homeless shelters. A pair of socks may not seem like a big deal for many, but for some, it can mean protection from low temperatures, infections and diseases.<\/p><p><\/p><p><strong>For every purchase made, we donate a pair of socks to someone in need.<\/strong><br\/><br\/><\/p>",
+            "accessories_image": "shopify:\/\/shop_images\/Donation-Icon-_1_-v1570132415501_4d996e91-0caf-45d5-a6b2-6453fa5568e2.png",
+            "accessories_full_width": true,
+            "flat_title": "",
+            "flat_description": "",
+            "flat_full_width": false,
+            "round_title": "",
+            "round_description": "",
+            "round_full_width": false
           }
         }
       },
       "block_order": [
         "4552172f-fa4d-41a8-8267-93ce62f3acd5",
         "98d75cb0-4d74-41f3-82f5-e860a9501597",
-        "dc3141dc-1917-4bc9-8b9c-7e614e2b0bd7",
-        "cabff4bb-965e-464d-933b-ad6dd5125fab"
+        "2eb496a0-8435-428d-89ea-b978b9701b3f"
       ],
       "settings": {
       }
