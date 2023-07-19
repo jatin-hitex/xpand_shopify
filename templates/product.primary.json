@@ -95,23 +95,23 @@
           "settings": {
             "text": "Free Shipping",
             "text_mobile": "Free Shipping",
-            "icon": "shopify:\/\/shop_images\/icons-01-v1582732985230.png"
+            "icon": "shopify:\/\/shop_images\/icons-03-v1582727801057.png"
           }
         },
         "c13026da-c946-44b6-b274-fe67f0228a74": {
           "type": "item",
           "settings": {
-            "text": "Try Xpand for <br>90 days",
+            "text": "Try Xpand for 90 days",
             "text_mobile": "Try Xpand for 90 Days",
-            "icon": "shopify:\/\/shop_images\/mobile-heart.png"
+            "icon": "shopify:\/\/shop_images\/icons-01-v1582732985230_3085d0f7-b27b-4a4f-9cbd-b6e6c1844649.png"
           }
         },
         "c14c80d0-1b31-4f23-accb-e9b3ac583984": {
           "type": "item",
           "settings": {
-            "text": "100% Money Back<br>Guarantee",
+            "text": "100% Money BackGuarantee",
             "text_mobile": "100% Satisfaction Guarantee",
-            "icon": "shopify:\/\/shop_images\/mobile-check.png"
+            "icon": "shopify:\/\/shop_images\/icons-02-v1582732279688.png"
           }
         }
       },
@@ -146,7 +146,7 @@
           "settings": {
             "name": "OVERVIEW",
             "title": "Introducing the Urban Belt",
-            "block_desc": "<p>In keeping with our mission to develop everyday products that do more for you, we have reexamined the belt and made further improvements to help you move smarter.<\/p><p>Following the success of the Xpand Explorer belt, we set out to design another universal belt that’s just as secure, comfortable, and compact. We introduced a new magnetic buckle to the familiar elastic strap, creating a system that quickly adjusts and unlocks so you can find your perfect fit every time.<\/p><h3>Meet the Urban.<\/h3><p>A belt so secure and comfortable, you’ll forget you’re wearing it.<\/p>",
+            "block_desc": "<p>{{ product.metafields.custom.primary_overview_description | metafield_tag }}<\/p>",
             "accessories_1_type": "image",
             "accessories_1_image": "shopify:\/\/shop_images\/download.gif",
             "accessories_video1_icon": "shopify:\/\/shop_images\/customized-v1600774757782.svg",
@@ -251,7 +251,7 @@
           "type": "installation",
           "settings": {
             "name": "INSTALLATION",
-            "accessories_iframe_video_1": "",
+            "accessories_iframe_video_1": "{{ product.metafields.custom.primary_installation.value }}",
             "accessories_iframe_video_2": "",
             "flat_iframe_video_1": "",
             "flat_iframe_video_2": "",
