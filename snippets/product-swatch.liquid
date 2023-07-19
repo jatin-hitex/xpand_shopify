@@ -1,7 +1,7 @@
 {% comment %}
 Set the extension of your color files below. Use 'png', 'jpeg', 'jpg' or 'gif'.
 {% endcomment %}
-{% if template.suffix == 'primary' or template.suffix == 'primary-alternate' %}
+{% if template.suffix == 'primary' or template.suffix == 'primary-alternate' or template.suffix == 'primary-wipe' %}
   <style>
     .product-block.product-block--price {
       align-items: flex-start;
@@ -10,7 +10,7 @@ Set the extension of your color files below. Use 'png', 'jpeg', 'jpg' or 'gif'.
 {% endif %}
 
 {% assign prodType = product.type | downcase %}
-{% if template.suffix != 'primary' or template.suffix == 'primary-alternate' %}
+{% if template.suffix != 'primary' or template.suffix == 'primary-alternate' or template.suffix == 'primary-wipe' %}
   <style>
     .product-block.product-block--price {
       align-items: flex-start;
@@ -134,7 +134,7 @@ Set the extension of your color files below. Use 'png', 'jpeg', 'jpg' or 'gif'.
   {% endfor %}
 
 </div>
-{% unless template.suffix == 'primary' or template.suffix == 'priamry-alternate' %}
+{% unless template.suffix == 'primary' or template.suffix == 'priamry-alternate' or template.suffix == 'primary-wipe' %}
   {% if is_color %}
     <p
       class="selected-swatch-text desktop hide_mobile"
@@ -144,7 +144,7 @@ Set the extension of your color files below. Use 'png', 'jpeg', 'jpg' or 'gif'.
     </p>
   {% endif %}
 {% endunless %}
-{% unless template.suffix == 'primary' or template.suffix == 'primary-alternate' %}
+{% unless template.suffix == 'primary' or template.suffix == 'primary-alternate' or template.suffix == 'primary-wipe' %}
   {% if section.settings.promo_1 != blank or section.settings.promo_2 != blank or section.settings.promo_3 != blank %}
     <div class="promo desktop hide_desktop pp">
       <h3>HUGE SAVINGS ON BUNDLES</h3>
@@ -161,7 +161,6 @@ Set the extension of your color files below. Use 'png', 'jpeg', 'jpg' or 'gif'.
 <script>
   window.addEventListener("DOMContentLoaded", (event) => {
     console.log('Dom Content loaded on PDP')
-
 // $('.pdp-custom-swatch-list-item[data-color="Golden Tan"]').trigger('click');
 
     $('.swatch[data-option-index][data-title="color"] .swatch-element').each(function() {
@@ -277,6 +276,7 @@ Set the extension of your color files below. Use 'png', 'jpeg', 'jpg' or 'gif'.
 // console.log('selectedColor', selectedColor, '============', selectedColorSrc);
     $('.swatch .swatch-element.color[data-value="' + selectedColor + '"] label').trigger('click');
     $('.product_gallery_nav[data-product-gallery-thumbnails] .product-gallery__thumbnail[data-title="' + selectedColor + '"], .product_gallery[data-product-gallery-featured] .gallery-cell[data-alt="' + selectedColor + '"]').addClass('showThis');
+    $('.product_gallery[data-product-gallery-featured]').removeClass('loader-visible');
 
     let checkVisibleThumbnailsLen = Number($('.product-gallery__thumbnail.showThis').length);
     console.log("checkVisibleThumbnailsLen===>", checkVisibleThumbnailsLen);

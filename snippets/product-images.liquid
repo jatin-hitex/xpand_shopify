@@ -55,7 +55,7 @@ If true, loop videos
                                                 gallery-arrows--{{ gallery_arrows }}
                                                 {% if set_product_height != blank %}product-height-set{% endif %}
                                                 gallery-thumbnails--{{ gallery_thumbnail_position }}"><div
-    class="product_gallery swiper-container
+    class="loader-visible product_gallery swiper-container
                                                                   js-product-gallery product-{{ product.id }}-gallery
                                                                   transparentBackground--{{ settings.slideshow_button_style }}
                                                                   slideshow-transition--{{ gallery_slideshow_transition }}
@@ -157,6 +157,7 @@ If true, loop videos
                   {% else %}
                     <img src="{{ image | img_url: 'master' }}" />
                   {% endif %}
+                  
                 </div>
                 {% if gallery_click_to_zoom and product.images.size > 0 %}
                 </a>

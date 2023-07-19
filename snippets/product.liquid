@@ -109,7 +109,7 @@ If true, show dynamic checkout button
       {% endif %}
 
 
-      {% unless template.suffix == 'primary' or template.suffix == 'primary-alternate' %}
+      {% unless template.suffix == 'primary' or template.suffix == 'primary-alternate' or template.suffix == 'primary-wipe' %}
         <div class="shoes-types hide_mobile">
           <ul>
             <li><img class="lazyload" data-src="{{ 'running.svg' | asset_url }}"><span>Running</span>
@@ -291,7 +291,7 @@ If true, show dynamic checkout button
                   </div>
                   {% comment %}Inject @pixelunion/shopify-price-ui/price-ui end{% endcomment %}
 
-                  {% if template.suffix == 'primary' or template.suffix == 'primary-alternate' %}
+                  {% if template.suffix == 'primary' or template.suffix == 'primary-alternate' or template.suffix == 'primary-wipe' %}
                     {%- assign is_color = false -%}
                     <div class="pdp-custom-swatch">
                       {% for option in product.options_with_values %}
@@ -338,7 +338,7 @@ If true, show dynamic checkout button
               {% endif %}
             {% endif %}
             {% comment %} show size dropdown on primary template {% endcomment %}
-            {% if template.suffix == 'primary' or template.suffix == 'primary-alternate' %}
+            {% if template.suffix == 'primary' or template.suffix == 'primary-alternate' or template.suffix == 'primary-wipe' %}
               <div class="pdp-custom-swatch-dropdown {% if template.suffix =='primary-alternate' %} with-swatch{%endif%}">
                 {% for option in product.options_with_values %}
                   {% assign optionName = option.name | downcase %}
@@ -451,7 +451,7 @@ If true, show dynamic checkout button
             {% endif %}
             {% if section.settings.promo_1 != blank or section.settings.promo_2 != blank or section.settings.promo_3 != blank %}
               <div class="promo desktop hide_mobile">
-                {% unless template.suffix == 'primary' or template.suffix == 'primary-alternate' %}
+                {% unless template.suffix == 'primary' or template.suffix == 'primary-alternate' or template.suffix == 'primary-wipe' %}
                   <h3>HUGE SAVINGS ON BUNDLES</h3>
                 {% endunless %}
                 <div class="text">
@@ -465,7 +465,7 @@ If true, show dynamic checkout button
 
             {% endif %}
 
-            {% unless template.suffix == 'primary' or template.suffix == 'primary-alternate' %}
+            {% unless template.suffix == 'primary' or template.suffix == 'primary-alternate' or template.suffix == 'primary-wipe' %}
 
               <div class="shoes-types hide_desktop">
                 <ul>
