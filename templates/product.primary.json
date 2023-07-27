@@ -145,7 +145,7 @@
           "type": "about",
           "settings": {
             "name": "OVERVIEW",
-            "title": "{{ product.title }}",
+            "title": "{{ product.metafields.custom.primary_overview_heading1.value }}",
             "block_desc": "<p>{{ product.metafields.custom.primary_overview_description | metafield_tag }}<\/p>",
             "accessories_1_type": "video",
             "accessories_video1_url": "{{ product.metafields.custom.primary_overview_video1.value }}",
