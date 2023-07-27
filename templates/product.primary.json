@@ -208,7 +208,7 @@
             "accessories_sizechart_top_title": "SIZE CHART",
             "accessories_sizechart_top_description": "",
             "accessories_sizechart_table_1_type": "UNISEX",
-            "accessories_sizechart_table_1_heading": "WAIST SIZE (INCHES), EXPAND BELT SIZE",
+            "accessories_sizechart_table_1_heading": "WAIST SIZE (INCHES), XPAND BELT SIZE",
             "accessories_sizechart_table_1_row_1_content": "25\" - 30\", S (Small)",
             "accessories_sizechart_table_1_row_2_content": "30\" - 35\", M (Medium)",
             "accessories_sizechart_table_1_row_3_content": "35\" - 40\",L (Large)",
@@ -271,6 +271,7 @@
     },
     "ff7c6ca4-f31a-42f4-9b0d-2190b71016f5": {
       "type": "custom-html",
+      "disabled": true,
       "custom_css": [
         "h2 {font-size: 28px; font-weight: 700; color: #008ffd; letter-spacing: 0; margin-bottom: 30px; text-align: center; font-family: inherit;}"
       ],
@@ -283,6 +284,7 @@
     },
     "817d4b3d-7e40-4b23-b84e-dd690db248f0": {
       "type": "faq",
+      "disabled": true,
       "blocks": {
         "template--15136042287215__817d4b3d-7e40-4b23-b84e-dd690db248f0-168362432268695d48-1": {
           "type": "content",
