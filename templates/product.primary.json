@@ -147,7 +147,6 @@
             "name": "OVERVIEW",
             "title": "Introducing the Urban Belt",
             "block_desc": "<p>{{ product.metafields.custom.primary_overview_description | metafield_tag }}<\/p>",
-            "accessories_top_video_url": "{{ product.metafields.custom.primary_overview_video1.value }}",
             "accessories_1_type": "image",
             "accessories_video1_url": "{{ product.metafields.custom.primary_overview_video1.value }}",
             "accessories_video1_icon": "shopify:\/\/shop_images\/customized-v1600774757782.svg",
