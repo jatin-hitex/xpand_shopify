@@ -16,9 +16,22 @@
           "settings": {
           }
         },
+        "743770d4-49ae-40cf-bda3-31d01c1f3a57": {
+          "type": "text",
+          "settings": {
+            "text": "<p>{{ product.metafields.custom.product_subheading.value }}<\/p>"
+          }
+        },
         "5a3dd3eb-8b9d-44a1-ac37-a69e1a645dbc": {
           "type": "rating",
           "settings": {
+          }
+        },
+        "acdd1f33-c781-4997-8856-8de88bf35d19": {
+          "type": "custom-liquid",
+          "disabled": true,
+          "settings": {
+            "custom_liquid": "<div class=\"social-impact-data\"><span>One Pair Purchased<\/span> <img class=\" lazyloaded\" src=\"\/\/images.accentuate.io?c_options=w_60&amp;shop=xpandlaces.myshopify.com&amp;image=https:\/\/cdn.accentuate.io\/4166139019375\/10780445081711\/Heart-v1570143219398.png?199x222\"> <span>One Pair Donated<\/span><\/div>"
           }
         },
         "price": {
@@ -55,7 +68,9 @@
       },
       "block_order": [
         "title",
+        "743770d4-49ae-40cf-bda3-31d01c1f3a57",
         "5a3dd3eb-8b9d-44a1-ac37-a69e1a645dbc",
+        "acdd1f33-c781-4997-8856-8de88bf35d19",
         "price",
         "description",
         "form",
@@ -82,7 +97,7 @@
         "cta_text_color": "#ffffff",
         "cta_bg_color": "#008ffd",
         "promo_title": "",
-        "promo_1": "",
+        "promo_1": "<p>Everyone is wearing socks, but with Xpand, you’re wearing a statement.<\/p>",
         "promo_2": "",
         "promo_3": ""
       }
@@ -93,25 +108,25 @@
         "f02eac51-3f0f-4869-8ae0-e43a3a3a4583": {
           "type": "item",
           "settings": {
-            "text": "Free Shipping",
+            "text": "Free <br>Shipping",
             "text_mobile": "Free Shipping",
-            "icon": "shopify:\/\/shop_images\/icons-03-v1582727801057.png"
+            "icon": "shopify:\/\/shop_images\/mobile-box.png"
           }
         },
         "c13026da-c946-44b6-b274-fe67f0228a74": {
           "type": "item",
           "settings": {
-            "text": "Try Xpand for 90 days",
+            "text": "Try Xpand for <br>90 days",
             "text_mobile": "Try Xpand for 90 Days",
-            "icon": "shopify:\/\/shop_images\/icons-01-v1582732985230_3085d0f7-b27b-4a4f-9cbd-b6e6c1844649.png"
+            "icon": "shopify:\/\/shop_images\/mobile-heart.png"
           }
         },
         "c14c80d0-1b31-4f23-accb-e9b3ac583984": {
           "type": "item",
           "settings": {
-            "text": "100% Money BackGuarantee",
+            "text": "100% Money Back<br>Guarantee",
             "text_mobile": "100% Satisfaction Guarantee",
-            "icon": "shopify:\/\/shop_images\/icons-02-v1582732279688.png"
+            "icon": "shopify:\/\/shop_images\/mobile-check.png"
           }
         }
       },
@@ -140,33 +155,34 @@
     },
     "6efb6157-dfb0-4b03-9444-cbf09eb48127": {
       "type": "product-tabs",
+      "disabled": true,
       "blocks": {
         "4552172f-fa4d-41a8-8267-93ce62f3acd5": {
           "type": "about",
           "settings": {
-            "name": "OVERVIEW",
-            "title": "{{ product.metafields.custom.primary_overview_heading1.value }}",
-            "block_desc": "<p>{{ product.metafields.custom.primary_overview_description | metafield_tag }}<\/p>",
+            "name": "Overview",
+            "title": "Meet the world’s most comfortable socks",
+            "block_desc": "",
             "accessories_1_type": "video",
-            "accessories_video1_url": "{{ product.metafields.custom.primary_overview_video1.value }}",
-            "accessories_video1_icon": "{{ product.metafields.custom.primary_overview_video1_icon.value }}",
-            "accessories_video1_heading": "{{ product.metafields.custom.primary_overview_video1_heading.value }}",
-            "accessories_video1_text": "{{ product.metafields.custom.primary_overview_video1_heading_text.value }}",
-            "accessories_2_type": "video",
-            "accessories_video2_url": "{{ product.metafields.custom.primary_overview_video2.value }}",
-            "accessories_video2_icon": "{{ product.metafields.custom.primary_overview_video2_icon.value }}",
-            "accessories_video2_heading": "Secure Fit",
-            "accessories_video2_text": "{{ product.metafields.custom.primary_overview_video2_heading_text.value }}",
-            "accessories_3_type": "video",
-            "accessories_video3_url": "{{ product.metafields.custom.primary_overview_video3.value }}",
-            "accessories_video3_icon": "{{ product.metafields.custom.primary_overview_video3_icon.value }}",
-            "accessories_video3_heading": "Invisible Comfort",
-            "accessories_video3_text": "{{ product.metafields.custom.primary_overview_video3_heading_text.value }}",
-            "accessories_4_type": "video",
-            "accessories_video4_url": "{{ product.metafields.custom.primary_overview_video4.value }}",
-            "accessories_video4_icon": "{{ product.metafields.custom.primary_overview_video4_icon.value }}",
-            "accessories_video4_heading": "Compact Design",
-            "accessories_video4_text": "{{ product.metafields.custom.primary_overview_video4new_heading_text.value }}",
+            "accessories_video1_url": "shopify:\/\/files\/videos\/(GIF-1)-Cushioned-No-Show-v1585155742390_5be89c6e-7a11-448c-88fe-c8e01f6274cd.mp4",
+            "accessories_video1_icon": "shopify:\/\/shop_images\/Countour-Seam-v1585586263310_37152b2b-fc9f-468c-a7ab-b8fdd044357d.svg",
+            "accessories_video1_heading": "Completely Hidden",
+            "accessories_video1_text": "Hides neatly under the collar of your shoes.",
+            "accessories_2_type": "image",
+            "accessories_2_image": "shopify:\/\/shop_images\/download2.gif",
+            "accessories_video2_icon": "shopify:\/\/shop_images\/Anti-heel-slip-v1585586100508_651f2551-45dd-41b1-80bd-97b0df5c9398.svg",
+            "accessories_video2_heading": "Anti-slip Heel Lock",
+            "accessories_video2_text": "Keeps your no-shows intact throughout the day as well as slipping on and off shoes.",
+            "accessories_3_type": "image",
+            "accessories_3_image": "shopify:\/\/shop_images\/download3.webp",
+            "accessories_video3_icon": "shopify:\/\/shop_images\/Ergonomic-v1585586113490_1ce16e33-7534-4e3a-bec3-690c1860c876.svg",
+            "accessories_video3_heading": "Ergonomic Cushioning",
+            "accessories_video3_text": "Triple-layered, strong and bouncy padding for an incredible comfortable feel.",
+            "accessories_4_type": "image",
+            "accessories_4_image": "shopify:\/\/shop_images\/download4.webp",
+            "accessories_video4_icon": "shopify:\/\/shop_images\/Breathable-v1585586243160_e526e5f5-96e0-4a61-8371-7757e3dfee90.svg",
+            "accessories_video4_heading": "Breathable Fabric",
+            "accessories_video4_text": "Designed to breathe easy and keep your feet dry.",
             "flat_top_video_url": "shopify:\/\/files\/videos\/XPAND.mp4",
             "flat_video1_url": "shopify:\/\/files\/videos\/Flat_-_Hidden_and_Visible.mp4",
             "flat_video1_text": "HIDDEN & VISIBLE MODE",
@@ -201,24 +217,24 @@
             "round_highlight2_text": ""
           }
         },
-        "896667b8-96bf-48d7-a7e7-4f53b73c4c48": {
+        "98d75cb0-4d74-41f3-82f5-e860a9501597": {
           "type": "size_chart",
           "settings": {
-            "name": "SIZE CHART & MATERIALS",
+            "name": "Details & Sizing",
             "accessories_sizechart_top_title": "SIZE CHART",
             "accessories_sizechart_top_description": "",
-            "accessories_sizechart_table_1_type": "UNISEX",
-            "accessories_sizechart_table_1_heading": "WAIST SIZE (INCHES), XPAND BELT SIZE",
-            "accessories_sizechart_table_1_row_1_content": "25\" - 30\", S (Small)",
-            "accessories_sizechart_table_1_row_2_content": "30\" - 35\", M (Medium)",
-            "accessories_sizechart_table_1_row_3_content": "35\" - 40\",L (Large)",
-            "accessories_sizechart_table_1_row_4_content": "40\" - 45\", XL (X Large)",
-            "accessories_sizechart_table_1_row_5_content": "45\" - 55\", XXL (XX Large)",
-            "accessories_sizechart_table_2_type": "",
-            "accessories_sizechart_table_2_heading": "",
-            "accessories_sizechart_table_2_row_1_content": "",
-            "accessories_sizechart_table_2_row_2_content": "",
-            "accessories_sizechart_table_2_row_3_content": "",
+            "accessories_sizechart_table_1_type": "Women",
+            "accessories_sizechart_table_1_heading": "SHOE SIZE US, XPAND SOCK SIZE",
+            "accessories_sizechart_table_1_row_1_content": "6-8, S",
+            "accessories_sizechart_table_1_row_2_content": "8.5-10, M",
+            "accessories_sizechart_table_1_row_3_content": "10.5-13, L",
+            "accessories_sizechart_table_1_row_4_content": "",
+            "accessories_sizechart_table_1_row_5_content": "",
+            "accessories_sizechart_table_2_type": "Men",
+            "accessories_sizechart_table_2_heading": "SHOE SIZE US, XPAND SOCK SIZE",
+            "accessories_sizechart_table_2_row_1_content": "6-7.5, S",
+            "accessories_sizechart_table_2_row_2_content": "8-9.5, M",
+            "accessories_sizechart_table_2_row_3_content": "10-12, L",
             "accessories_sizechart_table_2_row_4_content": "",
             "accessories_sizechart_table_2_row_5_content": "",
             "accessories_sizechart_table_3_type": "",
@@ -228,17 +244,18 @@
             "accessories_sizechart_table_3_row_3_content": "",
             "accessories_sizechart_table_3_row_4_content": "",
             "accessories_sizechart_table_3_row_5_content": "",
-            "accessories_sizechart_content": "<h3>Materials<\/h3><p>Buckle: High-grade plastic and ultra-strong magnets<br\/>Belt Strap: Stretch elastic<\/p>"
+            "accessories_sizechart_content": "<h3>Materials<\/h3><p>Tencel which comes from the eucalyptus tree, is 50% more absorbent than cotton. Tencel makes your socks more breathable and less susceptible to odorous bacteria growth, helping you maintain happy feet.<\/p><h3>Washing Instructions<\/h3><p>Machine wash cold on gentle cycle. Do not bleach. Tumble dry on low. Do not dry-clean or iron.<\/p>",
+            "accessories_sizechart_content_img": "shopify:\/\/shop_images\/Screen-Shot-2019-10-02-at-11.32.01-PM-v1570084331111.png"
           }
         },
-        "46516016-8664-4c84-9eac-03043ddd0557": {
+        "2eb496a0-8435-428d-89ea-b978b9701b3f": {
           "type": "specs",
           "settings": {
-            "name": "TECH",
-            "accessories_title": "",
-            "accessories_description": "",
-            "accessories_image": "{{ product.metafields.custom.primary_tech.value }}",
-            "accessories_full_width": false,
+            "name": "Social Impact",
+            "accessories_title": "We believe in the power of giving",
+            "accessories_description": "<p>At Xpand, we believe in altruism. Oftentimes, the tiniest action of goodwill can domino into a positive change, especially for those in need. It starts with a small step in the right direction.<br\/><br\/>Socks are the most needed but also least donated item of clothing in homeless shelters. A pair of socks may not seem like a big deal for many, but for some, it can mean protection from low temperatures, infections and diseases.<\/p><p><\/p><p><strong>For every purchase made, we donate a pair of socks to someone in need.<\/strong><br\/><br\/><\/p>",
+            "accessories_image": "shopify:\/\/shop_images\/Donation-Icon-_1_-v1570132415501_4d996e91-0caf-45d5-a6b2-6453fa5568e2.png",
+            "accessories_full_width": true,
             "flat_title": "",
             "flat_description": "",
             "flat_full_width": false,
@@ -246,25 +263,12 @@
             "round_description": "",
             "round_full_width": false
           }
-        },
-        "dc3141dc-1917-4bc9-8b9c-7e614e2b0bd7": {
-          "type": "installation",
-          "settings": {
-            "name": "INSTALLATION",
-            "accessories_iframe_video_1": "{{ product.metafields.custom.primary_installation.value }}",
-            "accessories_iframe_video_2": "",
-            "flat_iframe_video_1": "",
-            "flat_iframe_video_2": "",
-            "round_iframe_video_1": "",
-            "round_iframe_video_2": ""
-          }
         }
       },
       "block_order": [
         "4552172f-fa4d-41a8-8267-93ce62f3acd5",
-        "896667b8-96bf-48d7-a7e7-4f53b73c4c48",
-        "46516016-8664-4c84-9eac-03043ddd0557",
-        "dc3141dc-1917-4bc9-8b9c-7e614e2b0bd7"
+        "98d75cb0-4d74-41f3-82f5-e860a9501597",
+        "2eb496a0-8435-428d-89ea-b978b9701b3f"
       ],
       "settings": {
       }
