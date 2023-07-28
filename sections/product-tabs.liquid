@@ -331,8 +331,6 @@
             </div>
           {% endcase %}
         {% endfor %}
-
-
       </div>
     </section>
   </div>
@@ -371,19 +369,11 @@
             "label": "Top Video URL"
           },
           {
-            "type": "radio",
+            "type":"text",
             "id": "accessories_1_type",
-            "label": "Enable",
-            "options": [
-              {
-                "value": "image",
-                "label": "Image"
-              }, {
-                "value": "video",
-                "label": "Video"
-              }
-            ],
-            "default": "image"
+            "label": "Accessories type",
+            "info": "Image or Video",
+            "default": "Image"
           },
           {
             "type": "image_picker",
@@ -411,19 +401,11 @@
             "label": "Video #1 Text"
           }, 
           {
-            "type": "radio",
+            "type":"text",
             "id": "accessories_2_type",
-            "label": "Enable",
-            "options": [
-              {
-                "value": "image",
-                "label": "Image"
-              }, {
-                "value": "video",
-                "label": "Video"
-              }
-            ],
-            "default": "image"
+            "label": "Accessories type",
+            "info": "Image or Video",
+            "default": "Image"
           },
           {
             "type": "image_picker",
@@ -447,22 +429,14 @@
             "type": "text",
             "id": "accessories_video2_text",
             "label": "Video #2 Text"
-          }, 
+          },
           {
-            "type": "radio",
+            "type":"text",
             "id": "accessories_3_type",
-            "label": "Enable",
-            "options": [
-              {
-                "value": "image",
-                "label": "Image"
-              }, {
-                "value": "video",
-                "label": "Video"
-              }
-            ],
-            "default": "image"
-          }, 
+            "label": "Accessories type",
+            "info": "Image or Video",
+            "default": "Image"
+          },
           {
             "type": "image_picker",
             "id": "accessories_3_image",
@@ -486,21 +460,13 @@
             "type": "text",
             "id": "accessories_video3_text",
             "label": "Video #3 Text"
-          }, 
+          },
           {
-            "type": "radio",
+            "type":"text",
             "id": "accessories_4_type",
-            "label": "Enable",
-            "options": [
-              {
-                "value": "image",
-                "label": "Image"
-              }, {
-                "value": "video",
-                "label": "Video"
-              }
-            ],
-            "default": "image"
+            "label": "Accessories type",
+            "info": "Image or Video",
+            "default": "Image"
           },
           {
             "type": "image_picker",
@@ -574,21 +540,15 @@
             "type": "color",
             "id": "highlight_bg",
             "label": "Highlight Background color"
-          }, {
-            "type": "radio",
+          },
+          {
+            "type":"text",
             "id": "flat_highlight1_type",
-            "label": "Enable",
-            "options": [
-              {
-                "value": "image",
-                "label": "Image"
-              }, {
-                "value": "video",
-                "label": "Video"
-              }
-            ],
-            "default": "image"
-          }, {
+            "label": "Flat highlight type",
+            "info": "Image or Video",
+            "default": "Image"
+          }, 
+          {
             "type": "text",
             "id": "flat_highlight1_title",
             "label": "Highlight #1 Title"
@@ -611,21 +571,15 @@
           }, {
             "type": "header",
             "content": "Highlight #2"
-          }, {
-            "type": "radio",
+          },
+          {
+            "type":"text",
             "id": "flat_highlight2_type",
-            "label": "Enable",
-            "options": [
-              {
-                "value": "image",
-                "label": "Image"
-              }, {
-                "value": "video",
-                "label": "Video"
-              }
-            ],
-            "default": "image"
-          }, {
+            "label": "Flat highlight type",
+            "info": "Image or Video",
+            "default": "Image"
+          },
+          {
             "type": "text",
             "id": "flat_highlight2_title",
             "label": "Highlight #2 Title"
@@ -687,21 +641,15 @@
           }, {
             "type": "header",
             "content": "Highlight #1"
-          }, {
-            "type": "radio",
+          },
+          {
+            "type":"text",
             "id": "round_highlight1_type",
-            "label": "Enable",
-            "options": [
-              {
-                "value": "image",
-                "label": "Image"
-              }, {
-                "value": "video",
-                "label": "Video"
-              }
-            ],
-            "default": "image"
-          }, {
+            "label": "Rount highlight type",
+            "info": "Image or Video",
+            "default": "Image"
+          }, 
+          {
             "type": "text",
             "id": "round_highlight1_title",
             "label": "Highlight #1 Title"
@@ -724,21 +672,15 @@
           }, {
             "type": "header",
             "content": "Highlight #2"
-          }, {
-            "type": "radio",
+          },
+          {
+            "type":"text",
             "id": "round_highlight2_type",
-            "label": "Enable",
-            "options": [
-              {
-                "value": "image",
-                "label": "Image"
-              }, {
-                "value": "video",
-                "label": "Video"
-              }
-            ],
-            "default": "image"
-          }, {
+            "label": "Rount highlight type",
+            "info": "Image or Video",
+            "default": "Image"
+          }, 
+          {
             "type": "text",
             "id": "round_highlight2_title",
             "label": "Highlight #2 Title"
@@ -1069,7 +1011,7 @@
       {
         "name": "Product Tab"
       }
-    ]
+    ] 
   }
 {% endschema %}
 <script>
