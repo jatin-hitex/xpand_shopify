@@ -809,7 +809,7 @@
           "promo_text_3": "<p><strong>Free Shipping on Orders Over $30<\/strong><\/p>",
           "ab_text_color": "#000000",
           "ab_bg_color": "#ffd828",
-          "show_alert_bar": true,
+          "show_alert_bar": false,
           "alert_text": "<p><strong>OVER 2 MILLION HAPPY CUSTOMERS<\/strong><\/p>",
           "alert_text_color": "#ffffff",
           "alert_bg_color": "#008ffd",
