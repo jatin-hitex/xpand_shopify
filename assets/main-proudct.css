@@ -693,7 +693,8 @@ body[data-template="primary"] p.selected-swatch-text {
 
 }
 .product-primary .section-wrapper .shopify-section-wrapper,
-.product-primary-alternate .section-wrapper .shopify-section-wrapper{
+.product-primary-alternate .section-wrapper .shopify-section-wrapper,
+.product-primary-wipe .section-wrapper .shopify-section-wrapper{
     width: 100%;
 }
 .product-primary-alternate .product-main .container,
