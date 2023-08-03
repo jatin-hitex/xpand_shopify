@@ -2,6 +2,7 @@
 <!DOCTYPE html>
 <html class="no-js no-touch" lang="{{ request.locale.iso_code }}">
   <head>
+{% render 'replo-head' %}
   <script>
     window.Store = window.Store || {};
     window.Store.id = {{ shop.id }};
