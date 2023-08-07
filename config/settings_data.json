@@ -805,7 +805,7 @@
         "settings": {
           "announcement_bar_enabled": true,
           "promo_text_1": "<p>Mix & match laces or socks<\/p>",
-          "promo_text_2": "<p><strong>Limited Time:  <\/strong>Any 6 for $40 | Any 8  for $50<\/p>",
+          "promo_text_2": "<p><strong>Limited Time: <\/strong>Any 6 for $40 | Any 8  for $50<\/p>",
           "promo_text_3": "<p><strong>Free Shipping on Orders Over $30<\/strong><\/p>",
           "ab_text_color": "#000000",
           "ab_bg_color": "#ffd828",
