@@ -9,7 +9,7 @@
   </script>
     <meta charset="utf-8">
     <meta http-equiv="cleartype" content="on">
-    <meta name="robots" content="index,follow">
+    
 
     <!-- Mobile Specific Metas -->
     <meta name="HandheldFriendly" content="True">
@@ -17,6 +17,28 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="theme-color" content="{{ settings.shop_bg_color }}">
 
+
+
+
+
+  <meta name="p:domain_verify" content="2a5124afd415bf157b94755eb8d06104"/>
+  <meta name="p:domain_verify" content="2a5124afd415bf157b94755eb8d06104"/>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+  <meta name="facebook-domain-verification" content="iuxdi01zvk0tsoepuc9qrzxxqrpoox" />
+  {% if page.template_suffix contains 'ptab' or page.handle == 'social-impact'  or product.handle == 'free-shipping-product' %}
+    <meta name="robots" content="noindex">
+  {% else %}
+    <meta name="robots" content="index,follow">
+  {% endif %}
+
+  <meta name="google-site-verification" content="1GuKV9Ynhy01MON2gGSP-rmAXmClHgt956WgfNd9BEY" />
+  
+
+
+
+    
 <!-- begin Convert Experiences code--><script type="text/javascript" src="//cdn-4.convertexperiments.com/js/10007840-10007401.js"></script><!-- end Convert Experiences code -->
   
   {% if current_tags %}{% assign meta_tags = current_tags | join: ', ' %}{% endif %}
